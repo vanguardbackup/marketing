@@ -51,10 +51,17 @@
         }
     </script>
 
-    <script defer src="https://cloud.umami.is/script.js" data-website-id="a51c4b23-0e1c-45e5-8a85-863164fe739b"></script>
+    <script defer src="https://cloud.umami.is/script.js"
+            data-website-id="a51c4b23-0e1c-45e5-8a85-863164fe739b"></script>
     <style>
         body {
             font-family: 'Inter', sans-serif;
+        }
+
+        .border-gradient {
+            border-width: 8px;
+            border-image-slice: 1;
+            border-image-source: linear-gradient(to right, #3b82f6, #8b5cf6);
         }
 
         [x-cloak] {
@@ -77,9 +84,9 @@
         <div class="h-16 w-16">
             <svg width="100%" height="100%" viewBox="0 0 1000 1000" preserveAspectRatio="none">
                 <g transform="translate(0,1000) scale(0.1,-0.1)" fill="currentColor" stroke="none">
-                    <path d="M4710 8174 c-301 -15 -596 -45 -885 -92 l-170 -27 265 -7 c1074 -26 2293 -289 2872 -619 108 -62 175 -122 213 -191 28 -49 30 -60 30 -158 0 -124 -21 -206 -118 -450 -222 -563 -659 -1254 -1180 -1864 -60 -71 -104 -125 -96 -121 87 51 471 389 694 611 667 662 1124 1318 1270 1819 115 398 -14 632 -425 769 -440 147 -1055 266 -1600 311 -187 15 -712 27 -870 19z"/>
-                    <path d="M3460 7930 c-211 -17 -496 -58 -665 -96 -98 -22 -240 -93 -296 -147 -113 -109 -162 -267 -139 -453 15 -119 77 -358 149 -572 207 -614 552 -1251 1007 -1857 113 -150 364 -458 384 -470 6 -4 -18 38 -54 92 -191 295 -429 765 -593 1173 -278 690 -414 1352 -325 1581 29 74 98 141 188 185 176 84 675 181 1184 230 226 21 921 30 1172 15 279 -17 676 -61 788 -88 14 -3 22 -3 19 1 -12 13 -360 117 -574 171 -430 110 -811 177 -1258 221 -180 18 -817 27 -987 14z"/>
-                    <path d="M3025 6730 c21 -181 96 -484 184 -740 235 -688 656 -1461 1097 -2010 226 -282 407 -458 534 -519 67 -32 84 -36 156 -36 75 0 87 3 165 42 131 65 351 256 669 579 526 536 968 1142 1306 1789 65 124 180 367 206 435 13 34 8 28 -118 -149 -125 -176 -300 -398 -464 -586 -157 -180 -624 -644 -806 -802 -307 -265 -671 -538 -813 -610 -64 -33 -83 -38 -140 -38 -82 1 -136 26 -271 128 -120 91 -394 363 -530 527 -450 541 -866 1244 -1122 1895 -53 136 -58 145 -53 95z"/>
+                    <path d="M4710 8174 c-301 -15 -596 -45 -885 -92 l-170 -27 265 -7 c1074 -26 2293 -289 2872 -619 108 -62 175 -122 213 -191 28 -49 30 -60 30 -158 0 -124 -21 -206 -118 -450 -222 -563 -659 -1254 -1180 -1864 -60 -71 -104 -125 -96 -121 87 51 471 389 694 611 667 662 1124 1318 1270 1819 115 398 -14 632 -425 769 -440 147 -1055 266 -1600 311 -187 15 -712 27 -870 19z"></path>
+                    <path d="M3460 7930 c-211 -17 -496 -58 -665 -96 -98 -22 -240 -93 -296 -147 -113 -109 -162 -267 -139 -453 15 -119 77 -358 149 -572 207 -614 552 -1251 1007 -1857 113 -150 364 -458 384 -470 6 -4 -18 38 -54 92 -191 295 -429 765 -593 1173 -278 690 -414 1352 -325 1581 29 74 98 141 188 185 176 84 675 181 1184 230 226 21 921 30 1172 15 279 -17 676 -61 788 -88 14 -3 22 -3 19 1 -12 13 -360 117 -574 171 -430 110 -811 177 -1258 221 -180 18 -817 27 -987 14z"></path>
+                    <path d="M3025 6730 c21 -181 96 -484 184 -740 235 -688 656 -1461 1097 -2010 226 -282 407 -458 534 -519 67 -32 84 -36 156 -36 75 0 87 3 165 42 131 65 351 256 669 579 526 536 968 1142 1306 1789 65 124 180 367 206 435 13 34 8 28 -118 -149 -125 -176 -300 -398 -464 -586 -157 -180 -624 -644 -806 -802 -307 -265 -671 -538 -813 -610 -64 -33 -83 -38 -140 -38 -82 1 -136 26 -271 128 -120 91 -394 363 -530 527 -450 541 -866 1244 -1122 1895 -53 136 -58 145 -53 95z"></path>
                 </g>
             </svg>
 
@@ -94,21 +101,19 @@
         <button @click="isOpen = !isOpen" class="md:hidden focus:outline-none">
             <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                  stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"/>
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
             </svg>
             <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                 stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+                 stroke="currentColor" class="w-6 h-6" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
     </nav>
     <div x-show="isOpen" x-transition:enter="transition ease-out duration-300"
-         x-transition:enter-start="opacity-0 scale-95"
-         x-transition:enter-end="opacity-100 scale-100"
-         x-transition:leave="transition ease-in duration-300"
-         x-transition:leave-start="opacity-100 scale-100"
-         x-transition:leave-end="opacity-0 scale-95"
-         class="md:hidden bg-gray-950 p-6">
+         x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+         x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100"
+         x-transition:leave-end="opacity-0 scale-95" class="md:hidden bg-gray-950 p-6" style="display: none;">
         <a href="#features" class="block py-2 hover:text-gray-300 transition duration-300">Features</a>
         <a href="#how-it-works" class="block py-2 hover:text-gray-300 transition duration-300">How It Works</a>
         <a href="#security" class="block py-2 hover:text-gray-300 transition duration-300">Security</a>
@@ -118,108 +123,154 @@
 </header>
 <main>
     <section
-            class="bg-gradient-to-br from-gray-950 via-gray-850 to-gray-950 text-white py-12 md:py-24 relative overflow-hidden">
+            class="bg-gradient-to-br from-gray-950 via-gray-850 to-gray-950 text-white py-16 md:py-24 lg:py-32 relative overflow-hidden min-h-screen flex items-center">
         <div class="absolute inset-0 bg-grid-white/[0.05] bg-[size:40px_40px]"
              style="mask-image: linear-gradient(to bottom, transparent, black); -webkit-mask-image: linear-gradient(to bottom, transparent, black);"></div>
-        <div class="container mx-auto px-4 md:px-6 relative z-10 flex flex-col md:flex-row items-center justify-between">
-            <div class="w-full md:w-1/2 text-left mb-8 md:mb-0">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 leading-tight">
-                    Secure Your Data with Vanguard
-                </h1>
-                <p class="text-lg sm:text-xl md:text-2xl mt-4 mb-8 text-gray-300 max-w-xl">Open-source backup solution
-                    for server
-                    backup and application backup, built by the community, for robust data protection.</p>
-                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#get-started"
-                       class="bg-white text-gray-900 py-3 px-6 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
-                             stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                        </svg>
-                        Get Started
-                    </a>
-                    <a href="https://github.com/vanguardbackup/vanguard" target="_blank" rel="noopener noreferrer"
-                       class="bg-gray-800 text-white py-3 px-6 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-700 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center border border-gray-700">
-                        <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                  clip-rule="evenodd"/>
-                        </svg>
-                        View on GitHub
-                    </a>
-                </div>
-            </div>
-            <div class="w-full md:w-1/2 mt-8 md:mt-0">
-                <div class="bg-gray-800 rounded-lg shadow-2xl overflow-hidden max-w-[600px] mx-auto">
-                    <div class="bg-gray-700 px-4 py-2 flex items-center space-x-2">
-                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
-                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
-                        <div class="text-sm text-gray-300 ml-2">Backup Task Output</div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center justify-between">
+                <div class="w-full lg:w-1/2 text-left mb-12 lg:mb-0">
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 leading-tight pb-2">
+                        Secure Your Data with Vanguard
+                    </h1>
+                    <p class="text-lg sm:text-xl lg:text-2xl mb-8 text-gray-300 max-w-2xl">
+                        Open-source backup solution for server and application backup, built by the community for the
+                        community.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
+                        <a href="#get-started"
+                           class="bg-white text-gray-900 py-3 px-6 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                            Get Started
+                        </a>
+                        <a href="https://github.com/vanguardsh/vanguard" target="_blank" rel="noopener noreferrer"
+                           class="bg-gray-800 text-white py-3 px-6 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-700 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center border border-gray-700">
+                            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                      clip-rule="evenodd"></path>
+                            </svg>
+                            View on GitHub
+                        </a>
                     </div>
-                    <div class="bg-gray-900 p-4 font-mono text-sm text-gray-100" x-data="terminal()" x-init="start">
-                        <pre x-text="output"></pre>
-                        <div class="inline-block w-2 h-4 bg-gray-100 ml-1"
-                             :class="{ 'animate-[blink_1s_step-end_infinite]': cursorVisible }"></div>
+                    <div class="flex flex-wrap items-center gap-4 text-gray-400">
+                        <div class="flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
+                                      clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Easy Setup</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd"
+                                      d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                      clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Secure</span>
+                        </div>
+                        <div class="flex items-center">
+                            <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M13 7H7v6h6V7z"></path>
+                                <path fill-rule="evenodd"
+                                      d="M7 2a1 1 0 012 0v1h2V2a1 1 0 112 0v1h2a2 2 0 012 2v2h1a1 1 0 110 2h-1v2h1a1 1 0 110 2h-1v2a2 2 0 01-2 2h-2v1a1 1 0 11-2 0v-1H9v1a1 1 0 11-2 0v-1H5a2 2 0 01-2-2v-2H2a1 1 0 110-2h1V9H2a1 1 0 010-2h1V5a2 2 0 012-2h2V2zM5 5h10v10H5V5z"
+                                      clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Automated</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2 mt-12 lg:mt-0">
+                    <div class="bg-gray-800 rounded-lg shadow-2xl overflow-hidden max-w-[600px] mx-auto">
+                        <div class="bg-gray-700 px-4 py-2 flex items-center space-x-2">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            <div class="text-sm text-gray-300 ml-2">Backup Task Output</div>
+                        </div>
+                        <div class="bg-gray-900 p-4 font-mono text-sm text-gray-100 h-[300px] overflow-y-auto"
+                             x-data="terminal()" x-init="start">
+                            <pre x-text="output">[05-07-2024 11:00:03] Backup task started.
+[05-07-2024 11:00:11] SSH Connection established to the server.
+[05-07-2024 11:00:12] Directory size of /home/ploi/hello.com: 20 MB.
+[05-07-2024 11:00:12] Directory has been zipped: /tmp/backup_1.zip
+[05-07-2024 11:00:13] Backup has been uploaded to UpCloud.
+[05-07-2024 11:00:13] Cleaned up the temporary zip file on server.
+[05-07-2024 11:00:13] Backup task has finished successfully!
+</pre>
+                            <div class="inline-block w-2 h-4 bg-gray-100 ml-1 animate-[blink_1s_step-end_infinite]"
+                                 :class="{ 'animate-[blink_1s_step-end_infinite]': cursorVisible }"></div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-900 to-gray-950"></div>
+        <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-gray-900 to-transparent"></div>
     </section>
-
     <section id="features" class="py-24 bg-gradient-to-b from-gray-900 to-gray-950" x-data="{ activeTab: 'servers' }">
         <div class="container mx-auto px-4 md:px-6">
-            <div class="mb-8 md:mb-16 text-center">
-                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white relative inline-block">
+            <div class="mb-16 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
                     Key Features
-                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500"></span>
                 </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-6 rounded-full"></div>
+                <p class="mt-4 text-xl text-gray-300">Discover the powerful capabilities of Vanguard</p>
             </div>
 
-
-            <div class="flex flex-wrap justify-center mb-8 md:mb-12 bg-gray-800 rounded-lg md:rounded-full p-2 shadow-xl">
+            <div class="flex flex-wrap justify-center mb-12 bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-2 shadow-xl">
                 <button @click="activeTab = 'servers'"
-                        :class="{ 'bg-blue-500 text-white': activeTab === 'servers', 'bg-transparent text-gray-300': activeTab !== 'servers' }"
-                        class="w-full md:w-auto py-2 px-4 mb-2 md:mb-0 md:mr-2 rounded-full md:rounded-full transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-400 flex items-center justify-center">
+                        :class="{ 'bg-gradient-to-r from-blue-500 to-purple-600 text-white': activeTab === 'servers', 'bg-gray-700 text-gray-300': activeTab !== 'servers' }"
+                        class="w-full md:w-auto py-3 px-6 mb-2 md:mb-0 md:mr-2 rounded-xl transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-400 flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                              d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
                     </svg>
                     Server Connections
                 </button>
                 <button @click="activeTab = 'backups'"
-                        :class="{ 'bg-blue-500 text-white': activeTab === 'backups', 'bg-transparent text-gray-300': activeTab !== 'backups' }"
-                        class="w-full md:w-auto py-2 px-4 mb-2 md:mb-0 md:mr-2 rounded-full md:rounded-full transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-400 flex items-center justify-center">
+                        :class="{ 'bg-gradient-to-r from-blue-500 to-purple-600 text-white': activeTab === 'backups', 'bg-gray-700 text-gray-300': activeTab !== 'backups' }"
+                        class="w-full md:w-auto py-3 px-6 mb-2 md:mb-0 md:mr-2 rounded-xl transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-400 flex items-center justify-center bg-gray-700 text-gray-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"/>
+                              d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
                     </svg>
                     Backup Solutions
                 </button>
                 <button @click="activeTab = 'scheduling'"
-                        :class="{ 'bg-blue-500 text-white': activeTab === 'scheduling', 'bg-transparent text-gray-300': activeTab !== 'scheduling' }"
-                        class="w-full md:w-auto py-2 px-4 rounded-full md:rounded-full transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-blue-400 flex items-center justify-center">
+                        :class="{ 'bg-gradient-to-r from-blue-500 to-purple-600 text-white': activeTab === 'scheduling', 'bg-gray-700 text-gray-300': activeTab !== 'scheduling' }"
+                        class="w-full md:w-auto py-3 px-6 rounded-xl transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-400 flex items-center justify-center bg-gray-700 text-gray-300">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                              d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
                     Scheduling
                 </button>
             </div>
-            <div class="bg-gray-800 rounded-lg shadow-2xl p-6 md:p-8 text-white">
+
+            <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-8 text-white shadow-2xl">
                 <div x-show="activeTab === 'servers'" x-transition:enter="transition ease-out duration-300"
                      x-transition:enter-start="opacity-0 transform translate-y-4"
                      x-transition:enter-end="opacity-100 transform translate-y-0">
                     <h3 class="text-3xl font-semibold mb-6 flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-blue-400" fill="none"
-                             viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none" viewBox="0 0 24 24">
+                            <defs>
+                                <linearGradient id="serverGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1"></stop>
+                                    <!-- blue-500 -->
+                                    <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1"></stop>
+                                    <!-- purple-500 -->
+                                </linearGradient>
+                            </defs>
+                            <path stroke="url(#serverGradient)" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
                         </svg>
                         Server Connections
                     </h3>
@@ -228,7 +279,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Connect to multiple Linux servers
                         </li>
@@ -236,7 +287,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Support for Ploi and Laravel Forge
                         </li>
@@ -244,7 +295,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Pause and resume tasks as needed
                         </li>
@@ -252,7 +303,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Secure command execution
                         </li>
@@ -263,12 +314,20 @@
                 </div>
                 <div x-show="activeTab === 'backups'" x-transition:enter="transition ease-out duration-300"
                      x-transition:enter-start="opacity-0 transform translate-y-4"
-                     x-transition:enter-end="opacity-100 transform translate-y-0" x-cloak>
+                     x-transition:enter-end="opacity-100 transform translate-y-0" style="display: none;">
                     <h3 class="text-3xl font-semibold mb-6 flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-blue-400" fill="none"
-                             viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none" viewBox="0 0 24 24">
+                            <defs>
+                                <linearGradient id="backupGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1"></stop>
+                                    <!-- blue-500 -->
+                                    <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1"></stop>
+                                    <!-- purple-500 -->
+                                </linearGradient>
+                            </defs>
+                            <path stroke="url(#backupGradient)" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2"></path>
                         </svg>
                         Backup Solutions
                     </h3>
@@ -277,7 +336,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             MySQL and PostgreSQL database backups
                         </li>
@@ -285,7 +344,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Regular file backups
                         </li>
@@ -293,7 +352,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Support for various backup destinations
                         </li>
@@ -301,7 +360,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Secure and efficient backup process
                         </li>
@@ -313,12 +372,20 @@
                 </div>
                 <div x-show="activeTab === 'scheduling'" x-transition:enter="transition ease-out duration-300"
                      x-transition:enter-start="opacity-0 transform translate-y-4"
-                     x-transition:enter-end="opacity-100 transform translate-y-0" x-cloak>
+                     x-transition:enter-end="opacity-100 transform translate-y-0" style="display: none;">
                     <h3 class="text-3xl font-semibold mb-6 flex items-center">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3 text-blue-400" fill="none"
-                             viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 mr-3" fill="none" viewBox="0 0 24 24">
+                            <defs>
+                                <linearGradient id="scheduleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1"></stop>
+                                    <!-- blue-500 -->
+                                    <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1"></stop>
+                                    <!-- purple-500 -->
+                                </linearGradient>
+                            </defs>
+                            <path stroke="url(#scheduleGradient)" stroke-linecap="round" stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                         </svg>
                         Flexible Scheduling
                     </h3>
@@ -327,7 +394,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Custom cron schedule support
                         </li>
@@ -335,7 +402,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Pause and resume scheduled tasks
                         </li>
@@ -343,7 +410,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Flexible task management
                         </li>
@@ -351,7 +418,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
                             Built on Laravel for reliability
                         </li>
@@ -364,14 +431,14 @@
             </div>
         </div>
     </section>
-
     <section id="how-it-works" class="bg-gradient-to-b from-gray-950 to-gray-950 text-white py-24">
         <div class="container mx-auto px-6">
             <div class="mb-16 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-white relative inline-block">
-                    How it works
-                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500"></span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    How It Works
                 </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-6 rounded-full"></div>
+                <p class="mt-4 text-xl text-gray-300">Discover the simplicity of Vanguard's backup process</p>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div x-data="{ activeStep: 1 }" class="space-y-8">
@@ -406,34 +473,32 @@
                 </div>
                 <div class="relative">
                     <img src="dashboard.png" alt="Vanguard dashboard"
-                         class="rounded-xl shadow-2xl border-l-8 border-blue-500 rounded overflow-hidden">
+                         class="rounded-xl shadow-2xl border-gradient rounded overflow-hidden">
                 </div>
             </div>
         </div>
     </section>
-
     <section id="get-started" class="bg-gradient-to-b from-gray-950 to-gray-900 text-white py-20"
              x-data="{ activeStep: 1, showHostingOptions: false }">
         <div class="container mx-auto px-4">
             <div class="mb-16 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-white relative inline-block">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
                     Getting Started with Vanguard
-                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500"></span>
                 </h2>
-                <p class="mt-4 text-xl text-gray-300">Instant cloud or total control - pick your power!</p>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-6 rounded-full"></div>
+                <p class="mt-4 text-xl text-gray-300">Choose your deployment: Cloud-hosted or self-managed</p>
             </div>
-
             <div class="max-w-4xl mx-auto mb-12 bg-gray-800 rounded-lg shadow-2xl p-8">
                 <h3 class="text-2xl font-bold mb-6 text-center">Choose Your Vanguard Experience</h3>
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                     <a href="https://app.vanguardbackup.com" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                       class="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
                         Try Hosted Version
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
                              fill="currentColor">
                             <path fill-rule="evenodd"
                                   d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                                  clip-rule="evenodd"/>
+                                  clip-rule="evenodd"></path>
                         </svg>
                     </a>
                     <button @click="showHostingOptions = true"
@@ -443,36 +508,33 @@
                              fill="currentColor">
                             <path fill-rule="evenodd"
                                   d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm11 1H6v8l4-2 4 2V6z"
-                                  clip-rule="evenodd"/>
+                                  clip-rule="evenodd"></path>
                         </svg>
                     </button>
                 </div>
             </div>
-
-
             <div x-show="showHostingOptions" x-transition:enter="transition ease-out duration-300"
                  x-transition:enter-start="opacity-0 transform scale-95"
                  x-transition:enter-end="opacity-100 transform scale-100"
                  x-transition:leave="transition ease-in duration-200"
                  x-transition:leave-start="opacity-100 transform scale-100"
                  x-transition:leave-end="opacity-0 transform scale-95"
-                 class="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-2xl p-8 relative overflow-hidden">
+                 class="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-2xl p-8 relative overflow-hidden"
+                 style="display: none;">
                 <div class="flex mb-8">
                     <template x-for="step in 7">
                         <div class="flex-1">
-                            <div
-                                    :class="{ 'bg-blue-500': activeStep >= step, 'bg-gray-600': activeStep < step }"
-                                    class="h-2 rounded-full transition-all duration-300"
-                            ></div>
+                            <div :class="{ 'bg-gradient-to-r from-blue-500 to-purple-600': activeStep >= step, 'bg-gray-600': activeStep < step }"
+                                 class="h-2 rounded-full transition-all duration-300"></div>
                         </div>
                     </template>
                 </div>
                 <ol class="list-none space-y-6">
                     <template x-for="(step, index) in [
-                { title: 'Clone the repository', command: 'git clone https://github.com/vanguardbackup/vanguard.git' },
+                { title: 'Clone the repository', command: 'git clone https://github.com/vanguardsh/vanguard.git' },
                 { title: 'Navigate to the project directory', command: 'cd vanguard' },
-                { title: 'Install dependencies', command: 'composer install && npm install' },
-                { title: 'Set up your environment', command: 'cp .env.example .env && php artisan key:generate' },
+                { title: 'Install dependencies', command: 'composer install &amp;&amp; npm install' },
+                { title: 'Set up your environment', command: 'cp .env.example .env &amp;&amp; php artisan key:generate' },
                 { title: 'Configure your database in the .env file', command: null },
                 { title: 'Run migrations', command: 'php artisan migrate' },
                 { title: 'Start the development server', command: 'php artisan serve' }
@@ -486,15 +548,13 @@
                                 <div class="bg-gray-700 p-3 rounded mt-2 flex items-center justify-between">
                                     <pre class="overflow-x-auto flex-grow"><code class="text-white"
                                                                                  x-text="step.command"></code></pre>
-                                    <button
-                                            @click="navigator.clipboard.writeText(step.command)"
+                                    <button @click="navigator.clipboard.writeText(step.command)"
                                             class="ml-2 text-gray-400 hover:text-white transition-colors duration-200"
-                                            title="Copy to clipboard"
-                                    >
+                                            title="Copy to clipboard">
                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
                                              viewBox="0 0 24 24" stroke="currentColor">
                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
                                         </svg>
                                     </button>
                                 </div>
@@ -503,29 +563,25 @@
                     </template>
                 </ol>
                 <div class="mt-8 flex justify-between items-center">
-                    <button
-                            @click="activeStep = activeStep > 1 ? activeStep - 1 : 1"
-                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"
-                            :disabled="activeStep === 1"
-                    >
+                    <button @click="activeStep = activeStep > 1 ? activeStep - 1 : 1"
+                            class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"
+                            :disabled="activeStep === 1" disabled="disabled">
                         Previous
                     </button>
-                    <span class="text-gray-400" x-text="`Step ${activeStep} of 7`"></span>
-                    <button
-                            @click="activeStep = activeStep < 7 ? activeStep + 1 : 7"
-                            class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"
-                            :disabled="activeStep === 7"
-                    >
+                    <span class="text-gray-400" x-text="`Step ${activeStep} of 7`">Step 1 of 7</span>
+                    <button @click="activeStep = activeStep < 7 ? activeStep + 1 : 7"
+                            class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"
+                            :disabled="activeStep === 7">
                         Next
                     </button>
                 </div>
                 <div class="mt-8 text-center">
-                    <a href="https://github.com/vanguardbackup/vanguard" target="_blank" rel="noopener noreferrer"
+                    <a href="https://github.com/vanguardsh/vanguard" target="_blank" rel="noopener noreferrer"
                        class="inline-flex items-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">
                         <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
                                   d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                  clip-rule="evenodd"/>
+                                  clip-rule="evenodd"></path>
                         </svg>
                         View Project on GitHub
                     </a>
@@ -536,131 +592,221 @@
                 refer to the GitHub project readme. </p>
         </div>
     </section>
-
-    <section id="security" class="py-24 bg-gradient-to-b from-gray-950 to-gray-900 text-white">
-        <div class="container mx-auto px-6">
+    <section id="security" class="py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
             <div class="mb-16 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-white relative inline-block">
-                    Secured
-                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500"></span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    Data Security
                 </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-6 rounded-full"></div>
+                <p class="mt-4 text-xl text-gray-300">Your data is safe when using Vanguard</p>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
-                <div class="bg-gray-800 rounded-xl p-8 shadow-2xl transform transition duration-500 hover:scale-105">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
+                <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-2xl transform transition duration-500 hover:scale-105 hover:rotate-1"
+                     x-data="{ isHovered: false }">
                     <div class="flex items-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-green-400 mr-4" fill="none"
-                             viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"/>
-                        </svg>
-                        <h3 class="text-2xl font-semibold">SSH Key Authentication</h3>
+                        <div class="bg-green-500 p-3 rounded-full mr-4" :class="{ 'animate-pulse': isHovered }"
+                             @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-semibold">SSH Key Authentication</h3>
                     </div>
-                    <p class="mb-6 text-gray-300">Vanguard uses SSH key pairs for secure server authentication,
+                    <p class="mb-6 text-gray-300">Vanguard utilizes SSH key pairs for ironclad server authentication,
                         providing a robust and passwordless access method to your servers.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
+                    <ul class="space-y-4">
+                        <li class="flex items-center transform transition duration-300 hover:translate-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Uses a secure SSH keys for authentication to your server
+                            <span>Secure SSH keys for server authentication</span>
                         </li>
-                        <li class="flex items-center">
+                        <li class="flex items-center transform transition duration-300 hover:translate-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Supports standard SSH key formats
+                            <span>Support for standard SSH key formats</span>
                         </li>
                     </ul>
                 </div>
-                <div class="bg-gray-800 rounded-xl p-8 shadow-2xl transform transition duration-500 hover:scale-105">
+
+                <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-2xl transform transition duration-500 hover:scale-105 hover:rotate-1"
+                     x-data="{ isHovered: false }">
                     <div class="flex items-center mb-6">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-400 mr-4" fill="none"
-                             viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/>
-                        </svg>
-                        <h3 class="text-2xl font-semibold">Data Protection</h3>
+                        <div class="bg-blue-500 p-3 rounded-full mr-4" :class="{ 'animate-pulse': isHovered }"
+                             @mouseenter="isHovered = true" @mouseleave="isHovered = false">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-white" fill="none"
+                                 viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                      d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-semibold">Data Fortress</h3>
                     </div>
-                    <p class="mb-6 text-gray-300">Your data is safeguarded with industry-standard security measures
-                        throughout the backup process.</p>
-                    <ul class="space-y-3">
-                        <li class="flex items-center">
+                    <p class="mb-6 text-gray-300">Your data is protected by a virtual fortress, employing cutting-edge
+                        security measures throughout the entire backup process.</p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center transform transition duration-300 hover:translate-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-blue-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Secure data transmission protocols
+                            <span>State-of-the-art data transmission protocols</span>
                         </li>
-                        <li class="flex items-center">
+                        <li class="flex items-center transform transition duration-300 hover:translate-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-blue-400" fill="none"
                                  viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M5 13l4 4L19 7"/>
+                                      d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Encrypted storage for sensitive information
+                            <span>Encrypted vault for sensitive information</span>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Animated background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
+            <div class="absolute top-1/3 right-1/4 w-64 h-64 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-1/4 left-1/3 w-64 h-64 bg-green-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
+        </div>
+    </section>
+    <section id="contributors" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900 text-white"
+             style="display: block;">
+        <div class="container mx-auto px-4">
+            <div class="mb-16 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    Our Amazing Contributors
+                </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-6 rounded-full"></div>
+                <p class="mt-4 text-xl text-gray-300">Vanguard thrives thanks to our open-source community on GitHub</p>
+            </div>
+            <div id="contributors-list"
+                 class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-4xl mx-auto">
+                <!-- Contributors will be dynamically added here -->
+               </div>
+            <div class="text-center mt-12">
+                <button id="view-more"
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 hidden">
+                    View More
+                </button>
+            </div>
+        </div>
+    </section>
+    <section id="repo-info" class="py-12 bg-gray-900 text-white" style="display: none;">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
+                <div class="flex items-center justify-center mb-6">
+                    <svg class="w-10 h-10 text-white mr-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                    <h3 class="text-2xl font-bold">GitHub Repository Stats</h3>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="bg-gray-700 rounded-lg p-4">
+                        <p class="text-xl font-bold" id="repo-stars">1</p>
+                        <p class="text-sm text-gray-400">Stars</p>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg p-4">
+                        <p class="text-xl font-bold" id="repo-forks">0</p>
+                        <p class="text-sm text-gray-400">Forks</p>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg p-4">
+                        <p class="text-xl font-bold" id="repo-issues">1</p>
+                        <p class="text-sm text-gray-400">Open Issues</p>
+                    </div>
+                    <div class="bg-gray-700 rounded-lg p-4">
+                        <p class="text-xl font-bold" id="repo-watchers">1</p>
+                        <p class="text-sm text-gray-400">Watchers</p>
+                    </div>
+                </div>
+                <div class="mt-8 text-center">
+                    <a href="https://github.com/vanguardsh/vanguard" target="_blank" rel="noopener noreferrer"
+                       class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-full text-base sm:text-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
+                        <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                  clip-rule="evenodd"></path>
+                        </svg>
+                        View on GitHub
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="faq" class="bg-gradient-to-b from-gray-900 to-gray-950 text-white py-24">
-        <div class="container mx-auto px-6">
+    <section id="faq"
+             class="bg-gradient-to-b from-gray-900 via-gray-850 to-gray-950 text-white py-24 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
             <div class="mb-16 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold text-white relative inline-block">
-                    Frequently Asked Questions
-                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-blue-500"></span>
+                <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
+                    Curious Minds Ask
                 </h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-6 rounded-full"></div>
+                <p class="mt-4 text-xl text-gray-300">Get answers to your burning questions about Vanguard</p>
             </div>
-            <div x-data="{ activeQuestion: null }" class="space-y-6 max-w-3xl mx-auto">
+            <div x-data="{ activeQuestion: null }" class="space-y-6 max-w-4xl mx-auto">
                 <template x-for="(question, index) in [
                 { q: 'How secure is Vanguard?', a: 'Vanguard prioritizes security with features like SSH key authentication, AES-256 encryption for data at rest, and TLS 1.3 for data in transit.' },
                 { q: 'Which backup destinations are supported?', a: 'Vanguard supports various backup destinations, including S3-compatible storage providers. We\'re constantly expanding our list of supported destinations. Have a provider you are interested in? Feel free to contact us about it.' },
                 { q: 'Is Vanguard open-source?', a: 'Yes, Vanguard is fully open-source. You can find our source code on GitHub, contribute to the project, and even customize it for your specific needs. We believe in the power of community-driven development and transparency.' },
-                { q: 'How often are backups performed?', a: 'Vanguard allows you to set custom backup schedules. You can configure backups to run daily, weekly, or at any interval that suits your needs. Additionally, you can perform manual backups at any time through Vanguard\'\s interface.' },
+                { q: 'How often are backups performed?', a: 'Vanguard allows you to set custom backup schedules. You can configure backups to run daily, weekly, or at any interval that suits your needs. Additionally, you can perform manual backups at any time through Vanguard\'s interface.' },
                 { q: 'What notification channels can I use?', a: 'Vanguard can send emails, Slack and Discord webhooks when a backup task is ran. This is configurable per backup task.' },
             ]">
-                    <div class="bg-gray-800 rounded-lg shadow-lg overflow-hidden transition-all duration-300 ease-in-out"
-                         :class="{ 'shadow-xl': activeQuestion === index }">
+                    <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out"
+                         :class="{ 'shadow-2xl ring-2 ring-blue-500': activeQuestion === index }">
                         <button @click="activeQuestion = activeQuestion === index ? null : index"
-                                class="flex justify-between items-center w-full py-4 px-6 text-left focus:outline-none focus:ring-2 focus:ring-blue-500">
-                            <span class="text-lg font-semibold" x-text="question.q"></span>
+                                class="flex justify-between items-center w-full py-6 px-8 text-left focus:outline-none">
+                            <span class="text-xl font-semibold" x-text="question.q"></span>
                             <svg xmlns="http://www.w3.org/2000/svg"
-                                 class="h-6 w-6 transform transition-transform duration-300"
+                                 class="h-6 w-6 transform transition-transform duration-300 text-blue-400"
                                  :class="{ 'rotate-180': activeQuestion === index }" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                      d="M19 9l-7 7-7-7"/>
+                                      d="M19 9l-7 7-7-7"></path>
                             </svg>
                         </button>
                         <div x-show="activeQuestion === index" x-transition:enter="transition ease-out duration-300"
-                             x-transition:enter-start="opacity-0 transform -translate-y-2"
+                             x-transition:enter-start="opacity-0 transform -translate-y-4"
                              x-transition:enter-end="opacity-100 transform translate-y-0"
                              x-transition:leave="transition ease-in duration-300"
                              x-transition:leave-start="opacity-100 transform translate-y-0"
-                             x-transition:leave-end="opacity-0 transform -translate-y-2" class="p-6 bg-gray-700">
-                            <p class="text-gray-300" x-text="question.a"></p>
+                             x-transition:leave-end="opacity-0 transform -translate-y-4"
+                             class="p-8 bg-gray-700 bg-opacity-50">
+                            <p class="text-gray-300 text-lg" x-text="question.a"></p>
                         </div>
                     </div>
                 </template>
             </div>
+
+            <div class="mt-16 text-center">
+                <a href="https://github.com/vanguardsh/vanguard/issues/new/choose"
+                   class="inline-flex items-center px-8 py-4 text-lg font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"
+                         stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                    Still Curious? Reach Out!
+                </a>
+            </div>
         </div>
-        <div class="mt-16 text-center">
-            <a href="https://github.com/vanguardbackup/vanguard/issues/new/choose"
-               class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 ease-in-out transform hover:scale-105">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
-                     stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                          d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                </svg>
-                Have more questions? Contact us
-            </a>
+        <!-- Animated background elements -->
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
+            <div class="absolute top-3/4 right-1/4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
+            <div class="absolute bottom-1/4 left-1/2 w-72 h-72 bg-green-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
         </div>
     </section>
 </main>
@@ -687,11 +833,11 @@
             <div>
                 <h3 class="text-lg font-semibold mb-4">Community</h3>
                 <ul class="space-y-2">
-                    <li><a href="https://github.com/vanguardbackup/vanguard"
+                    <li><a href="https://github.com/vanguardsh/vanguard"
                            class="text-sm text-gray-400 hover:text-white transition duration-300">GitHub</a></li>
-                    <li><a href="https://github.com/vanguardbackup/vanguard/blob/main/CONTRIBUTING.md"
+                    <li><a href="https://github.com/vanguardsh/vanguard/blob/main/CONTRIBUTING.md"
                            class="text-sm text-gray-400 hover:text-white transition duration-300">Contribute</a></li>
-                    <li><a href="https://github.com/vanguardbackup/vanguard/issues/new/choose"
+                    <li><a href="https://github.com/vanguardsh/vanguard/issues/new/choose"
                            class="text-sm text-gray-400 hover:text-white transition duration-300">Report an Issue</a>
                     </li>
                 </ul>
@@ -699,23 +845,179 @@
             <div>
                 <h3 class="text-lg font-semibold mb-4">Connect</h3>
                 <div class="flex space-x-4">
-                    <a href="https://github.com/vanguardbackup/vanguard"
+                    <a href="https://github.com/vanguardsh/vanguard"
                        class="text-gray-400 hover:text-white transition duration-300">
                         <span class="sr-only">GitHub</span>
                         <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
                                   d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                  clip-rule="evenodd"/>
+                                  clip-rule="evenodd"></path>
                         </svg>
                     </a>
                 </div>
             </div>
         </div>
         <div class="border-t border-gray-800 mt-8 pt-8 text-sm text-gray-400 text-center">
-            <p>&copy; 2024 Vanguard. All rights reserved.</p>
+            <p>© 2024 Vanguard. All rights reserved.</p>
         </div>
     </div>
 </footer>
+<style>
+    @keyframes blob {
+        0% {
+            transform: translate(0px, 0px) scale(1);
+        }
+        33% {
+            transform: translate(30px, -50px) scale(1.1);
+        }
+        66% {
+            transform: translate(-20px, 20px) scale(0.9);
+        }
+        100% {
+            transform: translate(0px, 0px) scale(1);
+        }
+    }
+
+    .animate-blob {
+        animation: blob 7s infinite;
+    }
+
+    .animation-delay-2000 {
+        animation-delay: 2s;
+    }
+
+    .animation-delay-4000 {
+        animation-delay: 4s;
+    }
+</style>
+<style>
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    .contributor-item {
+        transition: all 0.3s ease;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .contributor-item:hover {
+        transform: scale(1.1) rotate(5deg);
+        z-index: 10;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .contributor-item:nth-child(even):hover {
+        transform: scale(1.1) rotate(-5deg);
+    }
+
+    .contributor-overlay {
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .contributor-item:hover .contributor-overlay {
+        opacity: 1;
+    }
+</style>
+
+<script>
+    const owner = 'vanguardbackup';
+    const repo = 'vanguard';
+    const contributorsElement = document.getElementById('contributors-list');
+    const viewMoreButton = document.getElementById('view-more');
+    const contributorsSection = document.getElementById('contributors');
+
+    let allContributors = [];
+    const initialDisplayCount = 12;
+    let currentDisplayCount = initialDisplayCount;
+
+    function createContributorElement(contributor, index) {
+        const contributorElement = document.createElement('a');
+        contributorElement.href = contributor.html_url;
+        contributorElement.target = '_blank';
+        contributorElement.className = 'contributor-item bg-gray-700 rounded-lg overflow-hidden relative';
+        contributorElement.style.animationDelay = `${index * 0.1}s`;
+        contributorElement.innerHTML = `
+            <img src="${contributor.avatar_url}" alt="${contributor.login}"
+                 class="w-full h-full object-cover">
+            <div class="contributor-overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                <span class="text-white font-bold">${contributor.login}</span>
+            </div>
+        `;
+        return contributorElement;
+    }
+
+    function displayContributors(start, end) {
+        for (let i = start; i < end && i < allContributors.length; i++) {
+            const contributorElement = createContributorElement(allContributors[i], i);
+            contributorsElement.appendChild(contributorElement);
+        }
+    }
+
+    function handleViewMore() {
+        const remainingContributors = allContributors.length - currentDisplayCount;
+        const additionalContributors = Math.min(remainingContributors, initialDisplayCount);
+
+        displayContributors(currentDisplayCount, currentDisplayCount + additionalContributors);
+        currentDisplayCount += additionalContributors;
+
+        if (currentDisplayCount >= allContributors.length) {
+            viewMoreButton.style.display = 'none';
+        }
+    }
+
+    viewMoreButton.addEventListener('click', handleViewMore);
+
+    fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`)
+        .then(response => response.json())
+        .then(contributors => {
+            if (contributors.length > 0) {
+                allContributors = contributors;
+                displayContributors(0, initialDisplayCount);
+
+                if (contributors.length > initialDisplayCount) {
+                    viewMoreButton.style.display = 'inline-block';
+                }
+
+                contributorsSection.style.display = 'block';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching contributors:', error);
+            contributorsSection.style.display = 'none';
+        });
+</script>
+<script>
+    const repoInfoSection = document.getElementById('repo-info');
+    const repoStars = document.getElementById('repo-stars');
+    const repoForks = document.getElementById('repo-forks');
+    const repoIssues = document.getElementById('repo-issues');
+    const repoWatchers = document.getElementById('repo-watchers');
+    const repoLink = document.getElementById('repo-link');
+
+    fetch(`https://api.github.com/repos/${owner}/${repo}`)
+        .then(response => response.json())
+        .then(data => {
+            repoStars.textContent = data.stargazers_count;
+            repoForks.textContent = data.forks_count;
+            repoIssues.textContent = data.open_issues_count;
+            repoWatchers.textContent = data.subscribers_count;
+            repoLink.href = data.html_url;
+            repoInfoSection.style.display = 'block';
+        })
+        .catch(error => {
+            console.error('Error fetching repository data:', error);
+            repoInfoSection.style.display = 'none';
+        });
+</script>
 <script>
     function terminal() {
         return {
