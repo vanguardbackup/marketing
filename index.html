@@ -1176,16 +1176,30 @@
         return {
             output: '',
             cursorVisible: true,
-            lines: [
-                "[05-07-2024 11:00:03] Backup task started.",
-                "[05-07-2024 11:00:11] SSH Connection established to the server.",
-                "[05-07-2024 11:00:12] Directory size of /home/ploi/hello.com: 20 MB.",
-                "[05-07-2024 11:00:12] Directory has been zipped: /tmp/backup_1.zip",
-                "[05-07-2024 11:00:13] Backup has been uploaded to UpCloud.",
-                "[05-07-2024 11:00:13] Cleaned up the temporary zip file on server.",
-                "[05-07-2024 11:00:13] Backup task has finished successfully!",
+            lines: [],
+            domains: [
+                'example.com', 'mywebsite.org', 'coolapp.io', 'awesomeproject.net', 'devblog.com',
+                'techstore.shop', 'fooddelivery.app', 'cloudservice.tech', 'portfolio.design', 'gameworld.gg'
             ],
+            s3Hosts: [
+                'UpCloud', 'AWS S3', 'DigitalOcean Spaces', 'Linode Object Storage', 'Backblaze B2',
+                'Wasabi', 'Google Cloud Storage', 'MinIO', 'Scaleway Object Storage', 'OVHcloud Object Storage'
+            ],
+            directories: [
+                '/home/ploi/', '/home/forge/', '/var/www/', '/opt/webapps/', '/usr/share/nginx/',
+                '/srv/http/', '/home/ubuntu/', '/home/ec2-user/', '/data/websites/', '/opt/vhosts/'
+            ],
+            backupTypes: ['postgresql', 'mysql', 'file'],
+            selectedDomain: '',
+            selectedS3Host: '',
+            selectedDirectory: '',
+            selectedBackupType: '',
             async start() {
+                this.selectRandomDomain();
+                this.selectRandomS3Host();
+                this.selectRandomDirectory();
+                this.selectRandomBackupType();
+                this.generateLines();
                 for (const line of this.lines) {
                     await this.typeLine(line);
                     await this.wait(500);
@@ -1200,6 +1214,61 @@
             },
             wait(ms) {
                 return new Promise(resolve => setTimeout(resolve, ms));
+            },
+            getCurrentDateTimeString() {
+                const now = new Date();
+                return now.toLocaleString('en-GB', {
+                    day: '2-digit',
+                    month: '2-digit',
+                    year: 'numeric',
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    second: '2-digit',
+                    hour12: false
+                }).replace(',', '');
+            },
+            selectRandomDomain() {
+                this.selectedDomain = this.domains[Math.floor(Math.random() * this.domains.length)];
+            },
+            selectRandomS3Host() {
+                this.selectedS3Host = this.s3Hosts[Math.floor(Math.random() * this.s3Hosts.length)];
+            },
+            selectRandomDirectory() {
+                this.selectedDirectory = this.directories[Math.floor(Math.random() * this.directories.length)];
+            },
+            selectRandomBackupType() {
+                this.selectedBackupType = this.backupTypes[Math.floor(Math.random() * this.backupTypes.length)];
+            },
+            generateLines() {
+                const backupTime = new Date();
+                const formattedBackupTime = backupTime.toISOString().replace(/[-:]/g, '').slice(0, 14);
+                const backupSize = Math.floor(Math.random() * 100) + 10;
+
+                let backupTypeLines;
+                if (this.selectedBackupType === 'postgresql') {
+                    backupTypeLines = [
+                        `[${this.getCurrentDateTimeString()}] Database type detected: postgresql.`,
+                        `[${this.getCurrentDateTimeString()}] Database backup has been uploaded to ${this.selectedS3Host}: backup_postgresql_${formattedBackupTime}.sql`
+                    ];
+                } else if (this.selectedBackupType === 'mysql') {
+                    backupTypeLines = [
+                        `[${this.getCurrentDateTimeString()}] Database type detected: mysql.`,
+                        `[${this.getCurrentDateTimeString()}] Database backup has been uploaded to ${this.selectedS3Host}: backup_mysql_${formattedBackupTime}.sql`
+                    ];
+                } else {
+                    backupTypeLines = [
+                        `[${this.getCurrentDateTimeString()}] Directory size of ${this.selectedDirectory}${this.selectedDomain}: ${backupSize} MB.`,
+                        `[${this.getCurrentDateTimeString()}] Backup has been uploaded to ${this.selectedS3Host}: backup_${this.selectedDomain.replace('.', '_')}_${formattedBackupTime}.zip`
+                    ];
+                }
+
+                this.lines = [
+                    `[${this.getCurrentDateTimeString()}] Backup task started.`,
+                    `[${this.getCurrentDateTimeString()}] SSH Connection established to the server.`,
+                    ...backupTypeLines,
+                    `[${this.getCurrentDateTimeString()}] Cleaned up the temporary file on the server.`,
+                    `[${this.getCurrentDateTimeString()}] Backup task has finished successfully!`,
+                ];
             }
         }
     }
