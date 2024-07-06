@@ -58,12 +58,6 @@
             font-family: 'Inter', sans-serif;
         }
 
-        .border-gradient {
-            border-width: 8px;
-            border-image-slice: 1;
-            border-image-source: linear-gradient(to right, #3b82f6, #8b5cf6);
-        }
-
         [x-cloak] {
             display: none !important;
         }
@@ -76,44 +70,67 @@
                 opacity: 0;
             }
         }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
     </style>
 </head>
 <body class="bg-gray-950 text-gray-950">
-<header x-data="{ isOpen: false }" class="bg-gray-950 text-white sticky top-0 z-50">
+<header x-data="{ isOpen: false, scrolled: false }"
+        x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 20 })"
+        :class="{ 'bg-opacity-90 backdrop-blur-md shadow-lg': scrolled }"
+        class="bg-gray-950 text-white sticky top-0 z-50 transition-all duration-300">
     <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-        <div class="h-auto w-32">
-            <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1114 222" width="100%" height="100%" fill="currentColor">
+        <div class="h-auto w-32 transform transition-all duration-300 hover:scale-105">
+            <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1114 222" width="100%" height="100%"
+                 fill="currentColor">
                 <path d="m78 172q-7.1 0-10.4-7.3l-64.4-147.4q-3.1-7.4-0.7-12.3 2.4-4.8 9.2-4.8 7.7 0 10.6 6.8l56.5 135.7h-2.4l57.7-135.7q1.7-4 3.9-5.3 2.4-1.5 6.4-1.5 6.6 0 9 4.8 2.7 4.6 0 10.4l-65.1 149.3q-1.5 3.6-4.2 5.5-2.4 1.8-6.1 1.8zm126.9 0.9q-16.1 0-28.8-7.9-12.8-8.2-20.3-21.8-7.2-13.9-7.2-31.3 0-17.3 7.9-31.2 8.1-13.9 21.8-21.8 13.8-8.1 31-8.1 17.2 0 30.8 8.1 13.6 7.9 21.6 21.8 8.1 13.9 8.1 31.2h-8.6q0 17.4-7.5 31.3-7.2 13.6-20 21.8-12.7 7.9-28.8 7.9zm4.4-19.8q11.2 0 20-5.3 8.8-5.5 13.9-14.7 5-9.5 5-21.2 0-11.8-5-21.1-5.1-9.4-13.9-14.7-8.8-5.5-20-5.5-11 0-20 5.5-8.8 5.3-14.1 14.7-5.1 9.3-5.1 21.1 0 11.7 5.1 21.2 5.3 9.2 14.1 14.7 9 5.3 20 5.3zm49.3 19.1q-4.9 0-8.2-3.1-3-3.3-3-8.1v-33.7l4.1-23.3 18.3 7.9v49.1q0 4.8-3.3 8.1-3.1 3.1-7.9 3.1zm146.3 0q-4.9 0-8.2-3.1-3-3.3-3-8.1v-54.1q0-12.6-4.7-20.5-4.6-7.9-12.5-11.6-7.7-4-17.8-4-9.3 0-16.7 3.7-7.5 3.8-11.9 10.2-4.4 6.1-4.4 14.3h-13.9q0-13.9 6.6-24.7 6.8-11 18.5-17.4 11.7-6.3 26.2-6.3 15.2 0 27 6.6 12.1 6.3 19 18.9 7 12.5 7 30.8v54.1q0 4.8-3.3 8.1-3.1 3.1-7.9 3.1zm-90.4 0q-4.9 0-8.2-3.1-3.1-3.3-3.1-8.1v-98.1q0-5.1 3.1-8.2 3.3-3 8.2-3 5 0 8.1 3 3.1 3.1 3.1 8.2v98.1q0 4.8-3.1 8.1-3.1 3.1-8.1 3.1zm188.9 0.7q-16.5 0-29.2-7.7-12.6-7.9-19.8-21.6-7.3-13.8-7.3-31.7 0-18 7.7-31.6 7.9-13.9 21.6-21.6 13.6-7.9 31.4-7.9 17.6 0 31.3 7.9 13.6 7.7 21.3 21.6 7.9 13.6 7.9 31.6h-12.9q0 17.9-6.9 31.7-6.6 13.7-18.2 21.6-11.7 7.7-26.9 7.7zm4 49q-15.6 0-29.3-6.1-13.6-6.2-23.1-18.1-2.8-3.7-2.2-7.7 0.9-3.9 4.4-6.3 4-2.7 8.2-1.8 4.4 0.9 7 4.4 6 7.5 15 11.7 9 4.1 20.4 4.1 10.6 0 19.4-5 9-5.1 14.3-15 5.3-9.9 5.3-24.2v-31.2l7.2-19.4 14.3 4.6v47.6q0 17.3-7.7 31.6-7.7 14.1-21.5 22.5-13.7 8.3-31.7 8.3zm0.4-68.8q11.5 0 20.3-5.3 8.8-5.3 13.6-14.5 5.1-9.3 5.1-21.4 0-12.1-5.1-21.3-4.8-9.5-13.6-14.7-8.8-5.3-20.3-5.3-11.4 0-20.2 5.3-8.8 5.2-13.9 14.7-5 9.2-5 21.3 0 12.1 5 21.4 5.1 9.2 13.9 14.5 8.8 5.3 20.2 5.3zm144.6 20q-15.2 0-27.3-6.4-11.9-6.6-18.9-19.1-6.8-12.6-6.8-30.8v-54.1q0-4.9 3-8 3.3-3.3 8.2-3.3 4.8 0 7.9 3.3 3.3 3.1 3.3 8v54.1q0 12.3 4.6 20.4 4.6 8 12.6 11.9 7.9 3.8 17.8 3.8 9.4 0 16.7-3.8 7.5-3.7 11.9-10.1 4.4-6.4 4.4-14.3h13.8q0 13.6-6.8 24.6-6.6 11-18.2 17.4-11.5 6.4-26.2 6.4zm48.6-1.1q-4.8 0-8.1-3.1-3.1-3.3-3.1-8.1v-98.1q0-5.1 3.1-8.2 3.3-3.1 8.1-3.1 5.1 0 8.1 3.1 3.1 3.1 3.1 8.2v98.1q0 4.8-3.1 8.1-3 3.1-8.1 3.1zm101 0.9q-16.1 0-28.8-7.9-12.8-8.2-20.3-21.8-7.2-13.9-7.2-31.3 0-17.3 7.9-31.2 8.1-13.9 21.8-21.8 13.8-8.1 31-8.1 17.1 0 30.8 8.1 13.6 7.9 21.5 21.8 8.2 13.9 8.2 31.2h-8.6q0 17.4-7.5 31.3-7.2 13.6-20 21.8-12.8 7.9-28.8 7.9zm4.4-19.8q11.2 0 20-5.3 8.8-5.5 13.9-14.7 5-9.5 5-21.2 0-11.8-5-21.1-5.1-9.4-13.9-14.7-8.8-5.5-20-5.5-11 0-20 5.5-8.8 5.3-14.1 14.7-5.1 9.3-5.1 21.1 0 11.7 5.1 21.2 5.3 9.2 14.1 14.7 9 5.3 20 5.3zm49.3 19.1q-4.9 0-8.2-3.1-3.1-3.3-3.1-8.1v-33.7l4.2-23.3 18.3 7.9v49.1q0 4.8-3.3 8.1-3.1 3.1-7.9 3.1zm66.6-75.4h-11.2q0-13.2 6.4-23.6 6.6-10.5 17.6-16.7 11-6.2 24.2-6.2 13.2 0 19.6 4.4 6.6 4.2 5 10.2-0.6 3-2.6 4.8-1.8 1.5-4.2 2-2.4 0.4-5.3-0.2-14.1-2.9-25.3-0.5-11.2 2.4-17.8 9-6.4 6.6-6.4 16.8zm-11 75.2q-5.3 0-8.1-2.6-2.9-2.9-2.9-8.4v-98.3q0-5.3 2.9-8.2 2.8-2.8 8.1-2.8 5.5 0 8.2 2.8 2.8 2.7 2.8 8.2v98.3q0 5.3-2.8 8.1-2.7 2.9-8.2 2.9zm141.7 0.9q-17.2 0-31-7.9-13.7-8.2-21.8-22-7.9-13.9-7.9-31.3 0-17.4 7.2-31 7.5-13.9 20.3-21.8 12.7-8.1 28.8-8.1 13 0 24 5.5 11 5.3 18.5 14.5v-59.4q0-5.1 3-8.1 3.3-3.1 8.2-3.1 5 0 8.1 3.1 3.1 3 3.1 8.1v100.3q0 17.4-8.1 31.3-8 13.8-21.6 22-13.6 7.9-30.8 7.9zm0-19.8q11.2 0 20-5.3 8.8-5.5 13.9-15 5-9.4 5-21.1 0-11.9-5-21.1-5.1-9.2-13.9-14.5-8.8-5.5-20-5.5-11 0-20 5.5-8.8 5.3-14.1 14.5-5.1 9.2-5.1 21.1 0 11.7 5.1 21.1 5.3 9.5 14.1 15 9 5.3 20 5.3z"/>
             </svg>
         </div>
         <div class="hidden md:flex space-x-4">
-            <a href="#features" class="hover:text-gray-300 transition duration-300">Features</a>
-            <a href="#how-it-works" class="hover:text-gray-300 transition duration-300">How It Works</a>
-            <a href="#security" class="hover:text-gray-300 transition duration-300">Security</a>
-            <a href="#faq" class="hover:text-gray-300 transition duration-300">FAQ</a>
-            <a href="#get-started" class="hover:text-gray-300 transition duration-300">Get Started</a>
+            <template x-for="(item, index) in ['Features', 'How It Works', 'Security', 'FAQ', 'Get Started']">
+                <a :href="'#' + item.toLowerCase().replace(/ /g, '-')"
+                   class="relative overflow-hidden group py-2 px-3 rounded-md transition duration-300"
+                   :style="`transition-delay: ${index * 50}ms`">
+                    <span x-text="item" class="relative z-10 group-hover:text-gray-950 transition duration-300"></span>
+                    <span class="absolute inset-0 w-full h-full bg-white transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+                </a>
+            </template>
+
         </div>
-        <button @click="isOpen = !isOpen" class="md:hidden focus:outline-none">
-            <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                 stroke="currentColor" class="w-6 h-6">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-            </svg>
-            <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                 stroke="currentColor" class="w-6 h-6" style="display: none;">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
+        <button @click="isOpen = !isOpen"
+                class="md:hidden focus:outline-none relative w-10 h-10 rounded-full hover:bg-gray-800 transition duration-300">
+            <span :class="isOpen ? 'rotate-45 translate-y-0' : '-translate-y-2'"
+                  class="absolute block w-5 h-0.5 bg-white left-1/2 top-1/2 transform -translate-x-1/2 transition duration-300"></span>
+            <span :class="isOpen ? 'opacity-0' : 'opacity-100'"
+                  class="absolute block w-5 h-0.5 bg-white left-1/2 top-1/2 transform -translate-x-1/2 transition duration-300"></span>
+            <span :class="isOpen ? '-rotate-45 translate-y-0' : 'translate-y-2'"
+                  class="absolute block w-5 h-0.5 bg-white left-1/2 top-1/2 transform -translate-x-1/2 transition duration-300"></span>
         </button>
     </nav>
-    <div x-show="isOpen" x-transition:enter="transition ease-out duration-300"
-         x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
-         x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 scale-100"
-         x-transition:leave-end="opacity-0 scale-95" class="md:hidden bg-gray-950 p-6" style="display: none;">
-        <a href="#features" class="block py-2 hover:text-gray-300 transition duration-300">Features</a>
-        <a href="#how-it-works" class="block py-2 hover:text-gray-300 transition duration-300">How It Works</a>
-        <a href="#security" class="block py-2 hover:text-gray-300 transition duration-300">Security</a>
-        <a href="#faq" class="block py-2 hover:text-gray-300 transition duration-300">FAQ</a>
-        <a href="#get-started" class="block py-2 hover:text-gray-300 transition duration-300">Get Started</a>
+    <div x-show="isOpen"
+         x-transition:enter="transition ease-out duration-300"
+         x-transition:enter-start="opacity-0 -translate-y-4"
+         x-transition:enter-end="opacity-100 translate-y-0"
+         x-transition:leave="transition ease-in duration-300"
+         x-transition:leave-start="opacity-100 translate-y-0"
+         x-transition:leave-end="opacity-0 -translate-y-4"
+         class="md:hidden bg-gray-950 p-6"
+         style="display: none;">
+        <template x-for="(item, index) in ['Features', 'How It Works', 'Security', 'FAQ', 'Get Started']">
+            <a :href="'#' + item.toLowerCase().replace(' ', '-')"
+               x-text="item"
+               class="block py-2 hover:text-gray-300 transition duration-300"
+               :style="`animation: slideIn 0.3s ease-out ${index * 0.1}s both;`"></a>
+        </template>
     </div>
 </header>
 <main>
@@ -133,7 +150,7 @@
                     </p>
                     <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 mb-8">
                         <a href="#get-started"
-                           class="bg-white text-gray-900 py-3 px-6 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-200 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
+                           class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-full text-base sm:text-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24"
                                  stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -141,7 +158,7 @@
                             </svg>
                             Get Started
                         </a>
-                        <a href="https://github.com/vanguardsh/vanguard" target="_blank" rel="noopener noreferrer"
+                        <a href="https://github.com/vanguardbackup/vanguard" target="_blank" rel="noopener noreferrer"
                            class="bg-gray-800 text-white py-3 px-6 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-700 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center border border-gray-700">
                             <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                                 <path fill-rule="evenodd"
@@ -446,7 +463,7 @@
                         <template x-for="(step, index) in steps" :key="index">
                             <div :class="{ 'opacity-50': activeStep !== index + 1 }"
                                  class="flex items-start mb-8 transition-opacity duration-300">
-                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center mr-4">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center mr-4">
                                     <span class="text-white font-bold" x-text="index + 1"></span>
                                 </div>
                                 <div>
@@ -457,18 +474,18 @@
                     </div>
                     <div class="flex justify-center space-x-4">
                         <button @click="activeStep = activeStep > 1 ? activeStep - 1 : 4"
-                                class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+                                class="bg-gray-700 text-white px-4 py-2 rounded-full hover:bg-gray-600 transition duration-300">
                             Previous
                         </button>
                         <button @click="activeStep = activeStep < 4 ? activeStep + 1 : 1"
-                                class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 transition duration-300">
+                                class="bg-gray-700 text-white px-4 py-2 rounded-full hover:bg-gray-600 transition duration-300">
                             Next
                         </button>
                     </div>
                 </div>
-                <div class="relative">
+                <div class="relative p-1 rounded-xl bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
                     <img src="dashboard.png" alt="Vanguard dashboard"
-                         class="rounded-xl shadow-2xl border-gradient rounded overflow-hidden">
+                         class="w-full h-auto rounded-lg shadow-2xl">
                 </div>
             </div>
         </div>
@@ -517,16 +534,25 @@
                  class="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-2xl p-8 relative overflow-hidden"
                  style="display: none;">
                 <div class="flex mb-8">
-                    <template x-for="step in 7">
+                    <template x-for="(step, index) in 7">
                         <div class="flex-1">
-                            <div :class="{ 'bg-gradient-to-r from-blue-500 to-purple-600': activeStep >= step, 'bg-gray-600': activeStep < step }"
+                            <div :class="{
+                    'bg-gradient-to-r': activeStep >= step,
+                    'bg-gray-600': activeStep < step
+                 }"
+                                 :style="{
+                    backgroundImage: activeStep >= step ? `linear-gradient(to right,
+                        hsl(${217 + (index * 10)}, 91%, 60%),
+                        hsl(${217 + ((index + 1) * 10)}, 91%, 60%)
+                    )` : ''
+                 }"
                                  class="h-2 rounded-full transition-all duration-300"></div>
                         </div>
                     </template>
                 </div>
                 <ol class="list-none space-y-6">
                     <template x-for="(step, index) in [
-                { title: 'Clone the repository', command: 'git clone https://github.com/vanguardsh/vanguard.git' },
+                { title: 'Clone the repository', command: 'git clone https://github.com/vanguardbackup/vanguard.git' },
                 { title: 'Navigate to the project directory', command: 'cd vanguard' },
                 { title: 'Install dependencies', command: 'composer install &amp;&amp; npm install' },
                 { title: 'Set up your environment', command: 'cp .env.example .env &amp;&amp; php artisan key:generate' },
@@ -559,20 +585,20 @@
                 </ol>
                 <div class="mt-8 flex justify-between items-center">
                     <button @click="activeStep = activeStep > 1 ? activeStep - 1 : 1"
-                            class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"
+                            class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                             :disabled="activeStep === 1" disabled="disabled">
                         Previous
                     </button>
                     <span class="text-gray-400" x-text="`Step ${activeStep} of 7`">Step 1 of 7</span>
                     <button @click="activeStep = activeStep < 7 ? activeStep + 1 : 7"
-                            class="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300"
+                            class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                             :disabled="activeStep === 7">
                         Next
                     </button>
                 </div>
                 <div class="mt-8 text-center">
-                    <a href="https://github.com/vanguardsh/vanguard" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-full transition duration-300">
+                    <a href="https://github.com/vanguardbackup/vanguard" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center bg-white hover:bg-gray-100 text-gray-900 font-bold py-3 px-6 rounded-full transition duration-300 shadow-md hover:shadow-lg">
                         <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
                                   d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
@@ -689,7 +715,7 @@
             <div id="contributors-list"
                  class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-4xl mx-auto">
                 <!-- Contributors will be dynamically added here -->
-               </div>
+            </div>
             <div class="text-center mt-12">
                 <button id="view-more"
                         class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 hidden">
@@ -698,44 +724,56 @@
             </div>
         </div>
     </section>
-    <section id="repo-info" class="py-12 bg-gray-900 text-white" style="display: none;">
+    <section id="repo-info" class="py-20 bg-gradient-to-b from-gray-900 to-gray-900 text-white" style="display: none;">
         <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-lg p-8">
-                <div class="flex items-center justify-center mb-6">
-                    <svg class="w-10 h-10 text-white mr-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path fill-rule="evenodd"
-                              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                              clip-rule="evenodd"></path>
-                    </svg>
-                    <h3 class="text-2xl font-bold">GitHub Repository Stats</h3>
+            <div class="max-w-5xl mx-auto bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl shadow-2xl p-10 transform hover:scale-105 transition-all duration-300">
+                <div class="flex flex-col md:flex-row items-center justify-between mb-12">
+                    <div class="flex items-center mb-6 md:mb-0">
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full mr-4 animate-pulse">
+                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"
+                                 aria-hidden="true">
+                                <path fill-rule="evenodd"
+                                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                      clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+                            GitHub Repository Stats</h3>
+                    </div>
+                    <div id="repo-update-time" class="text-sm text-gray-400 italic"></div>
                 </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                    <div class="bg-gray-700 rounded-lg p-4">
-                        <p class="text-xl font-bold" id="repo-stars">1</p>
-                        <p class="text-sm text-gray-400">Stars</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
+                    <div class="bg-gray-700 bg-opacity-50 rounded-xl p-6 transform hover:scale-110 transition-all duration-300">
+                        <p class="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+                           id="repo-stars">-</p>
+                        <p class="text-sm text-gray-300">Stars</p>
                     </div>
-                    <div class="bg-gray-700 rounded-lg p-4">
-                        <p class="text-xl font-bold" id="repo-forks">0</p>
-                        <p class="text-sm text-gray-400">Forks</p>
+                    <div class="bg-gray-700 bg-opacity-50 rounded-xl p-6 transform hover:scale-110 transition-all duration-300">
+                        <p class="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+                           id="repo-forks">-</p>
+                        <p class="text-sm text-gray-300">Forks</p>
                     </div>
-                    <div class="bg-gray-700 rounded-lg p-4">
-                        <p class="text-xl font-bold" id="repo-issues">1</p>
-                        <p class="text-sm text-gray-400">Open Issues</p>
+                    <div class="bg-gray-700 bg-opacity-50 rounded-xl p-6 transform hover:scale-110 transition-all duration-300">
+                        <p class="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+                           id="repo-issues">-</p>
+                        <p class="text-sm text-gray-300">Open Issues</p>
                     </div>
-                    <div class="bg-gray-700 rounded-lg p-4">
-                        <p class="text-xl font-bold" id="repo-watchers">1</p>
-                        <p class="text-sm text-gray-400">Watchers</p>
+                    <div class="bg-gray-700 bg-opacity-50 rounded-xl p-6 transform hover:scale-110 transition-all duration-300">
+                        <p class="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
+                           id="repo-watchers">-</p>
+                        <p class="text-sm text-gray-300">Watchers</p>
                     </div>
                 </div>
-                <div class="mt-8 text-center">
-                    <a href="https://github.com/vanguardsh/vanguard" target="_blank" rel="noopener noreferrer"
-                       class="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-full text-base sm:text-lg font-semibold hover:from-blue-600 hover:to-purple-700 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center">
-                        <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <div class="text-center">
+                    <a id="repo-link" href="https://github.com/vanguardbackup/vanguard" target="_blank"
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 px-8 rounded-full text-lg font-bold hover:from-blue-600 hover:to-purple-700 transition duration-300 transform hover:scale-105 hover:rotate-1 shadow-lg hover:shadow-2xl">
+                        <svg class="h-6 w-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
                                   d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                                   clip-rule="evenodd"></path>
                         </svg>
-                        View on GitHub
+                        Explore on GitHub
                     </a>
                 </div>
             </div>
@@ -760,14 +798,20 @@
                 { q: 'What notification channels can I use?', a: 'Vanguard can send emails, Slack and Discord webhooks when a backup task is ran. This is configurable per backup task.' },
             ]">
                     <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl shadow-lg overflow-hidden transition-all duration-300 ease-in-out"
-                         :class="{ 'shadow-2xl ring-2 ring-blue-500': activeQuestion === index }">
+                         :class="{ 'shadow-2xl ring-2 ring-opacity-50 ring-gradient-to-r from-blue-500 to-purple-600': activeQuestion === index }">
                         <button @click="activeQuestion = activeQuestion === index ? null : index"
                                 class="flex justify-between items-center w-full py-6 px-8 text-left focus:outline-none">
                             <span class="text-xl font-semibold" x-text="question.q"></span>
                             <svg xmlns="http://www.w3.org/2000/svg"
-                                 class="h-6 w-6 transform transition-transform duration-300 text-blue-400"
+                                 class="h-6 w-6 transform transition-transform duration-300"
                                  :class="{ 'rotate-180': activeQuestion === index }" fill="none" viewBox="0 0 24 24"
-                                 stroke="currentColor">
+                                 stroke="url(#questionGradient)">
+                                <defs>
+                                    <linearGradient id="questionGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                        <stop offset="0%" style="stop-color: #3B82F6"/> <!-- blue-500 -->
+                                        <stop offset="100%" style="stop-color: #8B5CF6"/> <!-- purple-600 -->
+                                    </linearGradient>
+                                </defs>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M19 9l-7 7-7-7"></path>
                             </svg>
@@ -786,7 +830,7 @@
             </div>
 
             <div class="mt-16 text-center">
-                <a href="https://github.com/vanguardsh/vanguard/issues/new/choose"
+                <a href="https://github.com/vanguardbackup/vanguard/discussions"
                    class="inline-flex items-center px-8 py-4 text-lg font-medium rounded-full text-white bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 ease-in-out transform hover:scale-105 shadow-lg hover:shadow-xl">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24"
                          stroke="currentColor">
@@ -828,11 +872,14 @@
             <div>
                 <h3 class="text-lg font-semibold mb-4">Community</h3>
                 <ul class="space-y-2">
-                    <li><a href="https://github.com/vanguardsh/vanguard"
+                    <li><a href="https://github.com/vanguardbackup/vanguard"
                            class="text-sm text-gray-400 hover:text-white transition duration-300">GitHub</a></li>
-                    <li><a href="https://github.com/vanguardsh/vanguard/blob/main/CONTRIBUTING.md"
+                    <li><a href="https://github.com/vanguardbackup/vanguard/discussions"
+                           class="text-sm text-gray-400 hover:text-white transition duration-300">Discussions</a></li>
+                    <li><a href="https://github.com/vanguardbackup/vanguard/blob/main/CONTRIBUTING.md"
                            class="text-sm text-gray-400 hover:text-white transition duration-300">Contribute</a></li>
-                    <li><a href="https://github.com/vanguardsh/vanguard/issues/new/choose"
+                    <li>
+                        <a href="https://github.com/vanguardbackup/vanguard/issues/new?&labels=bug&projects=&template=bug_report.yml&title=[Bug]%3A+"
                            class="text-sm text-gray-400 hover:text-white transition duration-300">Report an Issue</a>
                     </li>
                 </ul>
@@ -840,14 +887,15 @@
             <div>
                 <h3 class="text-lg font-semibold mb-4">Connect</h3>
                 <div class="flex space-x-4">
-                    <a href="https://github.com/vanguardsh/vanguard"
-                       class="text-gray-400 hover:text-white transition duration-300">
+                    <a href="https://github.com/vanguardbackup/vanguard"
+                       class="text-gray-400 hover:text-white transition duration-300 relative overflow-hidden">
                         <span class="sr-only">GitHub</span>
-                        <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <svg class="h-6 w-6 relative z-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path fill-rule="evenodd"
                                   d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
                                   clip-rule="evenodd"></path>
                         </svg>
+                        <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-blue-500 to-purple-600 transform -translate-x-full hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
                     </a>
                 </div>
             </div>
