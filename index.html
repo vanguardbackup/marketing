@@ -542,16 +542,18 @@
                     <template x-for="(step, index) in 7">
                         <div class="flex-1">
                             <div :class="{
-                    'bg-gradient-to-r': activeStep >= step,
-                    'bg-gray-600': activeStep < step
-                 }"
+    'bg-gradient-to-r': activeStep >= step,
+    'bg-gray-600': activeStep < step,
+    'rounded-l-full': index === 0,
+    'rounded-r-full': index === 6
+ }"
                                  :style="{
-                    backgroundImage: activeStep >= step ? `linear-gradient(to right,
-                        hsl(${217 + (index * 10)}, 91%, 60%),
-                        hsl(${217 + ((index + 1) * 10)}, 91%, 60%)
-                    )` : ''
-                 }"
-                                 class="h-2 rounded-full transition-all duration-300"></div>
+    backgroundImage: activeStep >= step ? `linear-gradient(to right,
+        hsl(${217 + (index * 10)}, 91%, 60%),
+        hsl(${217 + ((index + 1) * 10)}, 91%, 60%)
+    )` : ''
+ }"
+                                 class="h-2 transition-all duration-300"></div>
                         </div>
                     </template>
                 </div>
