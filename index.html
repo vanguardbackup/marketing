@@ -423,7 +423,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Regular file backups
+                             File backups
                         </li>
                         <li class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
@@ -431,7 +431,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Support for various backup destinations
+                            Supports AWS S3, Custom S3 Providers and local backup destinations
                         </li>
                         <li class="flex items-center">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-green-400" fill="none"
@@ -439,13 +439,13 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Secure and efficient backup process
+                           Custom backup labels
                         </li>
                     </ul>
                     <p class="text-gray-300">Vanguard offers comprehensive data security and cloud backup solutions for
-                        your critical information. With support for MySQL and PostgreSQL databases, as well as regular
+                        your critical information. With support for MySQL and PostgreSQL databases, as well as
                         file backups, you can ensure your critical data is safely stored and easily accessible when
-                        needed.</p>
+                        needed on whichever backup provider you prefer.</p>
                 </div>
                 <div x-show="activeTab === 'scheduling'" x-transition:enter="transition ease-out duration-300"
                      x-transition:enter-start="opacity-0 transform translate-y-4"
@@ -497,7 +497,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Built on Laravel for reliability
+                            Easily see scheduled tasks
                         </li>
                     </ul>
                     <p class="text-gray-300">Vanguard's scheduling system gives you complete control over your backup
@@ -520,7 +520,7 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div x-data="{ activeStep: 1 }" class="space-y-8">
                     <div x-data="{ steps: [
-                    'Connect your remote server to Vanguard by an SSH key',
+                    'Connect your remote server to Vanguard via SSH',
                     'Configure backup destinations (e.g., S3 buckets)',
                     'Create your backup task and define the schedule time',
                     'Monitor backup status and logs through the intuitive interface',
@@ -570,7 +570,7 @@
                 <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                     <a href="https://app.vanguardbackup.com" target="_blank" rel="noopener noreferrer"
                        class="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
-                        Try Hosted Version
+                        Try (Free) Hosted Version
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
                              fill="currentColor">
                             <path fill-rule="evenodd"
@@ -687,7 +687,7 @@
                     Data Security
                 </h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-6 rounded-full"></div>
-                <p class="mt-4 text-xl text-gray-300">Your data is safe when using Vanguard</p>
+                <p class="mt-4 text-xl text-gray-300">Learn how your credentials are safe when using Vanguard</p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 relative">
                 <div class="bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl p-8 shadow-2xl transform transition duration-500 hover:scale-105 hover:rotate-1"
@@ -736,10 +736,9 @@
                                       d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-3xl font-semibold">Data Fortress</h3>
+                        <h3 class="text-3xl font-semibold">Isolated Site Security</h3>
                     </div>
-                    <p class="mb-6 text-gray-300">Your data is protected by a virtual fortress, employing cutting-edge
-                        security measures throughout the entire backup process.</p>
+                    <p class="mb-6 text-gray-300">We support isolated site deployments with Laravel Forge and Ploi, ensuring your applications run securely and independently.</p>
                     <ul class="space-y-4">
                         <li class="flex items-center transform transition duration-300 hover:translate-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-blue-400" fill="none"
@@ -747,7 +746,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span>State-of-the-art data transmission protocols</span>
+                            <span>Isolated environments for enhanced security</span>
                         </li>
                         <li class="flex items-center transform transition duration-300 hover:translate-x-2">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-blue-400" fill="none"
@@ -755,7 +754,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M5 13l4 4L19 7"></path>
                             </svg>
-                            <span>Encrypted vault for sensitive information</span>
+                            <span>Encrypted storage for database passwords and sensitive data</span>
                         </li>
                     </ul>
                 </div>
