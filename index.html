@@ -707,8 +707,7 @@
             <div class="absolute bottom-1/4 left-1/3 w-64 h-64 bg-green-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
         </div>
     </section>
-    <section id="contributors" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900 text-white"
-             style="display: block;">
+    <section id="contributors" class="py-16 bg-gradient-to-b from-gray-950 to-gray-900 text-white" style="display: none;">
         <div class="container mx-auto px-4">
             <div class="mb-16 text-center">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
@@ -716,71 +715,59 @@
                 </h2>
                 <div class="w-24 h-1 bg-gradient-to-r from-blue-400 to-purple-600 mx-auto mb-6 rounded-full"></div>
                 <p class="mt-4 text-xl text-gray-300">Vanguard thrives thanks to our open-source community on GitHub</p>
+
+                <!-- Repository Stats -->
+                <div class="flex flex-wrap justify-center items-center mt-8 gap-4">
+                    <div class="repo-stat-item">
+                        <svg class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path>
+                        </svg>
+                        <span id="repo-stars" class="text-lg font-semibold">-</span>
+                        <span class="stat-label">Stars</span>
+                    </div>
+                    <div class="repo-stat-item">
+                        <svg class="w-6 h-6 text-blue-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M5 3a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V5a2 2 0 00-2-2H5zm0 2h10v7h-2l-1 2H8l-1-2H5V5z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span id="repo-forks" class="text-lg font-semibold">-</span>
+                        <span class="stat-label">Forks</span>
+                    </div>
+                    <div class="repo-stat-item">
+                        <svg class="w-6 h-6 text-green-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span id="repo-issues" class="text-lg font-semibold">-</span>
+                        <span class="stat-label">Issues</span>
+                    </div>
+                    <div class="repo-stat-item">
+                        <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"></path>
+                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"></path>
+                        </svg>
+                        <span id="repo-watchers" class="text-lg font-semibold">-</span>
+                        <span class="stat-label">Watchers</span>
+                    </div>
+                </div>
+                <p id="repo-update-time" class="text-sm text-gray-400 italic mt-4"></p>
             </div>
-            <div id="contributors-list"
-                 class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 max-w-4xl mx-auto">
+
+            <div id="contributors-list" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 max-w-4xl mx-auto">
                 <!-- Contributors will be dynamically added here -->
             </div>
             <div class="text-center mt-12">
-                <button id="view-more"
-                        class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 hidden">
-                    View More
+                <button id="view-more" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 hidden">
+                    <span>View More</span>
+                    <div class="spinner hidden"></div>
                 </button>
             </div>
-        </div>
-    </section>
-    <section id="repo-info" class="py-20 bg-gradient-to-b from-gray-900 to-gray-900 text-white" style="display: none;">
-        <div class="container mx-auto px-4">
-            <div class="max-w-5xl mx-auto bg-gray-800 bg-opacity-50 backdrop-filter backdrop-blur-lg rounded-2xl shadow-2xl p-10 transform hover:scale-105 transition-all duration-300">
-                <div class="flex flex-col md:flex-row items-center justify-between mb-12">
-                    <div class="flex items-center mb-6 md:mb-0">
-                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-full mr-4 animate-pulse">
-                            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24"
-                                 aria-hidden="true">
-                                <path fill-rule="evenodd"
-                                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                      clip-rule="evenodd"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-                            GitHub Repository Stats</h3>
-                    </div>
-                    <div id="repo-update-time" class="text-sm text-gray-400 italic"></div>
-                </div>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-                    <div class="bg-gray-700 bg-opacity-50 rounded-xl p-6 transform hover:scale-110 transition-all duration-300">
-                        <p class="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
-                           id="repo-stars">-</p>
-                        <p class="text-sm text-gray-300">Stars</p>
-                    </div>
-                    <div class="bg-gray-700 bg-opacity-50 rounded-xl p-6 transform hover:scale-110 transition-all duration-300">
-                        <p class="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
-                           id="repo-forks">-</p>
-                        <p class="text-sm text-gray-300">Forks</p>
-                    </div>
-                    <div class="bg-gray-700 bg-opacity-50 rounded-xl p-6 transform hover:scale-110 transition-all duration-300">
-                        <p class="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
-                           id="repo-issues">-</p>
-                        <p class="text-sm text-gray-300">Open Issues</p>
-                    </div>
-                    <div class="bg-gray-700 bg-opacity-50 rounded-xl p-6 transform hover:scale-110 transition-all duration-300">
-                        <p class="text-3xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500"
-                           id="repo-watchers">-</p>
-                        <p class="text-sm text-gray-300">Watchers</p>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a id="repo-link" href="https://github.com/vanguardbackup/vanguard" target="_blank"
-                       rel="noopener noreferrer"
-                       class="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white py-4 px-8 rounded-full text-lg font-bold hover:from-blue-600 hover:to-purple-700 transition duration-300 transform hover:scale-105 hover:rotate-1 shadow-lg hover:shadow-2xl">
-                        <svg class="h-6 w-6 mr-3" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                  clip-rule="evenodd"></path>
-                        </svg>
-                        Explore on GitHub
-                    </a>
-                </div>
+            <div class="text-center mt-8">
+                <a id="repo-link" href="https://github.com/vanguardbackup/vanguard" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center justify-center bg-gradient-to-r from-blue-500 to-purple-600 text-white py-3 px-6 rounded-full text-lg font-bold hover:from-blue-600 hover:to-purple-700 transition duration-300 transform hover:scale-105 shadow-lg">
+                    <svg class="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                    </svg>
+                    Explore on GitHub
+                </a>
             </div>
         </div>
     </section>
@@ -940,45 +927,141 @@
 </style>
 <style>
     @keyframes float {
-        0% {
-            transform: translateY(0px);
-        }
-        50% {
-            transform: translateY(-10px);
-        }
-        100% {
-            transform: translateY(0px);
-        }
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }
 
     .contributor-item {
+        aspect-ratio: 1 / 1;
+        position: relative;
         transition: all 0.3s ease;
         animation: float 6s ease-in-out infinite;
     }
 
     .contributor-item:hover {
-        transform: scale(1.1) rotate(5deg);
+        transform: scale(1.05) rotate(5deg);
         z-index: 10;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
     }
 
     .contributor-item:nth-child(even):hover {
-        transform: scale(1.1) rotate(-5deg);
+        transform: scale(1.05) rotate(-5deg);
+    }
+
+    .contributor-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .contributor-overlay {
         opacity: 0;
         transition: opacity 0.3s ease;
+        background: rgba(0, 0, 0, 0.7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
     }
 
     .contributor-item:hover .contributor-overlay {
         opacity: 1;
     }
-</style>
 
+    .spinner {
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(255,255,255,0.3);
+        border-radius: 50%;
+        border-top-color: #fff;
+        animation: spin 1s ease-in-out infinite;
+        margin-left: 10px;
+    }
+
+    .repo-stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.75rem;
+        border-radius: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+        min-width: 80px;
+    }
+
+    .repo-stat-item:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+    .repo-stat-item svg {
+        margin-bottom: 0.25rem;
+    }
+
+    .stat-label {
+        font-size: 0.75rem;
+        color: #a0aec0;
+        margin-top: 0.25rem;
+    }
+
+    @media (min-width: 640px) {
+        .repo-stat-item {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .repo-stat-item svg {
+            margin-right: 0.5rem;
+            margin-bottom: 0;
+        }
+
+        .stat-label {
+            display: none;
+        }
+
+        .repo-stat-item:hover .stat-label {
+            display: block;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            white-space: nowrap;
+            margin-top: 0.5rem;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .contributor-item {
+            animation: none;
+        }
+        .contributor-item:hover {
+            transform: none;
+            box-shadow: none;
+        }
+        .contributor-overlay {
+            opacity: 1;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 100%);
+        }
+    }
+</style>
 <script>
-    const owner = 'vanguardbackup';
-    const repo = 'vanguard';
+    const owner = 'laravel';
+    const repo = 'pulse';
     const contributorsElement = document.getElementById('contributors-list');
     const viewMoreButton = document.getElementById('view-more');
     const contributorsSection = document.getElementById('contributors');
@@ -988,16 +1071,18 @@
     let currentDisplayCount = initialDisplayCount;
 
     function createContributorElement(contributor, index) {
-        const contributorElement = document.createElement('a');
-        contributorElement.href = contributor.html_url;
-        contributorElement.target = '_blank';
-        contributorElement.className = 'contributor-item bg-gray-700 rounded-lg overflow-hidden relative';
+        const contributorElement = document.createElement('div');
+        contributorElement.className = 'contributor-item';
         contributorElement.style.animationDelay = `${index * 0.1}s`;
         contributorElement.innerHTML = `
-            <img src="${contributor.avatar_url}" alt="${contributor.login}"
-                 class="w-full h-full object-cover">
-            <div class="contributor-overlay absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                <span class="text-white font-bold">${contributor.login}</span>
+            <div class="contributor-content">
+                <img src="${contributor.avatar_url}" alt="${contributor.login}" class="w-full h-full object-cover rounded-lg">
+                <div class="contributor-overlay rounded-lg">
+                    <a href="${contributor.html_url}" target="_blank" class="text-white font-bold text-center">
+                        <span class="block text-sm">${contributor.login}</span>
+                        <span class="block text-xs mt-1">${contributor.contributions} contributions</span>
+                    </a>
+                </div>
             </div>
         `;
         return contributorElement;
@@ -1010,7 +1095,13 @@
         }
     }
 
-    function handleViewMore() {
+    async function handleViewMore() {
+        viewMoreButton.disabled = true;
+        viewMoreButton.querySelector('span').classList.add('hidden');
+        viewMoreButton.querySelector('.spinner').classList.remove('hidden');
+
+        await new Promise(resolve => setTimeout(resolve, 1000)); // Simulating network delay
+
         const remainingContributors = allContributors.length - currentDisplayCount;
         const additionalContributors = Math.min(remainingContributors, initialDisplayCount);
 
@@ -1019,29 +1110,43 @@
 
         if (currentDisplayCount >= allContributors.length) {
             viewMoreButton.style.display = 'none';
+        } else {
+            viewMoreButton.disabled = false;
+            viewMoreButton.querySelector('span').classList.remove('hidden');
+            viewMoreButton.querySelector('.spinner').classList.add('hidden');
         }
     }
 
     viewMoreButton.addEventListener('click', handleViewMore);
 
-    fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`)
-        .then(response => response.json())
-        .then(contributors => {
-            if (contributors.length > 0) {
-                allContributors = contributors;
-                displayContributors(0, initialDisplayCount);
+    function updateRepoStats(data) {
+        document.getElementById('repo-stars').textContent = data.stargazers_count.toLocaleString();
+        document.getElementById('repo-forks').textContent = data.forks_count.toLocaleString();
+        document.getElementById('repo-issues').textContent = data.open_issues_count.toLocaleString();
+        document.getElementById('repo-watchers').textContent = data.subscribers_count.toLocaleString();
+        document.getElementById('repo-update-time').textContent = `Last updated: ${new Date(data.updated_at).toLocaleString()}`;
+    }
 
-                if (contributors.length > initialDisplayCount) {
-                    viewMoreButton.style.display = 'inline-block';
-                }
+    Promise.all([
+        fetch(`https://api.github.com/repos/${owner}/${repo}/contributors`).then(response => response.json()),
+        fetch(`https://api.github.com/repos/${owner}/${repo}`).then(response => response.json())
+    ]).then(([contributors, repoData]) => {
+        if (contributors.length > 0) {
+            allContributors = contributors;
+            displayContributors(0, initialDisplayCount);
 
-                contributorsSection.style.display = 'block';
+            if (contributors.length > initialDisplayCount) {
+                viewMoreButton.style.display = 'inline-flex';
+                viewMoreButton.classList.add('items-center');
             }
-        })
-        .catch(error => {
-            console.error('Error fetching contributors:', error);
-            contributorsSection.style.display = 'none';
-        });
+
+            contributorsSection.style.display = 'block';
+        }
+        updateRepoStats(repoData);
+    }).catch(error => {
+        console.error('Error fetching data:', error);
+        contributorsSection.style.display = 'none';
+    });
 </script>
 <script>
     const repoInfoSection = document.getElementById('repo-info');
