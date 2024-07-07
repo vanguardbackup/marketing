@@ -1265,6 +1265,7 @@
                     await this.typeLine(line);
                     await this.wait(500);
                 }
+                await this.showRerunPrompt();
             },
             async typeLine(line) {
                 for (const char of line) {
@@ -1331,6 +1332,29 @@
                     `[${this.getCurrentDateTimeString()}] Temporary server file removed after successful backup operation.`,
                     `[${this.getCurrentDateTimeString()}] Backup task has been completed.`,
                 ];
+            },
+
+            async showRerunPrompt() {
+                await this.wait(1000);
+                this.output += '\n[' + this.getCurrentDateTimeString() + '] Would you like to run it again? (y/n): ';
+
+                const blinkCursor = setInterval(() => {
+                    this.cursorVisible = !this.cursorVisible;
+                }, 500);
+
+                document.addEventListener('keydown', async (event) => {
+                    if (event.key.toLowerCase() === 'y') {
+                        clearInterval(blinkCursor);
+                        this.cursorVisible = true;
+                        this.output += 'y\n\n';
+                        this.output = '';
+                        await this.start();
+                    } else if (event.key.toLowerCase() === 'n') {
+                        clearInterval(blinkCursor);
+                        this.cursorVisible = true;
+                        this.output += 'n\n\nThank you for watching the animation!';
+                    }
+                }, { once: true });
             }
         }
     }
