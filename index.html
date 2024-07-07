@@ -1308,27 +1308,28 @@
                 let backupTypeLines;
                 if (this.selectedBackupType === 'postgresql') {
                     backupTypeLines = [
-                        `[${this.getCurrentDateTimeString()}] Database type detected: postgresql.`,
+                        `[${this.getCurrentDateTimeString()}] Detected database type: Postgresql.`,
                         `[${this.getCurrentDateTimeString()}] Database backup has been uploaded to ${this.selectedS3Host}: backup_postgresql_${formattedBackupTime}.sql`
                     ];
                 } else if (this.selectedBackupType === 'mysql') {
                     backupTypeLines = [
-                        `[${this.getCurrentDateTimeString()}] Database type detected: mysql.`,
+                        `[${this.getCurrentDateTimeString()}] Detected database type: mysql.`,
                         `[${this.getCurrentDateTimeString()}] Database backup has been uploaded to ${this.selectedS3Host}: backup_mysql_${formattedBackupTime}.sql`
                     ];
                 } else {
                     backupTypeLines = [
-                        `[${this.getCurrentDateTimeString()}] Directory size of ${this.selectedDirectory}${this.selectedDomain}: ${backupSize} MB.`,
-                        `[${this.getCurrentDateTimeString()}] Backup has been uploaded to ${this.selectedS3Host}: backup_${this.selectedDomain.replace('.', '_')}_${formattedBackupTime}.zip`
+                        `[${this.getCurrentDateTimeString()}] Source directory ${this.selectedDirectory}${this.selectedDomain} size: ${backupSize} MB.`,
+                        `[${this.getCurrentDateTimeString()}] File backup has been uploaded to ${this.selectedS3Host}: backup_${this.selectedDomain.replace('.', '_')}_${formattedBackupTime}.zip`
                     ];
                 }
 
                 this.lines = [
-                    `[${this.getCurrentDateTimeString()}] Backup task started.`,
-                    `[${this.getCurrentDateTimeString()}] SSH Connection established to the server.`,
+                    `[${this.getCurrentDateTimeString()}] Backup task initiated.`,
+                    `[${this.getCurrentDateTimeString()}] Attempting to connect to remote server.`,
+                    `[${this.getCurrentDateTimeString()}] Secure SSH connection established with the remote server.`,
                     ...backupTypeLines,
-                    `[${this.getCurrentDateTimeString()}] Cleaned up the temporary file on the server.`,
-                    `[${this.getCurrentDateTimeString()}] Backup task has finished successfully!`,
+                    `[${this.getCurrentDateTimeString()}] Temporary server file removed after successful backup operation.`,
+                    `[${this.getCurrentDateTimeString()}] Backup task has been completed.`,
                 ];
             }
         }
