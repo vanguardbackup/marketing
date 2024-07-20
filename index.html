@@ -232,6 +232,13 @@
                             </svg>
                             View on GitHub
                         </a>
+                        <a href="https://docs.vanguardbackup.com"
+                           class="bg-gray-800 text-white py-3 px-6 rounded-full text-base sm:text-lg font-semibold hover:bg-gray-700 transition duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center border border-gray-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                            Documentation
+                        </a>
                     </div>
                     <div class="flex flex-wrap items-center gap-4 text-gray-400">
                         <div class="flex items-center">
@@ -497,7 +504,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                       d="M5 13l4 4L19 7"></path>
                             </svg>
-                            Easily see scheduled tasks
+                            Easily view scheduled tasks
                         </li>
                     </ul>
                     <p class="text-gray-300">Vanguard's scheduling system gives you complete control over your backup
@@ -555,8 +562,7 @@
             </div>
         </div>
     </section>
-    <section id="get-started" class="bg-gradient-to-b from-gray-950 to-gray-900 text-white py-20"
-             x-data="{ activeStep: 1, showHostingOptions: false }">
+    <section id="get-started" class="bg-gradient-to-b from-gray-950 to-gray-900 text-white py-20">
         <div class="container mx-auto px-4">
             <div class="mb-16 text-center">
                 <h2 class="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600">
@@ -578,8 +584,8 @@
                                   clip-rule="evenodd"></path>
                         </svg>
                     </a>
-                    <button @click="showHostingOptions = true"
-                            class="inline-flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
+                    <a href="https://docs.vanguardbackup.com/installation.html" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center justify-center bg-gray-600 hover:bg-gray-700 text-white font-bold py-3 px-6 rounded-full transition duration-300 transform hover:scale-105">
                         Self-Host Vanguard
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20"
                              fill="currentColor">
@@ -587,97 +593,24 @@
                                   d="M3 5a2 2 0 012-2h10a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5zm11 1H6v8l4-2 4 2V6z"
                                   clip-rule="evenodd"></path>
                         </svg>
-                    </button>
-                </div>
-            </div>
-            <div x-show="showHostingOptions" x-transition:enter="transition ease-out duration-300"
-                 x-transition:enter-start="opacity-0 transform scale-95"
-                 x-transition:enter-end="opacity-100 transform scale-100"
-                 x-transition:leave="transition ease-in duration-200"
-                 x-transition:leave-start="opacity-100 transform scale-100"
-                 x-transition:leave-end="opacity-0 transform scale-95"
-                 class="max-w-4xl mx-auto bg-gray-800 rounded-lg shadow-2xl p-8 relative overflow-hidden"
-                 style="display: none;">
-                <div class="flex mb-8">
-                    <template x-for="(step, index) in 7">
-                        <div class="flex-1">
-                            <div :class="{
-    'bg-gradient-to-r': activeStep >= step,
-    'bg-gray-600': activeStep < step,
-    'rounded-l-full': index === 0,
-    'rounded-r-full': index === 6
- }"
-                                 :style="{
-    backgroundImage: activeStep >= step ? `linear-gradient(to right,
-        hsl(${217 + (index * 10)}, 91%, 60%),
-        hsl(${217 + ((index + 1) * 10)}, 91%, 60%)
-    )` : ''
- }"
-                                 class="h-2 transition-all duration-300"></div>
-                        </div>
-                    </template>
-                </div>
-                <ol class="list-none space-y-6">
-                    <template x-for="(step, index) in [
-                { title: 'Clone the repository', command: 'git clone https://github.com/vanguardbackup/vanguard.git' },
-                { title: 'Navigate to the project directory', command: 'cd vanguard' },
-                { title: 'Install dependencies', command: 'composer install &amp;&amp; npm install' },
-                { title: 'Set up your environment', command: 'cp .env.example .env &amp;&amp; php artisan key:generate' },
-                { title: 'Configure your database in the .env file', command: null },
-                { title: 'Run migrations', command: 'php artisan migrate' },
-                { title: 'Start the development server', command: 'php artisan serve' }
-            ]">
-                        <li class="text-lg" :class="{ 'opacity-50': activeStep !== index + 1 }">
-                            <div class="flex items-center">
-                                <span class="font-semibold mr-2" x-text="`${index + 1}.`"></span>
-                                <span x-text="step.title"></span>
-                            </div>
-                            <template x-if="step.command">
-                                <div class="bg-gray-700 p-3 rounded mt-2 flex items-center justify-between">
-                                    <pre class="overflow-x-auto flex-grow"><code class="text-white"
-                                                                                 x-text="step.command"></code></pre>
-                                    <button @click="navigator.clipboard.writeText(step.command)"
-                                            class="ml-2 text-gray-400 hover:text-white transition-colors duration-200"
-                                            title="Copy to clipboard">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
-                                             viewBox="0 0 24 24" stroke="currentColor">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                  d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                        </svg>
-                                    </button>
-                                </div>
-                            </template>
-                        </li>
-                    </template>
-                </ol>
-                <div class="mt-8 flex justify-between items-center">
-                    <button @click="activeStep = activeStep > 1 ? activeStep - 1 : 1"
-                            class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                            :disabled="activeStep === 1" disabled="disabled">
-                        Previous
-                    </button>
-                    <span class="text-gray-400" x-text="`Step ${activeStep} of 7`">Step 1 of 7</span>
-                    <button @click="activeStep = activeStep < 7 ? activeStep + 1 : 7"
-                            class="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                            :disabled="activeStep === 7">
-                        Next
-                    </button>
-                </div>
-                <div class="mt-8 text-center">
-                    <a href="https://github.com/vanguardbackup/vanguard" target="_blank" rel="noopener noreferrer"
-                       class="inline-flex items-center bg-white hover:bg-gray-100 text-gray-900 font-bold py-3 px-6 rounded-full transition duration-300 shadow-md hover:shadow-lg">
-                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path fill-rule="evenodd"
-                                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                                  clip-rule="evenodd"></path>
-                        </svg>
-                        View Project on GitHub
                     </a>
                 </div>
             </div>
+            <div class="mt-8 text-center">
+                <a href="https://github.com/vanguardbackup/vanguard" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center bg-white hover:bg-gray-100 text-gray-900 font-bold py-3 px-6 rounded-full transition duration-300 shadow-md hover:shadow-lg">
+                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd"
+                              d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                              clip-rule="evenodd"></path>
+                    </svg>
+                    View Project on GitHub
+                </a>
+            </div>
             <p class="text-center mt-8 text-gray-400">
                 Vanguard is an open-source project. Contributions are welcome! For more detailed instructions, please
-                refer to the GitHub project readme. </p>
+                refer to the <a href="https://docs.vanguardbackup.com/installation.html" class="underline hover:text-white">documentation</a>.
+            </p>
         </div>
     </section>
     <section id="security" class="py-24 bg-gradient-to-b from-gray-900 to-gray-950 text-white relative overflow-hidden">
