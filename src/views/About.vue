@@ -42,7 +42,7 @@
     <!-- Get Involved -->
     <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white text-black">
       <div class="max-w-3xl mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-8">Get Involved</h2>
+        <h2 class="text-4xl font-medium mb-8">Get Involved</h2>
         <p class="text-lg mb-8">
           Vanguard thrives on community contributions. Whether you're a developer, designer, or just enthusiastic about backups, there's a place for you in our community.
         </p>
@@ -70,9 +70,3 @@
     </section>
   </div>
 </template>
-
-<style scoped>
-.font-sans {
-  font-family: 'Inter', sans-serif;
-}
-</style>

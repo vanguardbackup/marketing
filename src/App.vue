@@ -40,7 +40,7 @@ const toggleMenu = () => {
             </a>
           </div>
           <a href="#get-started"
-             class="hidden md:inline-block px-4 py-2 border border-white rounded-full text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all">
+             class="hidden md:inline-block px-4 py-2 border border-white rounded-full text-sm font-medium uppercase tracking-wider hover:bg-white hover:text-black transition-all">
             Get Started
           </a>
           <button @click="toggleMenu" class="md:hidden text-white focus:outline-none">
@@ -79,7 +79,7 @@ const toggleMenu = () => {
             <h4 class="text-lg font-medium mb-4">Quick Links</h4>
             <ul class="space-y-2">
               <li>
-                <router-link to="/" class="text-gray-300 hover:text-white transition-colors">Home</router-link>
+                <router-link to="/features" class="text-gray-300 hover:text-white transition-colors">Features</router-link>
               </li>
               <li>
                 <router-link to="/about" class="text-gray-300 hover:text-white transition-colors">About</router-link>
@@ -88,14 +88,15 @@ const toggleMenu = () => {
                 <router-link to="/faq" class="text-gray-300 hover:text-white transition-colors">FAQ</router-link>
               </li>
               <li>
-                <router-link to="/features" class="text-gray-300 hover:text-white transition-colors">Features</router-link>
+                <a class="text-gray-300 hover:text-white transition-colors" target="_blank" href="mailto:hello@vanguardbackup.com">Contact</a>
               </li>
             </ul>
           </div>
           <div>
             <h4 class="text-lg font-medium mb-4">Resources</h4>
             <ul class="space-y-2">
-              <li><a href="https://github.com/vanguardbackup/vanguard" target="_blank" class="text-gray-300 hover:text-white transition-colors">GitHub</a></li>
+              <li><a href="https://github.com/vanguardbackup/vanguard" target="_blank" class="text-gray-300 hover:text-white transition-colors">Project Repo</a></li>
+              <li><a href="https://docs.vanguardbackup.com" target="_blank" class="text-gray-300 hover:text-white transition-colors">Documentation</a></li>
               <li><a href="https://github.com/vanguardbackup/vanguard/discussions" target="_blank" class="text-gray-300 hover:text-white transition-colors">Discussions</a></li>
               <li><a href="https://github.com/vanguardbackup/vanguard/issues/new/choose" target="_blank" class="text-gray-300 hover:text-white transition-colors">Create an Issue</a></li>
               <li><a href="https://docs.vanguardbackup.com/installation" target="_blank" class="text-gray-300 hover:text-white transition-colors">Installation Guide</a></li>

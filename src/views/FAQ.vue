@@ -1,7 +1,7 @@
 <template>
   <section id="faq" class="bg-black text-white py-24">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-center">Frequently Asked Questions</h1>
+      <h1 class="text-4xl sm:text-5xl font-medium mb-6 text-center">Frequently Asked Questions (FAQ)</h1>
 
       <div class="max-w-3xl mx-auto space-y-6 md:mt-20">
         <div v-for="(item, index) in faqItems" :key="index" class="border border-gray-800">

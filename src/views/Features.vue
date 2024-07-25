@@ -3,11 +3,11 @@
     <!-- Hero Section -->
     <section class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div class="max-w-5xl mx-auto text-center relative z-10">
-        <h1 class="text-4xl sm:text-5xl font-bold mb-6">Vanguard's Features</h1>
+        <h1 class="text-4xl sm:text-5xl font-medium mb-6">Vanguard's Features</h1>
         <p class="text-xl mb-8 text-gray-200">
           Powerful backup solutions for developers who value simplicity and efficiency.
         </p>
-        <a href="#features" class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors duration-300 inline-flex items-center">
+        <a href="#features" class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300 inline-flex items-center">
           Explore Features
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd" />
@@ -28,7 +28,7 @@
             </div>
           </div>
           <div class="lg:w-1/2 lg:pl-12">
-            <h2 class="text-4xl font-bold mb-6">Impenetrable Security</h2>
+            <h2 class="text-4xl font-semibold mb-6">Impenetrable Security</h2>
             <p class="text-gray-400 mb-8 text-lg">Vanguard employs state-of-the-art security measures to ensure your data remains inviolable.</p>
             <ul class="space-y-4">
               <li v-for="point in securityPoints" :key="point" class="flex items-center">
@@ -46,13 +46,13 @@
           <div class="lg:w-1/2 mb-12 lg:mb-0">
             <div class="relative w-80 h-80 mx-auto">
               <div v-for="(tech, index) in compatibilityTech" :key="tech"
-                   :class="`absolute w-16 h-16 bg-white rounded-full flex items-center justify-center text-black font-bold text-sm transform ${techPositions[index]}`">
+                   :class="`absolute w-16 h-16 bg-white rounded-full flex items-center justify-center text-black font-medium text-sm transform ${techPositions[index]}`">
                 {{ tech }}
               </div>
             </div>
           </div>
           <div class="lg:w-1/2 lg:pr-12">
-            <h2 class="text-4xl font-bold mb-6">Universal Compatibility</h2>
+            <h2 class="text-4xl font-semibold mb-6">Universal Compatibility</h2>
             <p class="text-gray-400 mb-8 text-lg">Seamlessly integrate Vanguard with your existing infrastructure for comprehensive backup coverage.</p>
             <ul class="space-y-4">
               <li v-for="point in compatibilityPoints" :key="point" class="flex items-center">
@@ -67,7 +67,7 @@
       <!-- Data Protection Feature -->
       <section class="py-24 border-b border-gray-800">
         <div class="flex flex-col items-center">
-          <h2 class="text-4xl font-bold mb-12 text-center">Comprehensive Data Protection</h2>
+          <h2 class="text-4xl font-semibold mb-12 text-center">Comprehensive Data Protection</h2>
           <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-4xl">
             <div v-for="(feature, index) in dataProtectionFeatures" :key="index" class="bg-gray-900 p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:rotate-1">
               <component :is="feature.icon" class="w-12 h-12 mb-4 text-white" />
@@ -90,7 +90,7 @@
             </div>
           </div>
           <div class="lg:w-1/2 lg:pl-12">
-            <h2 class="text-4xl font-bold mb-6">Precision Automation</h2>
+            <h2 class="text-4xl font-semibold mb-6">Precision Automation</h2>
             <p class="text-gray-400 mb-8 text-lg">Harness the power of intelligent scheduling and management to optimize your backup strategy.</p>
             <ul class="space-y-4">
               <li v-for="point in automationPoints" :key="point" class="flex items-center">
@@ -106,16 +106,16 @@
     <!-- Call to Action -->
     <section class="py-24 px-4 sm:px-6 lg:px-8 bg-white text-black">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 class="text-4xl font-bold mb-8">Ready to Secure Your Data?</h2>
+        <h2 class="text-4xl font-medium mb-8">Ready to Secure Your Data?</h2>
         <p class="text-xl mb-12 text-gray-600">Join the Vanguard community and experience unparalleled data protection.</p>
         <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-          <a href="https://app.vanguardbackup.com" class="inline-flex items-center justify-center bg-black text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:bg-gray-800 hover:scale-105 transform">
+          <a href="https://app.vanguardbackup.com" class="inline-flex items-center justify-center bg-black text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:bg-gray-800 hover:scale-105 transform">
             Try Hosted Version
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
           </a>
-          <a href="https://docs.vanguardbackup.com/installation.html" class="inline-flex items-center justify-center bg-white text-black font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 border-2 border-black hover:bg-black hover:text-white hover:scale-105 transform">
+          <a href="https://docs.vanguardbackup.com/installation.html" class="inline-flex items-center justify-center bg-white text-black font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 border-2 border-black hover:bg-black hover:text-white hover:scale-105 transform">
             Self-Host Vanguard
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
@@ -164,9 +164,3 @@ const automationPoints = [
   "Comprehensive logging and alert system for total oversight"
 ];
 </script>
-
-<style scoped>
-.font-sans {
-  font-family: 'Inter', sans-serif;
-}
-</style>
