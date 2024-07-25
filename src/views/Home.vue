@@ -7,7 +7,7 @@
          Secure Your Data with Vanguard
         </h1>
         <p class="text-xl text-gray-200 mb-8">
-          Secure your data with Vanguard, a community-driven open-source backup solution for servers and applications. MySQL, PostgreSQL, and file backups made simple.
+          A community-driven open-source backup solution for servers and applications. MySQL, PostgreSQL, and file backups made simple.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
           <a href="#get-started" class="bg-white text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-gray-200 hover:scale-105 transform inline-flex items-center justify-center">
