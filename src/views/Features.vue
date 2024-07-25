@@ -109,16 +109,16 @@
         <h2 class="text-4xl font-medium mb-8">Ready to Secure Your Data?</h2>
         <p class="text-xl mb-12 text-gray-600">Join the Vanguard community and experience unparalleled data protection.</p>
         <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-          <a href="https://app.vanguardbackup.com" class="inline-flex items-center justify-center bg-black text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:bg-gray-800 hover:scale-105 transform">
-            Try Hosted Version
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-            </svg>
-          </a>
-          <a href="https://docs.vanguardbackup.com/installation.html" class="inline-flex items-center justify-center bg-white text-black font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 border-2 border-black hover:bg-black hover:text-white hover:scale-105 transform">
+          <a href="https://docs.vanguardbackup.com/installation" class="inline-flex items-center justify-center bg-black text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:bg-gray-800 hover:scale-105 transform">
             Self-Host Vanguard
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />
+            </svg>
+          </a>
+          <a href="https://app.vanguardbackup.com" class="inline-flex items-center justify-center bg-white text-black font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 border-2 border-black hover:bg-black hover:text-white hover:scale-105 transform">
+            Try Hosted Version
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
           </a>
         </div>
