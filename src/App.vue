@@ -11,11 +11,6 @@ const toggleMenu = () => {
 
 <template>
   <div class="flex flex-col min-h-screen bg-black text-white">
-    <!-- Animated Background -->
-    <div class="fixed inset-0 z-0 opacity-20">
-      <div class="absolute inset-0 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:40px_40px]"></div>
-    </div>
-
     <!-- Header -->
     <header class="relative z-10 border-b border-gray-800">
       <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

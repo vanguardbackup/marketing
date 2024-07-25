@@ -64,6 +64,28 @@
         </div>
       </section>
 
+      <!-- Laravel Support Feature -->
+      <section class="py-24 border-b border-gray-800">
+        <div class="flex flex-col lg:flex-row items-center">
+          <div class="lg:w-1/2 mb-12 lg:mb-0">
+            <div class="relative w-64 h-64 mx-auto">
+              <div class="absolute inset-0 border-2 border-red-500 rounded-full animate-pulse"></div>
+              <img src="https://laravel.com/img/logomark.min.svg" alt="Laravel Logo" class="w-28 h-42 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            </div>
+          </div>
+          <div class="lg:w-1/2 lg:pl-12">
+            <h2 class="text-4xl font-semibold mb-6">Seamless Laravel Integration</h2>
+            <p class="text-gray-400 mb-8 text-lg">Vanguard offers first-class support for Laravel applications, ensuring your artisan-crafted projects are always protected.</p>
+            <ul class="space-y-4">
+              <li v-for="point in laravelPoints" :key="point" class="flex items-center">
+                <svg class="w-6 h-6 mr-2 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                <span>{{ point }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
       <!-- Data Protection Feature -->
       <section class="py-24 border-b border-gray-800">
         <div class="flex flex-col items-center">
@@ -83,9 +105,7 @@
         <div class="flex flex-col lg:flex-row items-center">
           <div class="lg:w-1/2 mb-12 lg:mb-0">
             <div class="relative w-80 h-80 mx-auto">
-              <svg class="w-full h-full" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="2" />
-              </svg>
+              <div class="absolute inset-0 border-2 border-white rounded-full animate-pulse"></div>
               <Clock class="w-32 h-32 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white" />
             </div>
           </div>
@@ -162,5 +182,10 @@ const automationPoints = [
   "Fine-tuned cron scheduling for precise backup timing",
   "Dynamic task management for on-the-fly adjustments",
   "Comprehensive logging and alert system for total oversight"
+];
+
+const laravelPoints = [
+  "Automatic detection and backup of Laravel project structures",
+  "Intelligent handling of Laravel-specific files and directories",
 ];
 </script>
