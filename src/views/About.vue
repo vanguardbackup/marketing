@@ -3,7 +3,7 @@
     <!-- Hero Section -->
     <section class="py-20 px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl mx-auto text-center">
-        <h1 class="text-4xl sm:text-5xl font-bold mb-6">About Vanguard</h1>
+        <h1 class="text-4xl sm:text-5xl font-medium mb-6">About Vanguard</h1>
         <p class="text-xl mb-8 text-gray-200">
           An open-source backup solution for a developer's servers, applications and data.
         </p>
