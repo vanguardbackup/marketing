@@ -86,7 +86,7 @@
               <svg class="w-full h-full" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="2" />
               </svg>
-              <Clock class="w-16 h-16 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white" />
+              <Clock class="w-32 h-32 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white" />
             </div>
           </div>
           <div class="lg:w-1/2 lg:pl-12">
