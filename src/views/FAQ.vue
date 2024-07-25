@@ -1,9 +1,9 @@
 <template>
   <section id="faq" class="bg-black text-white py-24">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl sm:text-4xl font-bold mb-12 text-center">Frequently Asked Questions</h2>
+      <h1 class="text-4xl sm:text-5xl font-bold mb-6 text-center">Frequently Asked Questions</h1>
 
-      <div class="max-w-3xl mx-auto space-y-6">
+      <div class="max-w-3xl mx-auto space-y-6 md:mt-20">
         <div v-for="(item, index) in faqItems" :key="index" class="border border-gray-800">
           <button
               @click="toggleQuestion(index)"
@@ -35,8 +35,8 @@
 
       <div class="mt-16 text-center">
         <a
-            href="https://docs.vanguardbackup.com/faq"
-            class="inline-flex items-center px-6 py-3 border border-white text-lg font-medium rounded-md text-white hover:bg-white hover:text-black transition duration-200"
+            href="https://docs.vanguardbackup.com/frequently-asked-questions"
+            class="bg-white text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-gray-200 transform inline-flex items-center justify-center"
         >
           More FAQs in Documentation
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

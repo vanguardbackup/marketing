@@ -4,10 +4,10 @@
     <section class="min-h-screen flex flex-col items-center justify-center bg-black text-center rounded-b-3xl p-8 md:p-16">
       <div class="max-w-2xl mx-auto">
         <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
-          Secure Your Data with Vanguard
+         Secure Your Data with Vanguard
         </h1>
-        <p class="text-xl text-gray-400 mb-8">
-          Open-source backup solution for developers. MySQL, PostgreSQL, and file backups made simple.
+        <p class="text-xl text-gray-200 mb-8">
+          Secure your data with Vanguard, a community-driven open-source backup solution for servers and applications. MySQL, PostgreSQL, and file backups made simple.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
           <a href="#get-started" class="bg-white text-black font-bold py-3 px-6 rounded-full transition-all duration-300 hover:bg-gray-200 hover:scale-105 transform inline-flex items-center justify-center">
@@ -68,7 +68,7 @@
               <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
           </a>
-          <a href="https://docs.vanguardbackup.com/installation.html" class="border-2 border-white text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 transform inline-flex items-center justify-center">
+          <a href="https://docs.vanguardbackup.com/installation" class="border-2 border-white text-white font-bold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 transform inline-flex items-center justify-center">
             Self-Host Vanguard
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clip-rule="evenodd" />

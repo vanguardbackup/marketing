@@ -39,7 +39,7 @@ const toggleMenu = () => {
               Docs
             </a>
           </div>
-          <a href="#"
+          <a href="#get-started"
              class="hidden md:inline-block px-4 py-2 border border-white rounded-full text-sm uppercase tracking-wider hover:bg-white hover:text-black transition-all">
             Get Started
           </a>
@@ -72,11 +72,11 @@ const toggleMenu = () => {
       <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div class="md:col-span-2">
-            <h3 class="text-2xl font-bold mb-4">Vanguard</h3>
-            <p class="text-gray-300 max-w-md">An open-source backup solution for developers, by developers.</p>
+            <logo class="h-auto w-40 mb-4" />
+            <p class="text-gray-300 max-w-md ">Vanguard is a community-driven open-source backup solution for servers and applications.</p>
           </div>
           <div>
-            <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 class="text-lg font-medium mb-4">Quick Links</h4>
             <ul class="space-y-2">
               <li>
                 <router-link to="/" class="text-gray-300 hover:text-white transition-colors">Home</router-link>
@@ -93,7 +93,7 @@ const toggleMenu = () => {
             </ul>
           </div>
           <div>
-            <h4 class="text-lg font-semibold mb-4">Resources</h4>
+            <h4 class="text-lg font-medium mb-4">Resources</h4>
             <ul class="space-y-2">
               <li><a href="https://github.com/vanguardbackup/vanguard" target="_blank" class="text-gray-300 hover:text-white transition-colors">GitHub</a></li>
               <li><a href="https://github.com/vanguardbackup/vanguard/discussions" target="_blank" class="text-gray-300 hover:text-white transition-colors">Discussions</a></li>
@@ -103,7 +103,7 @@ const toggleMenu = () => {
           </div>
         </div>
         <div class="mt-8 border-t border-gray-700 pt-8 flex justify-between items-center">
-          <p class="text-gray-400">Vanguard is an open-source project licensed under MIT.</p>
+          <p class="text-gray-300 text-sm font-normal">Vanguard is an open-source project licensed under the MIT License.</p>
         </div>
       </div>
     </footer>

@@ -3,10 +3,8 @@
     <!-- Hero Section -->
     <section class="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div class="max-w-5xl mx-auto text-center relative z-10">
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold mb-6 tracking-tighter">
-          Vanguard Features
-        </h1>
-        <p class="text-xl text-gray-400 mb-8 max-w-3xl mx-auto">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-6">Vanguard's Features</h1>
+        <p class="text-xl mb-8 text-gray-200">
           Powerful backup solutions for developers who value simplicity and efficiency.
         </p>
         <a href="#features" class="bg-white text-black px-8 py-3 rounded-full font-bold hover:bg-gray-200 transition-colors duration-300 inline-flex items-center">
@@ -87,12 +85,6 @@
             <div class="relative w-80 h-80 mx-auto">
               <svg class="w-full h-full" viewBox="0 0 100 100">
                 <circle cx="50" cy="50" r="45" fill="none" stroke="white" stroke-width="2" />
-                <line x1="50" y1="50" x2="50" y2="20" stroke="white" stroke-width="2" class="animate-spin-slow origin-bottom">
-                  <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50" to="360 50 50" dur="60s" repeatCount="indefinite" />
-                </line>
-                <line x1="50" y1="50" x2="75" y2="50" stroke="white" stroke-width="2" class="animate-spin-slow origin-left">
-                  <animateTransform attributeName="transform" attributeType="XML" type="rotate" from="0 50 50" to="360 50 50" dur="3600s" repeatCount="indefinite" />
-                </line>
               </svg>
               <Clock class="w-16 h-16 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white" />
             </div>
@@ -174,15 +166,6 @@ const automationPoints = [
 </script>
 
 <style scoped>
-@keyframes spin-slow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 60s linear infinite;
-}
-
 .font-sans {
   font-family: 'Inter', sans-serif;
 }
