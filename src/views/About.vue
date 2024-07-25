@@ -5,7 +5,7 @@
       <div class="max-w-3xl mx-auto text-center">
         <h1 class="text-4xl sm:text-5xl font-bold mb-6">About Vanguard</h1>
         <p class="text-xl mb-8 text-gray-200">
-          An open-source backup solution for developers, by developers.
+          An open-source backup solution for a developer's servers, applications and data.
         </p>
       </div>
     </section>
@@ -17,7 +17,7 @@
           <div>
             <h2 class="text-2xl font-semibold mb-4">What is Vanguard?</h2>
             <p class="text-lg">
-              Vanguard is a simple, efficient backup tool designed for developers who need reliable data protection without the complexity. Our focus is on creating a lightweight, easy-to-use solution that integrates seamlessly with your workflow.
+              Vanguard is a simple, efficient backup software designed for developers who need reliable data protection without the complexity. Our focus is on creating a lightweight, easy-to-use backup solution.
             </p>
           </div>
           <div>
