@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Allow access to the main page and all resources
+Allow: /index.html
