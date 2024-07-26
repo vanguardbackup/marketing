@@ -32,7 +32,7 @@
             </div>
           </div>
           <div class="lg:w-1/2 lg:pl-12">
-            <h2 class="text-4xl font-semibold mb-6">Impenetrable Security</h2>
+            <h2 class="text-4xl font-medium mb-6">Impenetrable Security</h2>
             <p class="text-gray-400 mb-8 text-lg">Vanguard employs state-of-the-art security measures to ensure your
               data remains inviolable.</p>
             <ul class="space-y-4">
@@ -50,7 +50,7 @@
 
       <!-- Compatibility Feature -->
       <section class="py-24 border-b border-gray-800">
-        <h2 class="text-4xl font-semibold mb-12 text-center">Universal Compatibility</h2>
+        <h2 class="text-4xl font-medium mb-12 text-center">Universal Compatibility</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div class="relative w-80 h-80 mx-auto">
             <div v-for="(tech, index) in compatibilityTech" :key="tech.name"
@@ -78,7 +78,7 @@
 
       <!-- Data Protection Feature -->
       <section class="py-24 border-b border-gray-800">
-        <h2 class="text-4xl font-semibold mb-12 text-center">Comprehensive Data Protection</h2>
+        <h2 class="text-4xl font-medium mb-12 text-center">Comprehensive Data Protection</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div v-for="(feature, index) in dataProtectionFeatures" :key="index"
                class="bg-gray-900 p-6 rounded-lg transform transition-all duration-300 hover:scale-105 hover:rotate-1">
@@ -93,7 +93,7 @@
       <section class="py-24 border-b border-gray-800">
         <div class="flex flex-col lg:flex-row items-center">
           <div class="lg:w-1/2 mb-12 lg:mb-0">
-            <h2 class="text-4xl font-semibold mb-6">Precision Automation</h2>
+            <h2 class="text-4xl font-medium mb-6">Precision Automation</h2>
             <p class="text-gray-400 mb-8 text-lg">Harness the power of intelligent scheduling and management to optimize
               your backup strategy.</p>
             <ul class="space-y-4">
@@ -110,7 +110,7 @@
           <div class="lg:w-1/2 lg:pl-12">
             <div class="flex items-center mb-6">
               <LaravelIcon class="w-12 h-12 mr-4 text-red-500"/>
-              <h2 class="text-4xl font-semibold">Seamless Laravel Integration</h2>
+              <h2 class="text-4xl font-medium">Seamless Laravel Integration</h2>
             </div>
             <p class="text-gray-400 mb-8 text-lg">Vanguard offers first-class support for Laravel applications, ensuring
               your artisan-crafted projects are always protected.</p>
@@ -130,7 +130,7 @@
 
       <!-- Weekly Summary Section -->
       <section class="py-24 border-b border-gray-800">
-        <h2 class="text-4xl font-semibold mb-12 text-center">Weekly Backup Insights</h2>
+        <h2 class="text-4xl font-medium mb-12 text-center">Weekly Backup Insights</h2>
         <div class="flex flex-col lg:flex-row items-start">
           <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
             <h3 class="text-2xl font-semibold mb-6">Comprehensive Weekly Summary Emails</h3>
@@ -162,10 +162,10 @@
 
       <!-- Backup Destinations and Notifications -->
       <section class="py-24 border-b border-gray-800">
-        <h2 class="text-4xl font-semibold mb-12 text-center">Flexible Backup Solutions</h2>
+        <h2 class="text-4xl font-medium mb-12 text-center">Flexible Backup Solutions</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div class="bg-gray-900 p-6 rounded-lg">
-            <h3 class="text-2xl font-semibold mb-6">Backup Destinations</h3>
+            <h3 class="text-2xl font-medium mb-6">Backup Destinations</h3>
             <p class="text-gray-400 mb-8">Store your backups securely with support for various cloud providers:</p>
             <ul class="space-y-4">
               <li v-for="destination in backupDestinations" :key="destination.name"
@@ -176,7 +176,7 @@
             </ul>
           </div>
           <div class="bg-gray-900 p-6 rounded-lg">
-            <h3 class="text-2xl font-semibold mb-6">Notification Options</h3>
+            <h3 class="text-2xl font-medium mb-6">Notification Options</h3>
             <p class="text-gray-400 mb-8">Stay informed with our comprehensive notification system:</p>
             <ul class="space-y-4">
               <li v-for="notification in notificationTypes" :key="notification.name"
@@ -192,13 +192,13 @@
       <!-- Multilingual Support Section -->
       <section class="py-24 border-b border-gray-800">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 class="text-4xl font-semibold mb-12 text-center">Global Reach, Local Touch</h2>
+          <h2 class="text-4xl font-medium mb-12 text-center">Global Reach, Local Touch</h2>
           <div class="flex flex-col lg:flex-row items-start">
             <div class="lg:w-1/2 mb-12 lg:mb-0 lg:pr-12">
               <p class="text-xl text-gray-300 mb-8">
                 Vanguard breaks language barriers, allowing developers worldwide to use the platform in their preferred language. Our commitment to accessibility ensures a seamless experience for everyone.
               </p>
-              <h3 class="text-2xl font-semibold mb-6">Multilingual Features</h3>
+              <h3 class="text-2xl font-medium mb-6">Multilingual Features</h3>
               <ul class="space-y-6">
                 <li v-for="feature in languageFeatures" :key="feature.text" class="flex items-center">
                   <component :is="feature.icon" class="w-8 h-8 mr-4 text-blue-400" />
@@ -207,7 +207,7 @@
               </ul>
             </div>
             <div class="lg:w-1/2 bg-gray-900 p-8 rounded-lg shadow-xl">
-              <h3 class="text-2xl font-semibold mb-6">Supported Languages</h3>
+              <h3 class="text-2xl font-medium mb-6">Supported Languages</h3>
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                 <div v-for="lang in supportedLanguages" :key="lang.code" class="flex items-center bg-gray-800 p-3 rounded">
                   <span>{{ lang.name }}</span>
@@ -222,7 +222,7 @@
       <section class="py-24 border-b border-gray-800">
         <div class="flex flex-col items-center">
           <GitHubIcon class="w-16 h-16 mb-6 text-white"/>
-          <h2 class="text-4xl font-semibold mb-6 text-center">Open Source Power</h2>
+          <h2 class="text-4xl font-medium mb-6 text-center">Open Source Power</h2>
           <p class="text-xl text-gray-400 mb-8 text-center max-w-3xl">
             Vanguard is proudly open source, harnessing the power of community-driven development for enhanced security,
             transparency, and continuous improvement.
@@ -288,6 +288,7 @@ import forge from '../components/icons/forge.vue'
 import ploi from '../components/icons/ploi.vue'
 import slack from '../components/icons/slack.vue'
 import googlecloud from '../components/icons/googlecloud.vue'
+import teams from '../components/icons/teams.vue'
 
 const securityPoints = [
   "Advanced SSH key authentication protocols",
@@ -355,7 +356,8 @@ const backupDestinations = [
 const notificationTypes = [
   {icon: Mail, name: 'Email', color: 'text-gray-50'},
   {icon: slack, name: 'Slack Webhooks', color: 'text-[#4A154B]'},
-  {icon: DiscordIcon, name: 'Discord Webooks', color: 'text-[#5865F2]'}
+  {icon: DiscordIcon, name: 'Discord Webooks', color: 'text-[#5865F2]'},
+  {icon: teams, name: 'Microsoft Teams Webooks', color: 'text-[#828aed]'}
 ];
 
 const languageFeatures = ref([

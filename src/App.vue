@@ -127,7 +127,7 @@ onMounted(() => {
         <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div class="md:col-span-2">
             <Logo class="h-auto w-48 mb-6"/>
-            <p class="text-gray-400 max-w-md text-sm leading-relaxed">
+            <p class="text-gray-400 max-w-md text-sm leading-relaxed font-normal">
               Vanguard is a community-driven open-source backup solution for servers and applications, providing robust
               and secure data protection for businesses of all sizes.
             </p>
@@ -143,7 +143,7 @@ onMounted(() => {
             </div>
           </div>
           <div>
-            <h4 class="text-lg font-semibold mb-6 text-white">Quick Links</h4>
+            <h4 class="text-lg font-medium mb-6 text-white">Quick Links</h4>
             <ul class="space-y-4">
               <li>
                 <a href="/features" @click="(e) => navigateAndScrollTop(e, '/features')"
@@ -164,7 +164,7 @@ onMounted(() => {
             </ul>
           </div>
           <div>
-            <h4 class="text-lg font-semibold mb-6 text-white">Resources</h4>
+            <h4 class="text-lg font-medium mb-6 text-white">Resources</h4>
             <ul class="space-y-4">
               <li><a href="https://github.com/vanguardbackup/vanguard" target="_blank"
                      class="text-gray-400 hover:text-white transition-colors text-sm">Project Repo</a></li>
@@ -181,7 +181,7 @@ onMounted(() => {
         </div>
         <div class="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-400 text-sm">© {{ new Date().getFullYear() }} Vanguard. All rights reserved.</p>
-          <p class="text-gray-400 text-sm mt-4 md:mt-0">Vanguard is an open-source project licensed under the MIT
+          <p class="text-gray-400 text-sm mt-4 md:mt-0 font-normal">Vanguard is an open-source project licensed under the MIT
             License.</p>
         </div>
       </div>
