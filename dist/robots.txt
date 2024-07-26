@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 
-# Allow access to the main page and all resources
-Allow: /index.html
+# Allow access to main pages
+Allow: /features
+Allow: /about
+Allow: /faq
+
+# Sitemap (if you have one)
+Sitemap: https://vanguardbackup.com/sitemap.xml

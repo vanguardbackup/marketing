@@ -1,7 +1,10 @@
 <template>
-  <section id="faq" class="bg-black text-white py-24">
+  <section id="faq" class="bg-black text-white pt-40 pb-20">
     <div class="container mx-auto px-4 sm:px-6 lg:px-8">
       <h1 class="text-4xl sm:text-5xl font-medium mb-6 text-center">Frequently Asked Questions (FAQ)</h1>
+      <p class="text-xl mb-8 text-gray-200 text-center">
+        Get answers to key questions about the project.
+      </p>
 
       <div class="max-w-3xl mx-auto space-y-6 md:mt-20">
         <div v-for="(item, index) in faqItems" :key="index" class="border border-gray-800">
@@ -20,7 +23,7 @@
                   viewBox="0 0 24 24"
                   stroke="currentColor"
               >
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
               </svg>
             </div>
           </button>
@@ -39,8 +42,9 @@
             class="bg-white text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-gray-200 transform inline-flex items-center justify-center"
         >
           More FAQs in Documentation
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24"
+               stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
           </svg>
         </a>
       </div>

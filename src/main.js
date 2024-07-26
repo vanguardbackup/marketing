@@ -13,21 +13,37 @@ const routes = [
         path: '/',
         name: 'Home',
         component: Home,
+        meta: {
+            title: 'Vanguard - Open Source Backup Solution',
+            description: 'Vanguard is a powerful, community-driven open-source backup solution for servers and applications. Secure your data with ease and flexibility.'
+        }
     },
     {
         path: '/features',
         name: 'Features',
         component: Features,
+        meta: {
+            title: 'Vanguard Features and Capabilities',
+            description: 'Explore Vanguard\'s advanced features including automatic backups, multi-cloud support and encryption.'
+        }
     },
     {
         path: '/about',
         name: 'About',
         component: About,
+        meta: {
+            title: 'About Vanguard - Our Mission',
+            description: 'Learn about Vanguard\'s mission to provide secure, efficient, and open-source backup solutions.'
+        }
     },
     {
         path: '/faq',
         name: 'FAQ',
         component: FAQ,
+        meta: {
+            title: 'Vanguard FAQ - Common Questions Answered',
+            description: 'Find answers to frequently asked questions about Vanguard\'s backup solution, installation process, security measures, and community support.'
+        }
     },
 ]
 
@@ -37,17 +53,22 @@ const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
+    // Update the document title
     document.title = to.meta.title || 'Vanguard: Open-Source Backup Solution for Servers & Apps'
+
+    // Update the meta description
+    let metaDescription = document.querySelector('meta[name="description"]')
+    if (!metaDescription) {
+        metaDescription = document.createElement('meta')
+        metaDescription.name = 'description'
+        document.head.appendChild(metaDescription)
+    }
+    metaDescription.setAttribute('content', to.meta.description || 'Vanguard: Secure, efficient, and open-source backup solution for your servers and applications.')
+
     next()
 })
 
 const app = createApp(App)
-
-// Register all Simple Icons components globally
-for (const [name, component] of Object.entries(SimpleIcons)) {
-    app.component(name, component)
-}
-
 app.use(router)
 app.mount('#app')
 
