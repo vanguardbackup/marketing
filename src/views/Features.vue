@@ -46,8 +46,9 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div class="relative w-80 h-80 mx-auto">
             <div v-for="(tech, index) in compatibilityTech" :key="tech.name"
-                 :class="`absolute w-16 h-16 bg-white rounded-full flex items-center justify-center text-black transform ${techPositions[index]}`">
-              <component :is="tech.icon" class="w-8 h-8" />
+                 :class="`brand-icon absolute w-16 h-16 rounded-full flex items-center justify-center transform ${techPositions[index]}`"
+                 :style="{ '--hover-color': tech.color }">
+              <component :is="tech.icon" class="w-8 h-8 text-black transition-colors duration-1000" />
             </div>
           </div>
           <div>
@@ -134,31 +135,33 @@
       </section>
 
       <!-- Backup Destinations and Notifications -->
-      <section class="py-24 border-b border-gray-800">
-        <h2 class="text-4xl font-semibold mb-12 text-center">Flexible Backup Solutions</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div class="bg-gray-900 p-6 rounded-lg">
-            <h3 class="text-2xl font-semibold mb-6">Backup Destinations</h3>
-            <p class="text-gray-400 mb-8">Store your backups securely with support for various cloud providers:</p>
-            <ul class="space-y-4">
-              <li v-for="destination in backupDestinations" :key="destination.name" class="flex items-center">
-                <component :is="destination.icon" :class="`w-6 h-6 mr-2 ${destination.color}`" />
-                <span>{{ destination.name }}</span>
-              </li>
-            </ul>
+        <section class="py-24 border-b border-gray-800">
+          <h2 class="text-4xl font-semibold mb-12 text-center">Flexible Backup Solutions</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="bg-gray-900 p-6 rounded-lg">
+              <h3 class="text-2xl font-semibold mb-6">Backup Destinations</h3>
+              <p class="text-gray-400 mb-8">Store your backups securely with support for various cloud providers:</p>
+              <ul class="space-y-4">
+                <li v-for="destination in backupDestinations" :key="destination.name"
+                    class="flex items-center bg-gray-950 border border-gray-800/95 rounded-lg p-4">
+                  <component :is="destination.icon" :class="`w-6 h-6 mr-4 flex-shrink-0 ${destination.color}`" />
+                  <span class="text-lg">{{ destination.name }}</span>
+                </li>
+              </ul>
+            </div>
+            <div class="bg-gray-900 p-6 rounded-lg">
+              <h3 class="text-2xl font-semibold mb-6">Notification Options</h3>
+              <p class="text-gray-400 mb-8">Stay informed with our comprehensive notification system:</p>
+              <ul class="space-y-4">
+                <li v-for="notification in notificationTypes" :key="notification.name"
+                    class="flex items-center bg-gray-950 border border-gray-800/95 rounded-lg p-4">
+                  <component :is="notification.icon" :class="`w-6 h-6 mr-4 flex-shrink-0 ${notification.color}`" />
+                  <span class="text-lg">{{ notification.name }}</span>
+                </li>
+              </ul>
+            </div>
           </div>
-          <div class="bg-gray-900 p-6 rounded-lg">
-            <h3 class="text-2xl font-semibold mb-6">Notification Options</h3>
-            <p class="text-gray-400 mb-8">Stay informed with our comprehensive notification system:</p>
-            <ul class="space-y-4">
-              <li v-for="notification in notificationTypes" :key="notification.name" class="flex items-center">
-                <component :is="notification.icon" :class="`w-6 h-6 mr-2 ${notification.color}`" />
-                <span>{{ notification.name }}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
+        </section>
 
       <!-- Open Source Section -->
       <section class="py-24 border-b border-gray-800">
@@ -206,7 +209,21 @@
 
 <script setup>
 import { Shield, Server, Database, Clock, Cloud, Mail, ChartBar, LayoutGrid} from 'lucide-vue-next';
-import { SlackIcon, DiscordIcon, Amazons3Icon, LaravelIcon, DigitalOceanIcon, GoogleCloudIcon, GitHubIcon, UpCloudIcon, LinuxIcon, AmazonWebServicesIcon } from 'vue3-simple-icons';
+import {
+  DiscordIcon,
+  Amazons3Icon,
+  LaravelIcon,
+  DigitalOceanIcon,
+  GitHubIcon,
+  UpCloudIcon,
+  AmazonWebServicesIcon,
+  UbuntuIcon,
+  GoogleCloudIcon,
+} from 'vue3-simple-icons';
+import forge from '../components/icons/forge.vue'
+import ploi from '../components/icons/ploi.vue'
+import slack from '../components/icons/slack.vue'
+import googlecloud from '../components/icons/googlecloud.vue'
 
 const securityPoints = [
   "Advanced SSH key authentication protocols",
@@ -215,20 +232,19 @@ const securityPoints = [
 ];
 
 const compatibilityPoints = [
-  "Full support for Linux, Ploi, and Laravel Forge environments",
+  "Full support for Ubuntu, Ploi, and Laravel Forge environments",
   "Intuitive management interface for effortless control",
   "Infinitely scalable architecture to grow with your needs"
 ];
 
 const compatibilityTech = [
-  { name: 'Linux', icon: LinuxIcon },
-  { name: 'Ploi', icon: LayoutGrid }, //TODO: Update to Ploi's icon
-  { name: 'Forge', icon: Server }, // TODO: Update to Forge's icon
-  { name: 'AWS', icon: AmazonWebServicesIcon },
-  { name: 'GCP', icon: GoogleCloudIcon },
-  { name: 'UpCloud', icon: UpCloudIcon }
+  { name: 'Linux', icon: UbuntuIcon, color: '#e95420' },
+  { name: 'Ploi', icon: ploi, color: '#1853DB' },
+  { name: 'Forge', icon: forge, color: '#19b69b' },
+  { name: 'AWS', icon: AmazonWebServicesIcon, color: '#FF9900' },
+  { name: 'GCP', icon: GoogleCloudIcon, color: '#4285F4' },
+  { name: 'UpCloud', icon: UpCloudIcon, color: '#7B00FF' }
 ];
-
 
 const techPositions = [
   'top-0 left-1/2 -translate-x-1/2',
@@ -268,13 +284,27 @@ const weeklySummaryPoints = [
 const backupDestinations = [
   { icon: Amazons3Icon, name: 'Amazon S3', color: 'text-yellow-500' },
   { icon: DigitalOceanIcon, name: 'DigitalOcean Spaces', color: 'text-blue-400' },
-  { icon: GoogleCloudIcon, name: 'Google Cloud Storage', color: 'text-red-400' },
+  { icon: googlecloud, name: 'Google Cloud Storage', color: 'text-red-400' },
   { icon: Cloud, name: 'Custom S3-compatible providers', color: 'text-green-400' },
 ];
 
 const notificationTypes = [
   { icon: Mail, name: 'Email', color: 'text-gray-50' },
-  { icon: SlackIcon, name: 'Slack', color: 'text-[#4A154B]' },
-  { icon: DiscordIcon, name: 'Discord', color: 'text-[#5865F2]' }
+  { icon: slack, name: 'Slack Webhooks', color: 'text-[#4A154B]' },
+  { icon: DiscordIcon, name: 'Discord Webooks', color: 'text-[#5865F2]' }
 ];
 </script>
+
+<style>
+.brand-icon {
+  background-color: white;
+}
+
+.brand-icon:hover {
+  background-color: var(--hover-color);
+}
+
+.brand-icon:hover svg {
+  color: white;
+}
+</style>
