@@ -6,6 +6,7 @@ import Home from './views/Home.vue'
 import Features from './views/Features.vue'
 import About from './views/About.vue'
 import FAQ from './views/FAQ.vue'
+import * as SimpleIcons from 'vue3-simple-icons'
 
 const routes = [
     {
@@ -40,6 +41,14 @@ router.beforeEach((to, from, next) => {
     next()
 })
 
-export default router
+const app = createApp(App)
 
-createApp(App).use(router).mount('#app')
+// Register all Simple Icons components globally
+for (const [name, component] of Object.entries(SimpleIcons)) {
+    app.component(name, component)
+}
+
+app.use(router)
+app.mount('#app')
+
+export default router
