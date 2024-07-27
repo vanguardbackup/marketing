@@ -180,7 +180,7 @@ onMounted(() => {
           </div>
         </div>
         <div class="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-400 text-sm">© {{ new Date().getFullYear() }} Vanguard. All rights reserved.</p>
+          <p class="text-gray-400 text-sm">© {{ new Date().getFullYear() }} Vanguard.</p>
           <p class="text-gray-400 text-sm mt-4 md:mt-0 font-normal">Vanguard is an open-source project licensed under the MIT
             License.</p>
         </div>
