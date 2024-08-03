@@ -282,12 +282,13 @@ import {
   UpCloudIcon,
   AmazonWebServicesIcon,
   UbuntuIcon,
-  DebianIcon
+  DebianIcon,
 } from 'vue3-simple-icons';
 import forge from '../components/icons/forge.vue'
 import ploi from '../components/icons/ploi.vue'
 import slack from '../components/icons/slack.vue'
 import googlecloud from '../components/icons/googlecloud.vue'
+import pushover from '../components/icons/pushover.vue'
 import teams from '../components/icons/teams.vue'
 
 const securityPoints = [
@@ -357,7 +358,8 @@ const notificationTypes = [
   {icon: Mail, name: 'Email', color: 'text-gray-50'},
   {icon: slack, name: 'Slack Webhooks', color: 'text-[#4A154B]'},
   {icon: DiscordIcon, name: 'Discord Webooks', color: 'text-[#5865F2]'},
-  {icon: teams, name: 'Microsoft Teams Webooks', color: 'text-[#828aed]'}
+  {icon: teams, name: 'Microsoft Teams Webooks', color: 'text-[#828aed]'},
+  {icon: pushover, name: 'Pushover', color: 'text-[#828aed]'},
 ];
 
 const languageFeatures = ref([
