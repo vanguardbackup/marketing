@@ -75,7 +75,6 @@
         </div>
       </section>
 
-
       <!-- Data Protection Feature -->
       <section class="py-24 border-b border-gray-800">
         <h2 class="text-4xl font-medium mb-12 text-center">Comprehensive Data Protection</h2>
@@ -85,6 +84,33 @@
             <component :is="feature.icon" class="w-12 h-12 mb-4 text-white"/>
             <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
             <p class="text-gray-400">{{ feature.description }}</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- API and SDK Feature -->
+      <section class="py-24 border-b border-gray-800">
+        <div class="flex flex-col lg:flex-row items-center">
+          <div class="lg:w-1/2 mb-12 lg:mb-0">
+            <div class="relative w-64 h-64 mx-auto">
+              <div class="absolute inset-0 border-2 border-white rounded-full animate-pulse"></div>
+              <Code2
+                  class="w-32 h-32 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white"/>
+            </div>
+          </div>
+          <div class="lg:w-1/2 lg:pl-12">
+            <h2 class="text-4xl font-medium mb-6">Unleash the Power of Integration</h2>
+            <p class="text-gray-400 mb-8 text-lg">Harness Vanguard's full potential with our robust API and sleek PHP SDK.</p>
+            <ul class="space-y-4">
+              <li v-for="point in apiSdkPoints" :key="point" class="flex items-center">
+                <svg class="w-6 h-6 mr-2 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                     xmlns="http://www.w3.org/2000/svg">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                </svg>
+                <span>{{ point }}</span>
+              </li>
+            </ul>
           </div>
         </div>
       </section>
@@ -272,7 +298,7 @@
 </template>
 <script setup>
 import {ref} from 'vue';
-import {Shield, Server, Database, Cloud, Mail, ChartBar, Globe, Languages, GitPullRequest} from 'lucide-vue-next';
+import {Shield, Server, Database, Cloud, Mail, ChartBar, Globe, Languages, GitPullRequest, Code2} from 'lucide-vue-next';
 import {
   DiscordIcon,
   Amazons3Icon,
@@ -325,6 +351,12 @@ const dataProtectionFeatures = [
   {icon: Database, title: 'Database Backups', description: 'Complete MySQL and PostgreSQL database preservation'},
   {icon: Server, title: 'File Backups', description: 'Intelligent file and directory backup with customizable rules'},
   {icon: Cloud, title: 'Flexible Storage', description: 'Support for Amazon S3 and custom S3 providers'}
+];
+
+const apiSdkPoints = [
+  "RESTful API for seamless integration with your existing tools",
+  "Elegant PHP SDK for rapid development and deployment",
+  "Comprehensive documentation for both API and SDK",
 ];
 
 const automationPoints = [
