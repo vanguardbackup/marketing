@@ -253,7 +253,7 @@
             Vanguard is proudly open source, harnessing the power of community-driven development for enhanced security,
             transparency, and continuous improvement.
           </p>
-          <a href="https://github.com/vanguardapp/vanguard" target="_blank" rel="noopener noreferrer"
+          <a href="https://github.com/vanguardbackup/vanguard" target="_blank" rel="noopener noreferrer"
              class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300 inline-flex items-center">
             View on GitHub
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
