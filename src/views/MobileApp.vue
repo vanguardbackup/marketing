@@ -16,7 +16,7 @@
           </a>
         </div>
         <div class="relative">
-          <img src="/phone-render.png" alt="Vanguard Mobile App" class="mx-auto rounded-3xl shadow-2xl max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl border border-gray-800" />
+          <img src="/phone-render.png" alt="Vanguard Mobile App" class="mx-auto rounded-3xl shadow-2xl max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl border-transparent" />
           <div class="absolute -top-8 -right-8 bg-yellow-400 text-black font-bold py-3 px-6 rounded-full transform rotate-12 text-lg animate-pulse">
             Open Source!
           </div>
@@ -40,7 +40,7 @@
         <h2 class="text-4xl font-medium mb-20 text-center">How It Works</h2>
         <div class="flex flex-col md:flex-row items-center justify-between gap-16">
           <div class="md:w-1/2">
-            <img src="/phone-render-two.png" alt="App Screenshots" class="rounded-3xl shadow-2xl max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto border border-gray-800"/>
+            <img src="/phone-render-two.png" alt="App Screenshots" class="rounded-3xl shadow-2xl max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl mx-auto border border-transparent"/>
           </div>
           <div class="md:w-1/2">
             <ol class="space-y-10">
