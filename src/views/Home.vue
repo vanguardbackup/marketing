@@ -9,7 +9,7 @@
         </h1>
         <p class="text-xl text-gray-200 mb-8">
           A community-driven open-source backup solution for servers and applications. MySQL, PostgreSQL, and file
-          backups made simple.
+          backups made simple. Now with a mobile app for on-the-go management!
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
           <a href="#get-started"
@@ -49,7 +49,7 @@
         <h2 class="text-4xl font-medium mb-16 text-center">How It Works</h2>
         <div class="flex flex-col md:flex-row items-center justify-between">
           <div class="md:w-1/2 mb-12 md:mb-0">
-            <img src="/dashboard.png" class="rounded-lg"/>
+            <img src="/dashboard.png" alt="Vanguard Dashboard" class="rounded-lg shadow-xl"/>
           </div>
           <div class="md:w-1/2 md:pl-12">
             <ol class="space-y-8">
@@ -66,8 +66,37 @@
       </div>
     </section>
 
+    <!-- Mobile App Section -->
+    <section class="py-24 bg-black">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-medium mb-16 text-center">Vanguard Mobile</h2>
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <div class="md:w-1/2 mb-12 md:mb-0">
+            <img src="/phone-render.png" alt="Vanguard Mobile App" class="rounded-lg shadow-xl w-full max-w-xs mx-auto"/>
+          </div>
+          <div class="md:w-1/2 md:pl-12">
+            <h3 class="text-3xl font-medium mb-6">Manage Backups On-the-Go</h3>
+            <p class="text-xl mb-8 text-gray-300">
+              With Vanguard Mobile, you can monitor and manage your backups from anywhere. Available for Android.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <router-link
+                  to="/mobile"
+                  class="bg-white text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-gray-200 hover:scale-105 transform inline-flex items-center justify-center"
+              >
+                View More
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                </svg>
+              </router-link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Get Started Section -->
-    <section id="get-started" class="py-24 bg-black">
+    <section id="get-started" class="py-24 bg-gray-850">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-4xl font-medium mb-8">Get Started with Vanguard</h2>
         <p class="text-xl mb-12 text-gray-200">Choose your deployment: Cloud-hosted or self-managed</p>
@@ -97,7 +126,7 @@
 </template>
 
 <script setup>
-import {Shield, Database, Clock} from 'lucide-vue-next';
+import {Shield, Database, Clock, Smartphone} from 'lucide-vue-next';
 import HomeFeatureCard from '../components/HomeFeatureCard.vue';
 
 const features = [
@@ -115,6 +144,11 @@ const features = [
     icon: Clock,
     title: 'Automated Scheduling',
     description: 'Set up custom backup schedules to fit your specific needs.'
+  },
+  {
+    icon: Smartphone,
+    title: 'Mobile App',
+    description: 'Manage and monitor your backups on-the-go with our iOS and Android apps.'
   }
 ];
 
@@ -122,7 +156,7 @@ const howItWorks = [
   'Connect Vanguard to your servers securely via SSH.',
   'Configure your backup sources (databases, files) and destinations.',
   'Set up automated backup schedules via a time interval or with cron.',
-  'Monitor your backups through an intuitive dashboard.'
+  'Monitor your backups through an intuitive dashboard or mobile app.'
 ];
 </script>
 

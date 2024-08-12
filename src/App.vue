@@ -12,6 +12,7 @@ const navItems = [
   {name: 'Features', path: '/features'},
   {name: 'About', path: '/about'},
   {name: 'FAQ', path: '/faq'},
+  {name: 'Mobile', path: '/mobile'},
 ];
 
 const toggleMenu = () => {
@@ -156,6 +157,10 @@ onMounted(() => {
               <li>
                 <a href="/faq" @click="(e) => navigateAndScrollTop(e, '/faq')"
                    class="text-gray-400 hover:text-white transition-colors text-sm">FAQ</a>
+              </li>
+              <li>
+                <a href="/mobile" @click="(e) => navigateAndScrollTop(e, '/mobile')"
+                   class="text-gray-400 hover:text-white transition-colors text-sm">Mobile App</a>
               </li>
               <li>
                 <a class="text-gray-400 hover:text-white transition-colors text-sm" target="_blank"

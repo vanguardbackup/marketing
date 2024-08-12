@@ -6,6 +6,7 @@ import Home from './views/Home.vue'
 import Features from './views/Features.vue'
 import About from './views/About.vue'
 import FAQ from './views/FAQ.vue'
+import MobileApp from './views/MobileApp.vue'
 import * as SimpleIcons from 'vue3-simple-icons'
 
 const routes = [
@@ -43,6 +44,15 @@ const routes = [
         meta: {
             title: 'Vanguard FAQ - Common Questions Answered',
             description: 'Find answers to frequently asked questions about Vanguard\'s backup solution, installation process, security measures, and community support.'
+        }
+    },
+    {
+        path: '/mobile',
+        name: 'Mobile App',
+        component: MobileApp,
+        meta: {
+            title: 'Vanguard Mobile',
+            description: 'Vanguard has a mobile application, for checking your backup tasks on the go.'
         }
     },
 ]
