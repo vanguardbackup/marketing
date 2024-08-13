@@ -2,18 +2,12 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import './index.css'
 import App from './App.vue'
-import Home from './views/Home.vue'
-import Features from './views/Features.vue'
-import About from './views/About.vue'
-import FAQ from './views/FAQ.vue'
-import MobileApp from './views/MobileApp.vue'
-import * as SimpleIcons from 'vue3-simple-icons'
 
 const routes = [
     {
         path: '/',
         name: 'Home',
-        component: Home,
+        component: () => import('./views/Home.vue'),
         meta: {
             title: 'Vanguard - Open Source Backup Solution',
             description: 'Vanguard is a powerful, community-driven open-source backup solution for servers and applications. Secure your data with ease and flexibility.'
@@ -22,7 +16,7 @@ const routes = [
     {
         path: '/features',
         name: 'Features',
-        component: Features,
+        component: () => import('./views/Features.vue'),
         meta: {
             title: 'Vanguard Features and Capabilities',
             description: 'Explore Vanguard\'s advanced features including automatic backups, multi-cloud support and encryption.'
@@ -31,7 +25,7 @@ const routes = [
     {
         path: '/about',
         name: 'About',
-        component: About,
+        component: () => import('./views/About.vue'),
         meta: {
             title: 'About Vanguard - Our Mission',
             description: 'Learn about Vanguard\'s mission to provide secure, efficient, and open-source backup solutions.'
@@ -40,7 +34,7 @@ const routes = [
     {
         path: '/faq',
         name: 'FAQ',
-        component: FAQ,
+        component: () => import('./views/FAQ.vue'),
         meta: {
             title: 'Vanguard FAQ - Common Questions Answered',
             description: 'Find answers to frequently asked questions about Vanguard\'s backup solution, installation process, security measures, and community support.'
@@ -49,12 +43,21 @@ const routes = [
     {
         path: '/mobile',
         name: 'Mobile App',
-        component: MobileApp,
+        component: () => import('./views/MobileApp.vue'),
         meta: {
             title: 'Vanguard Mobile',
             description: 'Vanguard has a mobile application, for checking your backup tasks on the go.'
         }
     },
+    {
+        path: '/:pathMatch(.*)*',
+        name: 'NotFound',
+        component: () => import('./views/NotFound.vue'),
+        meta: {
+            title: '404 Not Found - Vanguard',
+            description: 'The page you are looking for does not exist.'
+        }
+    }
 ]
 
 const router = createRouter({
@@ -81,5 +84,18 @@ router.beforeEach((to, from, next) => {
 const app = createApp(App)
 app.use(router)
 app.mount('#app')
+
+// Register service worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+            .then(registration => {
+                console.log('Service Worker registered: ', registration);
+            })
+            .catch(registrationError => {
+                console.log('Service Worker registration failed: ', registrationError);
+            });
+    });
+}
 
 export default router

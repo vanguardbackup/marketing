@@ -2,6 +2,7 @@
 import {ref, onMounted, computed} from 'vue';
 import {useRouter} from 'vue-router';
 import Logo from "./components/Logo.vue";
+import LoadingIndicator from "./components/LoadingIndicator.vue";
 
 const isMenuOpen = ref(false);
 const router = useRouter();
@@ -53,6 +54,7 @@ onMounted(() => {
 
 <template>
   <div class="flex flex-col min-h-screen bg-black text-white">
+    <LoadingIndicator />
     <!-- Header -->
     <header
         class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-95 backdrop-filter backdrop-blur-sm border-b border-gray-800 shadow-lg">

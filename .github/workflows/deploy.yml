@@ -29,8 +29,8 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
-      - name: Copy redirects
-        run: cp public/_redirects dist/_redirects
+      - name: Create 404 page
+        run: cp dist/index.html dist/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
