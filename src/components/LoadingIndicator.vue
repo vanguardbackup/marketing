@@ -23,8 +23,8 @@ export default {
     })
 
     return {
-      isLoading
+      isLoading,
     }
-  }
+  },
 }
 </script>

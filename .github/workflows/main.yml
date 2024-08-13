@@ -1,0 +1,34 @@
+name: Main Pipeline
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+
+jobs:
+  format:
+    uses: ./.github/workflows/format.yml
+
+  test:
+    needs: format
+    uses: ./.github/workflows/test.yml
+
+  deploy:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    needs: test
+    uses: ./.github/workflows/deploy.yml
+
+  notify:
+    needs: [format, test, deploy]
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: Notify success
+        if: ${{ success() }}
+        run: echo "Pipeline completed successfully!"
+
+      - name: Notify failure
+        if: ${{ failure() }}
+        run: echo "Pipeline failed. Please check the logs for details."
