@@ -19,18 +19,40 @@
             <ul class="space-y-4">
               <li>
                 <h3 class="text-xl font-medium mb-2">General Enquiries</h3>
-                <a href="mailto:hello@vanguardbackup.com" class="text-white hover:text-gray-300 transition-colors underline">hello@vanguardbackup.com</a>
+                <a
+                  href="mailto:hello@vanguardbackup.com"
+                  class="text-white hover:text-gray-300 transition-colors underline"
+                  >hello@vanguardbackup.com</a
+                >
               </li>
               <li>
-                <h3 class="text-xl font-medium mb-2">Support for Serious Issues</h3>
-                <a href="mailto:support@vanguardbackup.com" class="text-white hover:text-gray-300 transition-colors underline">support@vanguardbackup.com</a>
+                <h3 class="text-xl font-medium mb-2">
+                  Support for Serious Issues
+                </h3>
+                <a
+                  href="mailto:support@vanguardbackup.com"
+                  class="text-white hover:text-gray-300 transition-colors underline"
+                  >support@vanguardbackup.com</a
+                >
               </li>
               <li>
-                <h3 class="text-xl font-medium mb-2">Security Vulnerabilities</h3>
-                <a href="mailto:security@vanguardbackup.com" class="text-white hover:text-gray-300 transition-colors underline">security@vanguardbackup.com</a>
+                <h3 class="text-xl font-medium mb-2">
+                  Security Vulnerabilities
+                </h3>
+                <a
+                  href="mailto:security@vanguardbackup.com"
+                  class="text-white hover:text-gray-300 transition-colors underline"
+                  >security@vanguardbackup.com</a
+                >
                 <p class="text-gray-400 mt-2">
                   For general details about security disclosure, please view our
-                  <a href="https://github.com/vanguardbackup/vanguard/blob/main/SECURITY.md" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 transition-colors underline">Security Policy</a>.
+                  <a
+                    href="https://github.com/vanguardbackup/vanguard/blob/main/SECURITY.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-white hover:text-gray-300 transition-colors underline"
+                    >Security Policy</a
+                  >.
                 </p>
               </li>
             </ul>
@@ -39,8 +61,15 @@
           <div>
             <h2 class="text-2xl font-semibold mb-4">Project Maintainers</h2>
             <p class="text-gray-300">
-              You can find a list of maintainers of the Vanguard project by visiting our
-              <a href="https://github.com/orgs/vanguardbackup/people" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 transition-colors underline">GitHub organization page</a>.
+              You can find a list of maintainers of the Vanguard project by
+              visiting our
+              <a
+                href="https://github.com/orgs/vanguardbackup/people"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-white hover:text-gray-300 transition-colors underline"
+                >GitHub organization page</a
+              >.
             </p>
           </div>
 
@@ -48,8 +77,14 @@
             <h2 class="text-2xl font-semibold mb-4">Community Support</h2>
             <p class="text-gray-300">
               For general help and discussions, we recommend using our
-              <a href="https://github.com/vanguardbackup/vanguard/discussions" target="_blank" rel="noopener noreferrer" class="text-white hover:text-gray-300 transition-colors underline">GitHub Discussions page</a>.
-              This is the best place to get help from the community and the maintainers.
+              <a
+                href="https://github.com/vanguardbackup/vanguard/discussions"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-white hover:text-gray-300 transition-colors underline"
+                >GitHub Discussions page</a
+              >. This is the best place to get help from the community and the
+              maintainers.
             </p>
           </div>
         </div>

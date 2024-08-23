@@ -60,7 +60,8 @@ const routes = [
     component: () => import('./views/PrivacyPolicy.vue'),
     meta: {
       title: 'Privacy Policy',
-      description: 'Learn about how Vanguard collects, uses, and protects your personal information when you use our backup services.',
+      description:
+        'Learn about how Vanguard collects, uses, and protects your personal information when you use our backup services.',
     },
   },
   {
@@ -69,7 +70,8 @@ const routes = [
     component: () => import('./views/TermsOfService.vue'),
     meta: {
       title: 'Terms of Service',
-      description: 'The Terms of Service for the Vanguard project, outlining the rules and conditions for using our backup services.',
+      description:
+        'The Terms of Service for the Vanguard project, outlining the rules and conditions for using our backup services.',
     },
   },
   {
@@ -78,7 +80,8 @@ const routes = [
     component: () => import('./views/Contact.vue'),
     meta: {
       title: 'Contact',
-      description: 'The methods to get in touch with the maintainers of the project.',
+      description:
+        'The methods to get in touch with the maintainers of the project.',
     },
   },
   {
