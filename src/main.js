@@ -60,7 +60,25 @@ const routes = [
     component: () => import('./views/PrivacyPolicy.vue'),
     meta: {
       title: 'Privacy Policy',
-      description: 'The privacy policy for the Vanguard project.',
+      description: 'Learn about how Vanguard collects, uses, and protects your personal information when you use our backup services.',
+    },
+  },
+  {
+    path: '/terms-of-service',
+    name: 'Terms of Service',
+    component: () => import('./views/TermsOfService.vue'),
+    meta: {
+      title: 'Terms of Service',
+      description: 'The Terms of Service for the Vanguard project, outlining the rules and conditions for using our backup services.',
+    },
+  },
+  {
+    path: '/contact',
+    name: 'Contact',
+    component: () => import('./views/Contact.vue'),
+    meta: {
+      title: 'Contact',
+      description: 'The methods to get in touch with the maintainers of the project.',
     },
   },
   {
