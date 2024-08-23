@@ -3,7 +3,7 @@ import { ref, onMounted, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import Logo from './components/Logo.vue'
 import LoadingIndicator from './components/LoadingIndicator.vue'
-import CookieNotice from "@/components/CookieNotice.vue";
+import CookieNotice from '@/components/CookieNotice.vue'
 
 const isMenuOpen = ref(false)
 const router = useRouter()

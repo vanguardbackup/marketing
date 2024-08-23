@@ -60,8 +60,7 @@ const routes = [
     component: () => import('./views/PrivacyPolicy.vue'),
     meta: {
       title: 'Privacy Policy',
-      description:
-          'The privacy policy for the Vanguard project.',
+      description: 'The privacy policy for the Vanguard project.',
     },
   },
   {
