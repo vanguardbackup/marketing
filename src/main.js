@@ -55,6 +55,16 @@ const routes = [
     },
   },
   {
+    path: '/privacy-policy',
+    name: 'Privacy Policy',
+    component: () => import('./views/PrivacyPolicy.vue'),
+    meta: {
+      title: 'Privacy Policy',
+      description:
+          'The privacy policy for the Vanguard project.',
+    },
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('./views/NotFound.vue'),
