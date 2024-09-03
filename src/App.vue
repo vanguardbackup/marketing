@@ -310,6 +310,14 @@ onMounted(() => {
                   >Installation Guide</a
                 >
               </li>
+              <li>
+                <a
+                    href="https://psp.vanguardbackup.com"
+                    target="_blank"
+                    class="text-gray-400 hover:text-white transition-colors text-sm"
+                >Paid Support</a
+                >
+              </li>
             </ul>
           </div>
         </div>

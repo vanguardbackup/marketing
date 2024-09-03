@@ -525,6 +525,7 @@ import {
   AmazonWebServicesIcon,
   UbuntuIcon,
   DebianIcon,
+  TelegramIcon,
 } from 'vue3-simple-icons'
 import forge from '../components/icons/forge.vue'
 import ploi from '../components/icons/ploi.vue'
@@ -629,6 +630,7 @@ const notificationTypes = [
   { icon: DiscordIcon, name: 'Discord Webooks', color: 'text-[#5865F2]' },
   { icon: teams, name: 'Microsoft Teams Webooks', color: 'text-[#828aed]' },
   { icon: pushover, name: 'Pushover', color: 'text-[#828aed]' },
+  { icon: TelegramIcon, name: 'Telegram', color: 'text-[#24A1DE]' },
 ]
 
 const languageFeatures = ref([
