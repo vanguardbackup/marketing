@@ -14,7 +14,6 @@ const navItems = [
   { name: 'Features', path: '/features' },
   { name: 'About', path: '/about' },
   { name: 'FAQ', path: '/faq' },
-  { name: 'Mobile', path: '/mobile' },
 ]
 
 const toggleMenu = () => {
