@@ -5,7 +5,6 @@ import Home from '../src/views/Home.vue'
 import Features from '../src/views/Features.vue'
 import About from '../src/views/About.vue'
 import FAQ from '../src/views/FAQ.vue'
-import MobileApp from '../src/views/MobileApp.vue'
 import NotFound from '../src/views/NotFound.vue'
 
 const router = createRouter({
@@ -15,7 +14,6 @@ const router = createRouter({
         { path: '/features', component: Features, name: 'Features' },
         { path: '/about', component: About, name: 'About' },
         { path: '/faq', component: FAQ, name: 'FAQ' },
-        { path: '/mobile', component: MobileApp, name: 'Mobile App' },
         { path: '/:pathMatch(.*)*', component: NotFound, name: 'NotFound' }
     ]
 })
@@ -74,17 +72,6 @@ describe('Smoke Tests', () => {
         expect(wrapper.vm).toBeTruthy()
     })
 
-    test('Mobile App page renders without crashing', async () => {
-        router.push('/mobile')
-        await router.isReady()
-        const wrapper = mount(MobileApp, {
-            global: {
-                plugins: [router]
-            }
-        })
-        expect(wrapper.vm).toBeTruthy()
-    })
-
     test('NotFound page renders without crashing', async () => {
         router.push('/non-existent-page')
         await router.isReady()
@@ -122,11 +109,6 @@ describe('Smoke Tests', () => {
         await router.push('/faq')
         await wrapper.vm.$nextTick()
         expect(wrapper.findComponent(FAQ).exists()).toBe(true)
-
-        // Navigate to Mobile App
-        await router.push('/mobile')
-        await wrapper.vm.$nextTick()
-        expect(wrapper.findComponent(MobileApp).exists()).toBe(true)
 
         // Navigate to non-existent page
         await router.push('/non-existent-page')
