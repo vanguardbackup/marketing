@@ -45,16 +45,6 @@ const routes = [
     },
   },
   {
-    path: '/mobile',
-    name: 'Mobile App',
-    component: () => import('./views/MobileApp.vue'),
-    meta: {
-      title: 'Vanguard Mobile',
-      description:
-        'Vanguard has a mobile application, for checking your backup tasks on the go.',
-    },
-  },
-  {
     path: '/privacy-policy',
     name: 'Privacy Policy',
     component: () => import('./views/PrivacyPolicy.vue'),

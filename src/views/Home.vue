@@ -10,8 +10,7 @@
         </h1>
         <p class="text-xl text-gray-200 mb-8">
           A community-driven open-source backup solution for servers and
-          applications. MySQL, PostgreSQL, and file backups made simple. Now
-          with a mobile app for on-the-go management!
+          applications. MySQL, PostgreSQL, and file backups made simple.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
           <a

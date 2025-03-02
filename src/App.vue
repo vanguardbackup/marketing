@@ -234,14 +234,6 @@ onMounted(() => {
               </li>
               <li>
                 <a
-                  href="/mobile"
-                  @click="(e) => navigateAndScrollTop(e, '/mobile')"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Mobile App</a
-                >
-              </li>
-              <li>
-                <a
                   href="/contact"
                   @click="(e) => navigateAndScrollTop(e, '/contact')"
                   class="text-gray-400 hover:text-white transition-colors text-sm"
