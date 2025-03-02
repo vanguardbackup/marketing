@@ -11,9 +11,6 @@ const route = useRouter()
 
 const navItems = [
   { name: 'Home', path: '/' },
-  { name: 'Features', path: '/features' },
-  { name: 'About', path: '/about' },
-  { name: 'FAQ', path: '/faq' },
 ]
 
 const toggleMenu = () => {
@@ -44,12 +41,6 @@ const navigateToGettingStarted = (event) => {
     }, 100) // Small delay to ensure the DOM has updated
   })
 }
-
-onMounted(() => {
-  router.afterEach(() => {
-    window.scrollTo(0, 0)
-  })
-})
 </script>
 
 <template>
@@ -208,38 +199,6 @@ onMounted(() => {
           <div>
             <h4 class="text-lg font-medium mb-6 text-white">Quick Links</h4>
             <ul class="space-y-4">
-              <li>
-                <a
-                  href="/features"
-                  @click="(e) => navigateAndScrollTop(e, '/features')"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Features</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/about"
-                  @click="(e) => navigateAndScrollTop(e, '/about')"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/faq"
-                  @click="(e) => navigateAndScrollTop(e, '/faq')"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >FAQ</a
-                >
-              </li>
-              <li>
-                <a
-                  href="/contact"
-                  @click="(e) => navigateAndScrollTop(e, '/contact')"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Contact</a
-                >
-              </li>
               <li>
                 <a
                   href="/terms-of-service"

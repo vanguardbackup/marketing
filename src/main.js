@@ -15,36 +15,6 @@ const routes = [
     },
   },
   {
-    path: '/features',
-    name: 'Features',
-    component: () => import('./views/Features.vue'),
-    meta: {
-      title: 'Vanguard Features and Capabilities',
-      description:
-        "Explore Vanguard's advanced features including automatic backups, multi-cloud support and encryption.",
-    },
-  },
-  {
-    path: '/about',
-    name: 'About',
-    component: () => import('./views/About.vue'),
-    meta: {
-      title: 'About Vanguard - Our Mission',
-      description:
-        "Learn about Vanguard's mission to provide secure, efficient, and open-source backup solutions.",
-    },
-  },
-  {
-    path: '/faq',
-    name: 'FAQ',
-    component: () => import('./views/FAQ.vue'),
-    meta: {
-      title: 'Vanguard FAQ - Common Questions Answered',
-      description:
-        "Find answers to frequently asked questions about Vanguard's backup solution, installation process, security measures, and community support.",
-    },
-  },
-  {
     path: '/privacy-policy',
     name: 'Privacy Policy',
     component: () => import('./views/PrivacyPolicy.vue'),
@@ -62,16 +32,6 @@ const routes = [
       title: 'Terms of Service',
       description:
         'The Terms of Service for the Vanguard project, outlining the rules and conditions for using our backup services.',
-    },
-  },
-  {
-    path: '/contact',
-    name: 'Contact',
-    component: () => import('./views/Contact.vue'),
-    meta: {
-      title: 'Contact',
-      description:
-        'The methods to get in touch with the maintainers of the project.',
     },
   },
   {
@@ -105,7 +65,7 @@ router.beforeEach((to, from, next) => {
   metaDescription.setAttribute(
     'content',
     to.meta.description ||
-      'Vanguard: Secure, efficient, and open-source backup solution for your servers and applications.'
+    'Vanguard: Secure, efficient, and open-source backup solution for your servers and applications.'
   )
 
   next()
@@ -114,19 +74,5 @@ router.beforeEach((to, from, next) => {
 const app = createApp(App)
 app.use(router)
 app.mount('#app')
-
-// Register service worker
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker
-      .register('/service-worker.js')
-      .then((registration) => {
-        console.log('Service Worker registered: ', registration)
-      })
-      .catch((registrationError) => {
-        console.log('Service Worker registration failed: ', registrationError)
-      })
-  })
-}
 
 export default router
