@@ -9,7 +9,11 @@ const isMenuOpen = ref(false)
 const router = useRouter()
 const route = useRouter()
 
-const navItems = [{ name: 'Home', path: '/' }]
+const navItems = [
+  { name: 'Home', path: '/' },
+  { name: 'Features', path: '/#features' },
+  { name: 'FAQ', path: '/#faq' }
+]
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value
@@ -28,13 +32,13 @@ const navigateAndScrollTop = (event, route) => {
   })
 }
 
-const navigateToGettingStarted = (event) => {
+const navigateToSection = (event, sectionId) => {
   event.preventDefault()
   router.push('/').then(() => {
     setTimeout(() => {
-      const gettingStartedSection = document.getElementById('get-started')
-      if (gettingStartedSection) {
-        gettingStartedSection.scrollIntoView({ behavior: 'smooth' })
+      const section = document.getElementById(sectionId)
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth' })
       }
     }, 100) // Small delay to ensure the DOM has updated
   })
@@ -42,27 +46,30 @@ const navigateToGettingStarted = (event) => {
 </script>
 
 <template>
-  <div class="flex flex-col min-h-screen bg-black text-white">
+  <div class="flex flex-col min-h-screen bg-white text-black">
     <LoadingIndicator />
+
     <!-- Header -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-95 backdrop-filter backdrop-blur-sm border-b border-gray-800 shadow-lg"
+      class="fixed top-0 left-0 right-0 z-50 bg-white bg-opacity-95 backdrop-filter backdrop-blur-sm border-b border-gray-100"
     >
-      <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center py-4">
+      <nav class="max-w-7xl mx-auto px-6">
+        <div class="flex justify-between items-center h-16">
           <a
             href="/"
-            class="h-auto w-36 transform transition-all duration-300 hover:scale-105"
+            class="h-auto w-32 transition-all duration-300 hover:opacity-80"
           >
             <Logo />
           </a>
-          <div class="hidden md:flex space-x-6">
+
+          <!-- Desktop Navigation -->
+          <div class="hidden md:flex items-center space-x-8">
             <router-link
               v-for="item in navItems"
               :key="item.path"
               :to="item.path"
-              class="text-sm font-medium uppercase tracking-wider hover:text-gray-400 transition-colors"
-              :class="{ 'text-blue-400': isActive(item.path) }"
+              class="text-sm font-medium hover:text-gray-600 transition-colors"
+              :class="{ 'text-black font-bold border-b-2 border-black pb-1': isActive(item.path) }"
             >
               {{ item.name }}
             </router-link>
@@ -70,21 +77,24 @@ const navigateToGettingStarted = (event) => {
               href="https://docs.vanguardbackup.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="text-sm font-medium uppercase tracking-wider hover:text-gray-400 transition-colors"
+              class="text-sm font-medium hover:text-gray-600 transition-colors"
             >
               Docs
             </a>
+            <a
+              href="#get-started"
+              @click="(e) => navigateToSection(e, 'get-started')"
+              class="ml-4 px-5 py-2 bg-black text-white rounded-md text-sm font-medium hover:bg-gray-800 transition-all"
+            >
+              Get Started
+            </a>
           </div>
-          <a
-            href="#getting-started"
-            @click="navigateToGettingStarted"
-            class="hidden md:inline-block px-6 py-2 bg-white text-gray-900 rounded-full text-sm font-medium uppercase tracking-wider hover:bg-gray-200 transition-all shadow-md"
-          >
-            Get Started
-          </a>
+
+          <!-- Mobile Menu Button -->
           <button
             @click="toggleMenu"
-            class="md:hidden text-white focus:outline-none"
+            class="md:hidden text-black focus:outline-none"
+            aria-label="Toggle menu"
           >
             <svg
               class="h-6 w-6"
@@ -96,40 +106,41 @@ const navigateToGettingStarted = (event) => {
                 v-if="!isMenuOpen"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                stroke-width="2"
+                stroke-width="1.5"
                 d="M4 6h16M4 12h16M4 18h16"
               ></path>
               <path
                 v-else
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                stroke-width="2"
+                stroke-width="1.5"
                 d="M6 18L18 6M6 6l12 12"
               ></path>
             </svg>
           </button>
         </div>
       </nav>
+
       <!-- Mobile menu -->
       <transition
         enter-active-class="transition ease-out duration-200"
-        enter-from-class="opacity-0 scale-95"
-        enter-to-class="opacity-100 scale-100"
+        enter-from-class="opacity-0 -translate-y-2"
+        enter-to-class="opacity-100 translate-y-0"
         leave-active-class="transition ease-in duration-150"
-        leave-from-class="opacity-100 scale-100"
-        leave-to-class="opacity-0 scale-95"
+        leave-from-class="opacity-100 translate-y-0"
+        leave-to-class="opacity-0 -translate-y-2"
       >
         <div
           v-show="isMenuOpen"
-          class="md:hidden absolute top-full left-0 right-0 bg-black bg-opacity-95 backdrop-filter backdrop-blur-sm"
+          class="md:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100"
         >
-          <div class="px-2 pt-2 pb-3 space-y-1">
+          <div class="px-6 py-4 space-y-3">
             <router-link
               v-for="item in navItems"
               :key="item.path"
               :to="item.path"
-              class="block px-3 py-2 text-base font-medium hover:bg-gray-900 rounded-md"
-              :class="{ 'bg-gray-900': isActive(item.path) }"
+              class="block py-2 text-sm font-medium hover:text-gray-600"
+              :class="{ 'text-black font-bold': isActive(item.path) }"
               @click="closeMenu"
             >
               {{ item.name }}
@@ -138,16 +149,16 @@ const navigateToGettingStarted = (event) => {
               href="https://docs.vanguardbackup.com"
               target="_blank"
               rel="noopener noreferrer"
-              class="block px-3 py-2 text-base font-medium hover:bg-gray-900 rounded-md"
+              class="block py-2 text-sm font-medium hover:text-gray-600"
             >
               Docs
             </a>
             <a
-              href="#getting-started"
-              @click="navigateToGettingStarted"
-              class="block px-3 py-2 text-base font-medium bg-blue-600 text-white rounded-md hover:bg-blue-700"
+              href="#get-started"
+              @click="(e) => navigateToSection(e, 'get-started')"
+              class="block py-2 text-sm font-medium text-black hover:text-gray-600"
             >
-              Get Started
+              Get Started →
             </a>
           </div>
         </div>
@@ -155,35 +166,34 @@ const navigateToGettingStarted = (event) => {
     </header>
 
     <!-- Router View -->
-    <main class="flex-grow relative z-10">
+    <main class="flex-grow relative z-10 pt-16">
       <RouterView />
     </main>
 
     <!-- Footer -->
-    <footer class="relative z-10 bg-gray-900">
-      <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-          <div class="md:col-span-2">
-            <Logo class="h-auto w-48 mb-6" />
-            <p
-              class="text-gray-400 max-w-md text-sm leading-relaxed font-normal"
-            >
-              Vanguard is a community-driven open-source backup solution for
-              servers and applications, providing robust and secure data
-              protection for businesses of all sizes.
+    <footer class="relative z-10 bg-white border-t border-gray-100">
+      <div class="max-w-7xl mx-auto py-12 px-6">
+        <!-- Top Footer Section -->
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10">
+          <!-- Logo & Description -->
+          <div class="md:col-span-5">
+            <Logo class="h-auto w-36 mb-4" />
+            <p class="text-gray-500 text-sm leading-relaxed max-w-md">
+              A community-driven open-source backup solution for servers and applications,
+              providing robust and secure data protection.
             </p>
-            <div class="mt-6 flex space-x-6">
+            <!-- Social Links -->
+            <div class="mt-6 flex space-x-4">
               <a
                 href="https://github.com/vanguardbackup"
                 target="_blank"
-                class="text-gray-400 hover:text-white"
+                aria-label="GitHub"
+                class="inline-block text-gray-500 hover:text-black transition-colors"
               >
-                <span class="sr-only">GitHub</span>
                 <svg
                   class="h-6 w-6"
                   fill="currentColor"
                   viewBox="0 0 24 24"
-                  aria-hidden="true"
                 >
                   <path
                     fill-rule="evenodd"
@@ -194,94 +204,120 @@ const navigateToGettingStarted = (event) => {
               </a>
             </div>
           </div>
-          <div>
-            <h4 class="text-lg font-medium mb-6 text-white">Quick Links</h4>
-            <ul class="space-y-4">
+
+          <!-- Quick Links -->
+          <div class="md:col-span-3 md:col-start-7">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-gray-800 mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a
+                  href="#features"
+                  @click="(e) => navigateToSection(e, 'features')"
+                  class="text-gray-500 hover:text-black transition-colors text-sm"
+                >
+                  Features
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#get-started"
+                  @click="(e) => navigateToSection(e, 'get-started')"
+                  class="text-gray-500 hover:text-black transition-colors text-sm"
+                >
+                  Get Started
+                </a>
+              </li>
               <li>
                 <a
                   href="/terms-of-service"
                   @click="(e) => navigateAndScrollTop(e, '/terms-of-service')"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Terms of Service</a
+                  class="text-gray-500 hover:text-black transition-colors text-sm"
                 >
+                  Terms of Service
+                </a>
               </li>
               <li>
                 <a
                   href="/privacy-policy"
                   @click="(e) => navigateAndScrollTop(e, '/privacy-policy')"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Privacy Policy</a
+                  class="text-gray-500 hover:text-black transition-colors text-sm"
                 >
+                  Privacy Policy
+                </a>
               </li>
             </ul>
           </div>
-          <div>
-            <h4 class="text-lg font-medium mb-6 text-white">Resources</h4>
-            <ul class="space-y-4">
-              <li>
-                <a
-                  href="https://github.com/vanguardbackup/vanguard"
-                  target="_blank"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Project Repo</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://docs.vanguardbackup.com"
-                  target="_blank"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Documentation</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/vanguardbackup/vanguard/discussions"
-                  target="_blank"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Discussions</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/vanguardbackup/vanguard/issues/new/choose"
-                  target="_blank"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Create an Issue</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://docs.vanguardbackup.com/installation"
-                  target="_blank"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Installation Guide</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://psp.vanguardbackup.com"
-                  target="_blank"
-                  class="text-gray-400 hover:text-white transition-colors text-sm"
-                  >Paid Support</a
-                >
-              </li>
-            </ul>
+
+          <!-- Resources -->
+          <div class="md:col-span-4">
+            <h4 class="text-sm font-bold uppercase tracking-wider text-gray-800 mb-4">Resources</h4>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+              <a
+                href="https://github.com/vanguardbackup/vanguard"
+                target="_blank"
+                class="text-gray-500 hover:text-black transition-colors text-sm"
+              >
+                Project Repo
+              </a>
+              <a
+                href="https://docs.vanguardbackup.com"
+                target="_blank"
+                class="text-gray-500 hover:text-black transition-colors text-sm"
+              >
+                Documentation
+              </a>
+              <a
+                href="https://github.com/vanguardbackup/vanguard/discussions"
+                target="_blank"
+                class="text-gray-500 hover:text-black transition-colors text-sm"
+              >
+                Discussions
+              </a>
+              <a
+                href="https://github.com/vanguardbackup/vanguard/issues/new/choose"
+                target="_blank"
+                class="text-gray-500 hover:text-black transition-colors text-sm"
+              >
+                Create an Issue
+              </a>
+              <a
+                href="https://docs.vanguardbackup.com/installation"
+                target="_blank"
+                class="text-gray-500 hover:text-black transition-colors text-sm"
+              >
+                Installation Guide
+              </a>
+              <a
+                href="https://psp.vanguardbackup.com"
+                target="_blank"
+                class="text-gray-500 hover:text-black transition-colors text-sm"
+              >
+                Paid Support
+              </a>
+            </div>
           </div>
         </div>
-        <div
-          class="mt-12 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center"
-        >
+
+        <!-- Horizontal Divider -->
+        <div class="h-px w-full bg-gray-100 mb-6"></div>
+
+        <!-- Bottom Footer -->
+        <div class="flex flex-col md:flex-row justify-between items-center">
           <p class="text-gray-400 text-sm">
-            © {{ new Date().getFullYear() }} Vanguard.
+            © {{ new Date().getFullYear() }} Vanguard
           </p>
-          <p class="text-gray-400 text-sm mt-4 md:mt-0 font-normal">
-            Vanguard is an open-source project licensed under AGPL 3.0.
+          <p class="text-gray-400 text-sm mt-2 md:mt-0">
+            Open-source project licensed under AGPL 3.0
           </p>
         </div>
       </div>
     </footer>
+
     <!-- Cookie Notice -->
     <CookieNotice />
   </div>
 </template>
+
+<style scoped>
+/* Clean design with no additional patterns */
+</style>

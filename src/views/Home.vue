@@ -1,254 +1,258 @@
 <template>
-  <main class="bg-black text-white font-sans">
+  <main class="font-sans">
     <!-- Hero Section -->
-    <section
-      class="min-h-screen flex flex-col items-center justify-center bg-black text-center p-8 md:p-16"
-    >
-      <div class="max-w-2xl mx-auto">
-        <h1 class="text-4xl md:text-6xl font-medium text-white mb-6">
-          Secure Your Data with Vanguard
-        </h1>
-        <p class="text-xl text-gray-200 mb-8">
-          A community-driven open-source backup solution for servers and
-          applications. MySQL, PostgreSQL, and file backups made simple.
-        </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4 mb-8">
-          <a
-            href="#get-started"
-            class="bg-white text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-gray-200 hover:scale-105 transform inline-flex items-center justify-center"
-          >
-            Get Started
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 ml-2"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://github.com/vanguardbackup/vanguard"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="border border-white text-white font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-white hover:text-black hover:scale-105 transform inline-flex items-center justify-center"
-          >
-            View on GitHub
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 ml-2"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
-              />
-            </svg>
-          </a>
+    <section class="relative bg-white py-24 md:py-32">
+      <div class="absolute top-0 right-0 w-1/3 h-full bg-black z-0 hidden lg:block"></div>
+      <div class="container mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h1 class="text-5xl md:text-6xl font-bold text-black mb-6 leading-tight">
+              Reliable <span class="inline-block relative">Backups<span class="absolute -bottom-2 left-0 w-full h-1 bg-black"></span></span> for Developers
+            </h1>
+            <p class="text-xl text-gray-700 mb-10">
+              A community-driven open-source backup solution built specifically for servers and applications. MySQL, PostgreSQL, and file backups done right.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#get-started"
+                class="bg-black text-white font-medium py-4 px-8 rounded-md transition-colors duration-300 hover:bg-gray-800 inline-flex items-center"
+              >
+                Get Started
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 ml-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a
+                href="https://github.com/vanguardbackup/vanguard"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="border-2 border-black text-black font-medium py-4 px-8 rounded-md transition-colors duration-300 hover:bg-black hover:text-white inline-flex items-center"
+              >
+                View on GitHub
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 ml-2"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="flex justify-center lg:justify-end">
+            <div class="relative">
+              <div class="absolute -top-8 -left-8 w-64 h-64 bg-gray-100 rounded-lg"></div>
+              <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-black rounded-lg"></div>
+              <div class="relative z-10 bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+                <Shield class="w-16 h-16 mb-4 text-black" />
+                <h3 class="text-xl font-semibold mb-2">Built for Security</h3>
+                <p class="text-gray-600">Strong encryption protocols and secure connections ensure your data is protected throughout the backup process.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- Features Section -->
-    <section class="py-24 bg-black">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-medium mb-16 text-center">Key Features</h2>
-        <div class="grid md:grid-cols-3 gap-12">
+    <section class="py-24 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">FEATURES</span>
+          <h2 class="text-4xl font-bold mb-6">Built for Developers</h2>
+          <p class="text-xl text-gray-600">Everything you need for reliable server backups without the complexity.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
           <div
             v-for="feature in features"
             :key="feature.title"
-            class="p-6 bg-gray-900 rounded-lg transition-all duration-300 hover:transform hover:scale-105 hover:shadow-xl"
+            class="bg-white p-8 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300"
           >
-            <component :is="feature.icon" class="w-12 h-12 mb-4 text-white" />
-            <h3 class="text-xl font-semibold mb-2">{{ feature.title }}</h3>
-            <p class="text-gray-400">{{ feature.description }}</p>
+            <component :is="feature.icon" class="w-12 h-12 mb-6 text-black" />
+            <h3 class="text-xl font-semibold mb-3">{{ feature.title }}</h3>
+            <p class="text-gray-600">{{ feature.description }}</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Security Section -->
-    <section class="py-24 border-b border-gray-800">
-      <div class="container mx-auto px-4">
-        <div class="flex flex-col lg:flex-row items-center">
-          <div class="lg:w-1/2 mb-12 lg:mb-0">
-            <div class="relative w-64 h-64 mx-auto">
-              <div
-                class="absolute inset-0 border-2 border-white rounded-full animate-pulse"
-              ></div>
-              <Shield
-                class="w-32 h-32 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white"
-              />
-            </div>
-          </div>
-          <div class="lg:w-1/2 lg:pl-12">
-            <h2 class="text-4xl font-medium mb-6">Impenetrable Security</h2>
-            <p class="text-gray-400 mb-8 text-lg">
-              Vanguard employs state-of-the-art security measures to ensure your
-              data remains inviolable.
-            </p>
-            <ul class="space-y-4">
-              <li
-                v-for="point in securityPoints"
-                :key="point"
-                class="flex items-center"
-              >
-                <svg
-                  class="w-6 h-6 mr-2 text-green-500"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M5 13l4 4L19 7"
-                  ></path>
-                </svg>
-                <span>{{ point }}</span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="py-24 bg-gray-900">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-medium mb-16 text-center">How It Works</h2>
-        <div class="flex flex-col md:flex-row items-center justify-between">
-          <div class="md:w-1/2 mb-12 md:mb-0">
-            <img
-              src="/dashboard.png"
-              alt="Vanguard Dashboard"
-              class="rounded-lg shadow-xl"
-            />
-          </div>
-          <div class="md:w-1/2 md:pl-12">
-            <ol class="space-y-8">
-              <li
-                v-for="(step, index) in howItWorks"
-                :key="index"
-                class="flex items-center"
-              >
-                <span
-                  class="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center mr-4 font-bold"
-                  >{{ index + 1 }}</span
-                >
-                <span class="text-gray-300">{{ step }}</span>
-              </li>
-            </ol>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ Section Preview -->
-    <section class="py-24 bg-black">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-medium mb-8 text-center">
-          Frequently Asked Questions
-        </h2>
-        <p class="text-xl mb-16 text-gray-200 text-center">
-          Get answers to the most common questions about Vanguard
-        </p>
-
-        <div class="max-w-3xl mx-auto space-y-6">
+    <!-- Security Banner -->
+    <section class="py-16 bg-black text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6">Security-First Design</h2>
+        <div class="max-w-4xl mx-auto grid md:grid-cols-4 gap-8">
           <div
-            v-for="(item, index) in faqPreview"
-            :key="index"
-            class="border border-gray-800"
+            v-for="point in securityPoints"
+            :key="point"
+            class="flex flex-col items-center p-4"
           >
-            <button
-              @click="toggleQuestion(index)"
-              class="w-full px-6 py-4 text-left focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 transition-colors duration-200"
-              :class="{ 'bg-white text-black': activeQuestion === index }"
-            >
-              <div class="flex items-center justify-between">
-                <span class="text-lg font-medium">{{ item.question }}</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-5 w-5 transform transition-transform duration-200"
-                  :class="{ 'rotate-180': activeQuestion === index }"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M19 9l-7 7-7-7"
-                  />
-                </svg>
-              </div>
-            </button>
-            <div
-              v-show="activeQuestion === index"
-              class="px-6 py-4 bg-gray-900"
-            >
-              <p class="text-gray-300" v-html="item.answer"></p>
-            </div>
-          </div>
-        </div>
-
-        <div class="mt-12 text-center">
-          <router-link
-            to="/faq"
-            class="bg-white text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-gray-200 transform inline-flex items-center justify-center"
-          >
-            View All FAQs
             <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 ml-2"
+              class="w-8 h-8 mb-4 text-green-400"
               fill="none"
-              viewBox="0 0 24 24"
               stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 stroke-width="2"
-                d="M14 5l7 7m0 0l-7 7m7-7H3"
-              />
+                d="M5 13l4 4L19 7"
+              ></path>
             </svg>
-          </router-link>
+            <span class="text-center">{{ point }}</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section - Timeline Layout -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">HOW IT WORKS</span>
+          <h2 class="text-4xl font-bold mb-6">Simple & Effective Process</h2>
+          <p class="text-xl text-gray-600">Follow these steps to get your backups running smoothly</p>
+        </div>
+
+        <div class="max-w-4xl mx-auto relative">
+          <!-- Vertical line for timeline -->
+          <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gray-300 transform md:translate-x-px hidden md:block"></div>
+
+          <div class="space-y-12">
+            <!-- Timeline items -->
+            <div
+              v-for="(step, index) in howItWorks"
+              :key="index"
+              class="relative flex flex-col md:flex-row items-center md:items-start"
+              :class="index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'"
+            >
+              <!-- Step number -->
+              <div class="absolute md:static left-0 top-0 flex w-8 h-8 md:w-12 md:h-12 rounded-full bg-black text-white font-bold text-lg items-center justify-center z-10 md:mx-8 md:translate-y-2">
+                {{ index + 1 }}
+              </div>
+
+              <!-- Content -->
+              <div class="md:w-5/12 pt-1 pl-12 md:pl-0">
+                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300">
+                  <p class="text-lg text-gray-700">{{ step }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Integration Section -->
+    <section class="py-24 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">INTEGRATIONS</span>
+          <h2 class="text-4xl font-bold mb-6">Connect with Your Workflow</h2>
+          <p class="text-xl text-gray-600">Integrate Vanguard with your existing tools and processes.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-8 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300">
+            <Webhook class="w-12 h-12 mb-6 text-black" />
+            <h3 class="text-xl font-semibold mb-3">Webhooks</h3>
+            <p class="text-gray-600">Send backup data to your own endpoints to trigger custom workflows and integrations.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300">
+            <Code class="w-12 h-12 mb-6 text-black" />
+            <h3 class="text-xl font-semibold mb-3">Powerful API</h3>
+            <p class="text-gray-600">Comprehensive REST API lets you control every aspect of Vanguard programmatically.</p>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300">
+            <Globe class="w-12 h-12 mb-6 text-black" />
+            <h3 class="text-xl font-semibold mb-3">Multilingual</h3>
+            <p class="text-gray-600">Available in multiple languages, making Vanguard accessible worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section - Expanded -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <span class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">FAQ</span>
+          <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
+          <p class="text-xl text-gray-600">Get answers to the most common questions about Vanguard.</p>
+        </div>
+
+        <div class="max-w-3xl mx-auto divide-y divide-gray-200">
+          <div
+            v-for="(item, index) in faqItems"
+            :key="index"
+            class="py-6"
+          >
+            <button
+              @click="toggleQuestion(index)"
+              class="w-full flex justify-between items-center focus:outline-none"
+            >
+              <span class="text-xl font-medium text-gray-900">{{ item.question }}</span>
+              <span class="ml-6 flex-shrink-0">
+                <svg
+                  class="h-6 w-6 transform transition-transform duration-200"
+                  :class="{ 'rotate-180': activeQuestion === index }"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </span>
+            </button>
+            <div
+              v-show="activeQuestion === index"
+              class="mt-4 text-gray-600"
+            >
+              <p v-html="item.answer"></p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <!-- About Section Preview -->
-    <section class="py-24 bg-gray-900">
-      <div class="container mx-auto px-4">
-        <div class="max-w-3xl mx-auto">
-          <div class="text-center mb-16">
-            <h2 class="text-4xl font-medium mb-6">About Vanguard</h2>
-            <p class="text-xl text-gray-200">
-              An open-source backup solution for a developer's servers,
-              applications and data.
-            </p>
-          </div>
-
-          <div class="space-y-12">
-            <div>
-              <h3 class="text-2xl font-semibold mb-4">What is Vanguard?</h3>
-              <p class="text-lg text-gray-300">
+    <section class="py-24 bg-gray-100">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div class="relative">
+            <div class="absolute -top-6 -left-6 w-full h-full bg-black rounded-lg"></div>
+            <div class="relative bg-gray-100 p-8 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4">What is Vanguard?</h3>
+              <p class="text-lg text-gray-700">
                 Vanguard is a simple, efficient backup software designed for
                 developers who need reliable data protection without the
                 complexity. Our focus is on creating a lightweight, easy-to-use
                 backup solution.
               </p>
             </div>
-            <div>
-              <h3 class="text-2xl font-semibold mb-4">Why Open Source?</h3>
-              <p class="text-lg text-gray-300">
+          </div>
+          <div class="relative">
+            <div class="absolute -top-6 -right-6 w-full h-full bg-gray-200 rounded-lg"></div>
+            <div class="relative bg-white border border-gray-200 p-8 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4">Why Open Source?</h3>
+              <p class="text-lg text-gray-700">
                 We believe in the power of community-driven development. By
                 keeping Vanguard open source, we ensure transparency, encourage
                 collaboration, and build trust with our users. Your
@@ -256,110 +260,69 @@
               </p>
             </div>
           </div>
-
-          <div class="mt-12 text-center">
-            <router-link
-              to="/about"
-              class="bg-white text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-gray-200 transform inline-flex items-center justify-center"
-            >
-              Learn More About Us
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="h-5 w-5 ml-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"
-                />
-              </svg>
-            </router-link>
-          </div>
         </div>
       </div>
     </section>
 
     <!-- Get Started Section -->
-    <section id="get-started" class="py-24 bg-white text-black">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-4xl font-medium mb-8">Get Started with Vanguard</h2>
-        <p class="text-xl mb-12 text-gray-600">
-          Choose your deployment: Cloud-hosted or self-managed
-        </p>
-        <div
-          class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
-        >
-          <a
-            href="https://docs.vanguardbackup.com/installation"
-            class="bg-black text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:bg-gray-800 hover:scale-105 transform inline-flex items-center justify-center"
-          >
-            Self-Host Vanguard
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 ml-2"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
-          <a
-            href="https://app.vanguardbackup.com"
-            class="border-2 border-black text-black font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 hover:bg-black hover:text-white hover:scale-105 transform inline-flex items-center justify-center"
-          >
-            Try Hosted Version
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5 ml-2"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clip-rule="evenodd"
-              />
-            </svg>
-          </a>
+    <section id="get-started" class="py-24 bg-gray-900 text-white">
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-4xl font-bold mb-6">Get Started with Vanguard</h2>
+          <p class="text-xl mb-12 text-gray-300">
+            Choose your deployment: Cloud-hosted or self-managed
+          </p>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-black p-8 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4">Self-Host Vanguard</h3>
+              <p class="text-gray-300 mb-6">
+                Full control over your data and infrastructure. Perfect for people with specific requirements.
+              </p>
+              <a
+                href="https://docs.vanguardbackup.com/installation"
+                class="inline-flex items-center px-6 py-3 bg-white text-black font-medium rounded-md hover:bg-gray-200 transition-colors duration-300"
+              >
+                Installation Guide
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 ml-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+            <div class="bg-gray-800 p-8 rounded-lg">
+              <h3 class="text-2xl font-bold mb-4">Try Hosted Version</h3>
+              <p class="text-gray-300 mb-6">
+                Quick setup with no infrastructure management. Perfect for getting started quickly.
+              </p>
+              <a
+                href="https://app.vanguardbackup.com"
+                class="inline-flex items-center px-6 py-3 border-2 border-white text-white font-medium rounded-md hover:bg-white hover:text-black transition-colors duration-300"
+              >
+                Start Now
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5 ml-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Contact Preview Section -->
-    <section class="py-16 bg-black">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-medium mb-6">Need Help?</h2>
-        <p class="text-lg mb-8 text-gray-300">
-          Our team and community are ready to assist you with any questions
-        </p>
-        <router-link
-          to="/contact"
-          class="bg-white text-black font-semibold py-3 px-6 rounded-full transition-all duration-300 hover:bg-gray-200 transform inline-flex items-center justify-center"
-        >
-          Contact Us
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 ml-2"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-            />
-          </svg>
-        </router-link>
       </div>
     </section>
   </main>
@@ -367,7 +330,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Shield, Database, Clock, Cloud, Code2 } from 'lucide-vue-next'
+import { Shield, Database, Clock, Cloud, BellRing, Webhook, Code, Globe } from 'lucide-vue-next'
 
 const activeQuestion = ref(null)
 
@@ -376,7 +339,7 @@ const features = [
     icon: Shield,
     title: 'Secure Backups',
     description:
-      'End-to-end encryption ensures your data remains protected at all times.',
+      'Strong encryption and secure SSH connections protect your data during backup and storage.',
   },
   {
     icon: Database,
@@ -395,35 +358,36 @@ const features = [
       'Support for multiple cloud providers including Amazon S3 and more.',
   },
   {
-    icon: Code2,
-    title: 'Developer Friendly',
+    icon: BellRing,
+    title: 'Notifications',
     description:
-      'Easy integration with Laravel projects and popular hosting platforms.',
+      'Get alerts via Email, Microsoft Teams, Telegram, Pushover, Discord and more.',
   },
   {
-    icon: Shield,
-    title: 'Open Source',
+    icon: Code,
+    title: 'Developer Friendly',
     description:
-      'Community-driven development ensures transparency and security.',
+      'Comprehensive API, webhooks, and easy integration with existing workflows.',
   },
 ]
 
 const securityPoints = [
-  'Advanced SSH key authentication protocols',
-  'Military-grade end-to-end encryption',
-  'Continuous security audits and enhancements',
-  'Secure transmission of data to storage destinations',
+  'SSH key authentication',
+  'Data encryption in transit and at rest',
+  'Regular security updates',
+  'Secure storage integrations',
 ]
 
 const howItWorks = [
   'Connect Vanguard to your servers securely via SSH.',
   'Configure your backup sources (databases, files) and destinations.',
   'Set up automated backup schedules via a time interval or with cron.',
-  'Monitor backup status and receive notifications.',
-  'Restore data quickly when needed with a simple process.',
+  'Configure notifications to Discord, Telegram, Teams, or Pushover.',
+  'Monitor backup status through the dashboard or API.',
 ]
 
-const faqPreview = [
+// Expanded FAQ items
+const faqItems = [
   {
     question: 'What is Vanguard?',
     answer:
@@ -432,13 +396,48 @@ const faqPreview = [
   {
     question: 'How does Vanguard handle security?',
     answer:
-      'Vanguard prioritizes security by using SSH key pairs for server authentication and implementing strong encryption for data transfer and storage. We also follow best practices for secure coding.',
+      'Vanguard uses SSH key pairs for server authentication and implements strong encryption for data transfer and storage.',
   },
   {
     question: 'Which cloud storage providers does Vanguard support?',
     answer:
-      'Vanguard supports multiple cloud storage providers, including:<br>- Amazon S3<br>- Custom S3-compatible storage solutions<br>Additionally, you can use local storage for your backups.',
+      'Vanguard supports multiple cloud storage providers, including:<br>- Amazon S3<br>- DigitalOcean Spaces<br>- Backblaze B2<br>- Custom S3-compatible storage solutions<br>Additionally, you can use local storage for your backups.',
   },
+  {
+    question: 'What notification options does Vanguard offer?',
+    answer:
+      'Vanguard supports sending backup notifications to:<br>- Discord<br>- Telegram<br>- Microsoft Teams<br>- Pushover<br>- Email<br><br>You can configure these to receive alerts for successful backups, failures, or both.',
+  },
+  {
+    question: 'Does Vanguard have an API?',
+    answer:
+      'Yes, Vanguard offers a comprehensive REST API that allows you to programmatically control all aspects of the backup system. You can create and manage servers, configure backup sources, schedule backups, retrieve backup status, and more through the API. This makes it easy to integrate Vanguard into your existing DevOps workflows and tools.',
+  },
+  {
+    question: 'What languages is Vanguard available in?',
+    answer:
+      'Vanguard is available in multiple languages including English, German and Danish.',
+  },
+  {
+    question: 'Is Vanguard free to use?',
+    answer:
+      'Yes, Vanguard is completely free and open-source. You can install and use it on as many servers as you need without any licensing costs. We do offer an optional cloud-hosted version for convenience.',
+  },
+  {
+    question: 'What types of backups does Vanguard support?',
+    answer:
+      'Vanguard supports backing up:<br>- MySQL databases<br>- PostgreSQL databases<br>- Directory/file backups',
+  },
+  {
+    question: 'How can I integrate Vanguard with my existing workflow?',
+    answer:
+      'Vanguard offers several integration options:<br>- REST API for programmatic control<br>- Webhooks to trigger custom workflows after backup events<br>- Notification integrations with popular platforms',
+  },
+  {
+    question: 'What are the system requirements?',
+    answer:
+      'To run Vanguard, you need:<br>- Ubuntu 24.04 or newer (other Linux distributions may work but are not officially supported)<br>- PHP 8.3 or newer<br>- MySQL 5.7+ or PostgreSQL 12+ (for the Vanguard application database)<br>- Composer<br>- Node.js and npm (for building the frontend)',
+  }
 ]
 
 const toggleQuestion = (index) => {
@@ -449,15 +448,3 @@ const toggleQuestion = (index) => {
   }
 }
 </script>
-
-<style scoped>
-@keyframes fadeInOut {
-  0%,
-  100% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-}
-</style>

@@ -1,6 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
-import { CookieIcon, InfoIcon, CheckIcon } from 'lucide-vue-next'
+import { CookieIcon, XIcon } from 'lucide-vue-next'
 
 const showNotice = ref(true)
 
@@ -18,47 +18,50 @@ onMounted(() => {
 
 <template>
   <transition
-    enter-active-class="transition ease-out duration-300"
-    enter-from-class="transform translate-y-full opacity-0"
+    enter-active-class="transition ease-out duration-500"
+    enter-from-class="transform translate-y-12 opacity-0"
     enter-to-class="transform translate-y-0 opacity-100"
     leave-active-class="transition ease-in duration-300"
     leave-from-class="transform translate-y-0 opacity-100"
-    leave-to-class="transform translate-y-full opacity-0"
+    leave-to-class="transform translate-y-12 opacity-0"
   >
-    <div v-if="showNotice" class="fixed bottom-0 inset-x-0 pb-2 sm:pb-5 z-50">
-      <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
-        <div
-          class="p-3 rounded-lg bg-black border border-gray-700 shadow-lg sm:p-4"
-        >
-          <div class="flex items-center justify-between flex-wrap">
-            <div class="flex-1 flex items-center">
-              <CookieIcon class="h-6 w-6 text-white mr-3" />
-              <p class="font-medium text-white">
-                <span class="md:hidden">We use cookies.</span>
-                <span class="hidden md:inline">
-                  This website uses cookies to enhance your browsing experience.
-                </span>
+    <div v-if="showNotice" class="fixed bottom-0 inset-x-0 z-50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col sm:flex-row items-center bg-white border-t border-l border-r border-gray-200 rounded-t-lg p-4 sm:p-6 shadow-lg">
+          <div class="flex-1 flex items-center mb-4 sm:mb-0">
+            <div class="w-10 h-10 bg-black flex items-center justify-center rounded-md mr-4 flex-shrink-0">
+              <CookieIcon class="h-5 w-5 text-white" />
+            </div>
+            <div>
+              <h3 class="font-bold text-gray-900 text-lg">Cookie Notice</h3>
+              <p class="text-gray-600 mt-1 text-sm max-w-xl">
+                We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept," you consent to our use of cookies.
               </p>
             </div>
-            <div class="mt-2 flex-shrink-0 w-full sm:mt-0 sm:w-auto sm:ml-4">
-              <div class="flex space-x-4">
-                <button
-                  @click="acceptCookies"
-                  class="flex items-center justify-center px-4 py-2 border border-white rounded-full shadow-sm text-sm font-medium text-black bg-white hover:bg-gray-200 transition-colors duration-200"
-                >
-                  <CheckIcon class="h-4 w-4 mr-2" />
-                  Accept
-                </button>
-                <router-link
-                  to="/privacy-policy"
-                  class="flex items-center justify-center px-4 py-2 border border-white rounded-full shadow-sm text-sm font-medium text-white hover:bg-gray-800 transition-colors duration-200"
-                >
-                  <InfoIcon class="h-4 w-4 mr-2" />
-                  Learn More
-                </router-link>
-              </div>
-            </div>
           </div>
+
+          <div class="flex space-x-3">
+            <a
+              href="/privacy-policy"
+              class="px-5 py-2 text-sm font-medium text-gray-700 hover:text-black transition-colors"
+            >
+              Privacy Policy
+            </a>
+            <button
+              @click="acceptCookies"
+              class="px-5 py-2 rounded-md bg-black text-white text-sm font-medium hover:bg-gray-800 transition-colors flex items-center"
+            >
+              Accept All
+            </button>
+          </div>
+
+          <button
+            @click="showNotice = false"
+            class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 transition-colors"
+            aria-label="Dismiss"
+          >
+            <XIcon class="h-5 w-5" />
+          </button>
         </div>
       </div>
     </div>
