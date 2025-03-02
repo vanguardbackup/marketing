@@ -1,9 +1,15 @@
 <template>
-  <div class="min-h-screen bg-white flex flex-col items-center justify-center px-6">
+  <div
+    class="min-h-screen bg-white flex flex-col items-center justify-center px-6"
+  >
     <div class="max-w-lg">
       <div class="relative mb-12">
-        <div class="absolute -top-8 -left-8 w-24 h-24 bg-gray-100 rounded-lg"></div>
-        <div class="absolute -bottom-8 -right-8 w-16 h-16 bg-black rounded-lg"></div>
+        <div
+          class="absolute -top-8 -left-8 w-24 h-24 bg-gray-100 rounded-lg"
+        ></div>
+        <div
+          class="absolute -bottom-8 -right-8 w-16 h-16 bg-black rounded-lg"
+        ></div>
         <div class="relative z-10 text-center">
           <span class="text-9xl font-bold text-black">404</span>
         </div>
@@ -12,7 +18,8 @@
       <div class="text-center mb-10">
         <h1 class="text-3xl font-bold text-black mb-4">Page Not Found</h1>
         <p class="text-lg text-gray-600 max-w-md mx-auto">
-          The page you're looking for doesn't exist or has been moved to another URL.
+          The page you're looking for doesn't exist or has been moved to another
+          URL.
         </p>
       </div>
 
@@ -51,7 +58,9 @@
             viewBox="0 0 20 20"
             fill="currentColor"
           >
-            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+            <path
+              d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+            />
             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
           </svg>
         </a>

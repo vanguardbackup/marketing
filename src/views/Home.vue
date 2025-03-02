@@ -2,15 +2,27 @@
   <main class="font-sans">
     <!-- Hero Section -->
     <section class="relative bg-white py-24 md:py-32">
-      <div class="absolute top-0 right-0 w-1/3 h-full bg-black z-0 hidden lg:block"></div>
+      <div
+        class="absolute top-0 right-0 w-1/3 h-full bg-black z-0 hidden lg:block"
+      ></div>
       <div class="container mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h1 class="text-5xl md:text-6xl font-bold text-black mb-6 leading-tight">
-              Reliable <span class="inline-block relative">Backups<span class="absolute -bottom-2 left-0 w-full h-1 bg-black"></span></span> for Developers
+            <h1
+              class="text-5xl md:text-6xl font-bold text-black mb-6 leading-tight"
+            >
+              Reliable
+              <span class="inline-block relative"
+                >Backups<span
+                  class="absolute -bottom-2 left-0 w-full h-1 bg-black"
+                ></span
+              ></span>
+              for Developers
             </h1>
             <p class="text-xl text-gray-700 mb-10">
-              A community-driven open-source backup solution built specifically for servers and applications. MySQL, PostgreSQL, and file backups done right.
+              A community-driven open-source backup solution built specifically
+              for servers and applications. MySQL, PostgreSQL, and file backups
+              done right.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
               <a
@@ -53,12 +65,21 @@
           </div>
           <div class="flex justify-center lg:justify-end">
             <div class="relative">
-              <div class="absolute -top-8 -left-8 w-64 h-64 bg-gray-100 rounded-lg"></div>
-              <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-black rounded-lg"></div>
-              <div class="relative z-10 bg-white p-6 border border-gray-200 rounded-lg shadow-sm">
+              <div
+                class="absolute -top-8 -left-8 w-64 h-64 bg-gray-100 rounded-lg"
+              ></div>
+              <div
+                class="absolute -bottom-8 -right-8 w-32 h-32 bg-black rounded-lg"
+              ></div>
+              <div
+                class="relative z-10 bg-white p-6 border border-gray-200 rounded-lg shadow-sm"
+              >
                 <Shield class="w-16 h-16 mb-4 text-black" />
                 <h3 class="text-xl font-semibold mb-2">Built for Security</h3>
-                <p class="text-gray-600">Strong encryption protocols and secure connections ensure your data is protected throughout the backup process.</p>
+                <p class="text-gray-600">
+                  Strong encryption protocols and secure connections ensure your
+                  data is protected throughout the backup process.
+                </p>
               </div>
             </div>
           </div>
@@ -70,9 +91,15 @@
     <section class="py-24 bg-gray-100">
       <div class="container mx-auto px-6">
         <div class="max-w-3xl mx-auto text-center mb-16">
-          <span class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">FEATURES</span>
+          <span
+            class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4"
+            >FEATURES</span
+          >
           <h2 class="text-4xl font-bold mb-6">Built for Developers</h2>
-          <p class="text-xl text-gray-600">Everything you need for reliable server backups without the complexity.</p>
+          <p class="text-xl text-gray-600">
+            Everything you need for reliable server backups without the
+            complexity.
+          </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
@@ -123,14 +150,21 @@
     <section class="py-24 bg-white">
       <div class="container mx-auto px-6">
         <div class="max-w-3xl mx-auto text-center mb-16">
-          <span class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">HOW IT WORKS</span>
+          <span
+            class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4"
+            >HOW IT WORKS</span
+          >
           <h2 class="text-4xl font-bold mb-6">Simple & Effective Process</h2>
-          <p class="text-xl text-gray-600">Follow these steps to get your backups running smoothly</p>
+          <p class="text-xl text-gray-600">
+            Follow these steps to get your backups running smoothly
+          </p>
         </div>
 
         <div class="max-w-4xl mx-auto relative">
           <!-- Vertical line for timeline -->
-          <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gray-300 transform md:translate-x-px hidden md:block"></div>
+          <div
+            class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gray-300 transform md:translate-x-px hidden md:block"
+          ></div>
 
           <div class="space-y-12">
             <!-- Timeline items -->
@@ -141,13 +175,17 @@
               :class="index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'"
             >
               <!-- Step number -->
-              <div class="absolute md:static left-0 top-0 flex w-8 h-8 md:w-12 md:h-12 rounded-full bg-black text-white font-bold text-lg items-center justify-center z-10 md:mx-8 md:translate-y-2">
+              <div
+                class="absolute md:static left-0 top-0 flex w-8 h-8 md:w-12 md:h-12 rounded-full bg-black text-white font-bold text-lg items-center justify-center z-10 md:mx-8 md:translate-y-2"
+              >
                 {{ index + 1 }}
               </div>
 
               <!-- Content -->
               <div class="md:w-5/12 pt-1 pl-12 md:pl-0">
-                <div class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300">
+                <div
+                  class="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300"
+                >
                   <p class="text-lg text-gray-700">{{ step }}</p>
                 </div>
               </div>
@@ -161,28 +199,48 @@
     <section class="py-24 bg-gray-100">
       <div class="container mx-auto px-6">
         <div class="max-w-3xl mx-auto text-center mb-16">
-          <span class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">INTEGRATIONS</span>
+          <span
+            class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4"
+            >INTEGRATIONS</span
+          >
           <h2 class="text-4xl font-bold mb-6">Connect with Your Workflow</h2>
-          <p class="text-xl text-gray-600">Integrate Vanguard with your existing tools and processes.</p>
+          <p class="text-xl text-gray-600">
+            Integrate Vanguard with your existing tools and processes.
+          </p>
         </div>
 
         <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white p-8 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300">
+          <div
+            class="bg-white p-8 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300"
+          >
             <Webhook class="w-12 h-12 mb-6 text-black" />
             <h3 class="text-xl font-semibold mb-3">Webhooks</h3>
-            <p class="text-gray-600">Send backup data to your own endpoints to trigger custom workflows and integrations.</p>
+            <p class="text-gray-600">
+              Send backup data to your own endpoints to trigger custom workflows
+              and integrations.
+            </p>
           </div>
 
-          <div class="bg-white p-8 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300">
+          <div
+            class="bg-white p-8 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300"
+          >
             <Code class="w-12 h-12 mb-6 text-black" />
             <h3 class="text-xl font-semibold mb-3">Powerful API</h3>
-            <p class="text-gray-600">Comprehensive REST API lets you control every aspect of Vanguard programmatically.</p>
+            <p class="text-gray-600">
+              Comprehensive REST API lets you control every aspect of Vanguard
+              programmatically.
+            </p>
           </div>
 
-          <div class="bg-white p-8 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300">
+          <div
+            class="bg-white p-8 rounded-lg border border-gray-200 hover:border-black transition-colors duration-300"
+          >
             <Globe class="w-12 h-12 mb-6 text-black" />
             <h3 class="text-xl font-semibold mb-3">Multilingual</h3>
-            <p class="text-gray-600">Available in multiple languages, making Vanguard accessible worldwide.</p>
+            <p class="text-gray-600">
+              Available in multiple languages, making Vanguard accessible
+              worldwide.
+            </p>
           </div>
         </div>
       </div>
@@ -192,22 +250,25 @@
     <section class="py-24 bg-white">
       <div class="container mx-auto px-6">
         <div class="max-w-3xl mx-auto text-center mb-16">
-          <span class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4">FAQ</span>
+          <span
+            class="inline-block px-3 py-1 bg-black text-white text-sm font-medium rounded-md mb-4"
+            >FAQ</span
+          >
           <h2 class="text-4xl font-bold mb-6">Frequently Asked Questions</h2>
-          <p class="text-xl text-gray-600">Get answers to the most common questions about Vanguard.</p>
+          <p class="text-xl text-gray-600">
+            Get answers to the most common questions about Vanguard.
+          </p>
         </div>
 
         <div class="max-w-3xl mx-auto divide-y divide-gray-200">
-          <div
-            v-for="(item, index) in faqItems"
-            :key="index"
-            class="py-6"
-          >
+          <div v-for="(item, index) in faqItems" :key="index" class="py-6">
             <button
               @click="toggleQuestion(index)"
               class="w-full flex justify-between items-center focus:outline-none"
             >
-              <span class="text-xl font-medium text-gray-900">{{ item.question }}</span>
+              <span class="text-xl font-medium text-gray-900">{{
+                item.question
+              }}</span>
               <span class="ml-6 flex-shrink-0">
                 <svg
                   class="h-6 w-6 transform transition-transform duration-200"
@@ -217,14 +278,16 @@
                   viewBox="0 0 24 24"
                   stroke="currentColor"
                 >
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
                 </svg>
               </span>
             </button>
-            <div
-              v-show="activeQuestion === index"
-              class="mt-4 text-gray-600"
-            >
+            <div v-show="activeQuestion === index" class="mt-4 text-gray-600">
               <p v-html="item.answer"></p>
             </div>
           </div>
@@ -237,7 +300,9 @@
       <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
           <div class="relative">
-            <div class="absolute -top-6 -left-6 w-full h-full bg-black rounded-lg"></div>
+            <div
+              class="absolute -top-6 -left-6 w-full h-full bg-black rounded-lg"
+            ></div>
             <div class="relative bg-gray-100 p-8 rounded-lg">
               <h3 class="text-2xl font-bold mb-4">What is Vanguard?</h3>
               <p class="text-lg text-gray-700">
@@ -249,8 +314,12 @@
             </div>
           </div>
           <div class="relative">
-            <div class="absolute -top-6 -right-6 w-full h-full bg-gray-200 rounded-lg"></div>
-            <div class="relative bg-white border border-gray-200 p-8 rounded-lg">
+            <div
+              class="absolute -top-6 -right-6 w-full h-full bg-gray-200 rounded-lg"
+            ></div>
+            <div
+              class="relative bg-white border border-gray-200 p-8 rounded-lg"
+            >
               <h3 class="text-2xl font-bold mb-4">Why Open Source?</h3>
               <p class="text-lg text-gray-700">
                 We believe in the power of community-driven development. By
@@ -276,7 +345,8 @@
             <div class="bg-black p-8 rounded-lg">
               <h3 class="text-2xl font-bold mb-4">Self-Host Vanguard</h3>
               <p class="text-gray-300 mb-6">
-                Full control over your data and infrastructure. Perfect for people with specific requirements.
+                Full control over your data and infrastructure. Perfect for
+                people with specific requirements.
               </p>
               <a
                 href="https://docs.vanguardbackup.com/installation"
@@ -300,7 +370,8 @@
             <div class="bg-gray-800 p-8 rounded-lg">
               <h3 class="text-2xl font-bold mb-4">Try Hosted Version</h3>
               <p class="text-gray-300 mb-6">
-                Quick setup with no infrastructure management. Perfect for getting started quickly.
+                Quick setup with no infrastructure management. Perfect for
+                getting started quickly.
               </p>
               <a
                 href="https://app.vanguardbackup.com"
@@ -330,7 +401,16 @@
 
 <script setup>
 import { ref } from 'vue'
-import { Shield, Database, Clock, Cloud, BellRing, Webhook, Code, Globe } from 'lucide-vue-next'
+import {
+  Shield,
+  Database,
+  Clock,
+  Cloud,
+  BellRing,
+  Webhook,
+  Code,
+  Globe,
+} from 'lucide-vue-next'
 
 const activeQuestion = ref(null)
 
@@ -437,7 +517,7 @@ const faqItems = [
     question: 'What are the system requirements?',
     answer:
       'To run Vanguard, you need:<br>- Ubuntu 24.04 or newer (other Linux distributions may work but are not officially supported)<br>- PHP 8.3 or newer<br>- MySQL 5.7+ or PostgreSQL 12+ (for the Vanguard application database)<br>- Composer<br>- Node.js and npm (for building the frontend)',
-  }
+  },
 ]
 
 const toggleQuestion = (index) => {

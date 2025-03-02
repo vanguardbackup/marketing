@@ -27,15 +27,21 @@ onMounted(() => {
   >
     <div v-if="showNotice" class="fixed bottom-0 inset-x-0 z-50">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="flex flex-col sm:flex-row items-center bg-white border-t border-l border-r border-gray-200 rounded-t-lg p-4 sm:p-6 shadow-lg">
+        <div
+          class="flex flex-col sm:flex-row items-center bg-white border-t border-l border-r border-gray-200 rounded-t-lg p-4 sm:p-6 shadow-lg"
+        >
           <div class="flex-1 flex items-center mb-4 sm:mb-0">
-            <div class="w-10 h-10 bg-black flex items-center justify-center rounded-md mr-4 flex-shrink-0">
+            <div
+              class="w-10 h-10 bg-black flex items-center justify-center rounded-md mr-4 flex-shrink-0"
+            >
               <CookieIcon class="h-5 w-5 text-white" />
             </div>
             <div>
               <h3 class="font-bold text-gray-900 text-lg">Cookie Notice</h3>
               <p class="text-gray-600 mt-1 text-sm max-w-xl">
-                We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept," you consent to our use of cookies.
+                We use cookies to enhance your browsing experience and analyze
+                our traffic. By clicking "Accept," you consent to our use of
+                cookies.
               </p>
             </div>
           </div>
