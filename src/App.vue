@@ -9,9 +9,7 @@ const isMenuOpen = ref(false)
 const router = useRouter()
 const route = useRouter()
 
-const navItems = [
-  { name: 'Home', path: '/' },
-]
+const navItems = [{ name: 'Home', path: '/' }]
 
 const toggleMenu = () => {
   isMenuOpen.value = !isMenuOpen.value

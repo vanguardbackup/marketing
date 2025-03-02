@@ -65,7 +65,7 @@ router.beforeEach((to, from, next) => {
   metaDescription.setAttribute(
     'content',
     to.meta.description ||
-    'Vanguard: Secure, efficient, and open-source backup solution for your servers and applications.'
+      'Vanguard: Secure, efficient, and open-source backup solution for your servers and applications.'
   )
 
   next()

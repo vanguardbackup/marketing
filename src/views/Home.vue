@@ -140,7 +140,7 @@
               >
                 <span
                   class="bg-white text-black rounded-full w-10 h-10 flex items-center justify-center mr-4 font-bold"
-                >{{ index + 1 }}</span
+                  >{{ index + 1 }}</span
                 >
                 <span class="text-gray-300">{{ step }}</span>
               </li>
@@ -190,7 +190,10 @@
                 </svg>
               </div>
             </button>
-            <div v-show="activeQuestion === index" class="px-6 py-4 bg-gray-900">
+            <div
+              v-show="activeQuestion === index"
+              class="px-6 py-4 bg-gray-900"
+            >
               <p class="text-gray-300" v-html="item.answer"></p>
             </div>
           </div>
@@ -228,8 +231,8 @@
           <div class="text-center mb-16">
             <h2 class="text-4xl font-medium mb-6">About Vanguard</h2>
             <p class="text-xl text-gray-200">
-              An open-source backup solution for a developer's servers, applications
-              and data.
+              An open-source backup solution for a developer's servers,
+              applications and data.
             </p>
           </div>
 
@@ -248,8 +251,8 @@
               <p class="text-lg text-gray-300">
                 We believe in the power of community-driven development. By
                 keeping Vanguard open source, we ensure transparency, encourage
-                collaboration, and build trust with our users. Your contributions
-                help make Vanguard better for everyone.
+                collaboration, and build trust with our users. Your
+                contributions help make Vanguard better for everyone.
               </p>
             </div>
           </div>
@@ -388,17 +391,20 @@ const features = [
   {
     icon: Cloud,
     title: 'Flexible Storage',
-    description: 'Support for multiple cloud providers including Amazon S3 and more.',
+    description:
+      'Support for multiple cloud providers including Amazon S3 and more.',
   },
   {
     icon: Code2,
     title: 'Developer Friendly',
-    description: 'Easy integration with Laravel projects and popular hosting platforms.',
+    description:
+      'Easy integration with Laravel projects and popular hosting platforms.',
   },
   {
     icon: Shield,
     title: 'Open Source',
-    description: 'Community-driven development ensures transparency and security.',
+    description:
+      'Community-driven development ensures transparency and security.',
   },
 ]
 
